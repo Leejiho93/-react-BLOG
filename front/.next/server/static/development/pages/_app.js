@@ -152,30 +152,28 @@ const AppLayout = ({
   const {
     me
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_5__["useSelector"])(state => state.user);
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
-    type: "grid",
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 2fr 1fr',
+      gridTemplateRows: '200px 400px 1fr',
+      alignItems: 'center'
+    },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17,
       columnNumber: 13
     }
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
-    md: 6,
-    xs: 24,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18,
-      columnNumber: 17
-    }
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
-    md: 12,
-    xs: 24,
+  }, __jsx("div", {
     style: {
-      display: 'inline-flex',
-      justifyContent: 'center',
-      alignItems: 'center'
+      gridColumnStart: 2,
+      gridColumnEnd: 3,
+      gridRowStart: 1,
+      gridRowEnd: 2,
+      display: 'block',
+      marginLeft: 'auto',
+      marginRight: 'auto'
     },
     __self: undefined,
     __source: {
@@ -183,60 +181,48 @@ const AppLayout = ({
       lineNumber: 23,
       columnNumber: 17
     }
-  }, __jsx("div", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27,
-      columnNumber: 21
-    }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: "/",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
-      columnNumber: 25
+      lineNumber: 26,
+      columnNumber: 21
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
-      columnNumber: 29
+      lineNumber: 27,
+      columnNumber: 25
     }
   }, __jsx("img", {
-    style: {
-      display: 'inline-block',
-      verticalAlign: 'middle'
-    },
     src: "/logo300.png",
     alt: "EASYHO Blog",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
-      columnNumber: 33
+      lineNumber: 28,
+      columnNumber: 29
     }
-  }))))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
-    md: 6,
-    xs: 24,
+  })))), __jsx("div", {
     style: {
-      display: 'inline-flex',
-      justifyContent: 'center',
-      alignItems: 'center'
+      gridColumnStart: 3,
+      gridColumnEnd: 4,
+      gridRowStart: 1,
+      gridRowEnd: 2
     },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 33,
       columnNumber: 17
     }
   }, me ? __jsx(_ProfileTop__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 35,
       columnNumber: 25
     }
   }) : __jsx("div", {
@@ -244,7 +230,7 @@ const AppLayout = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 37,
       columnNumber: 25
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -252,14 +238,14 @@ const AppLayout = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 38,
       columnNumber: 29
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 38,
       columnNumber: 49
     }
   }, " \uB85C\uADF8\uC778 ")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -267,50 +253,40 @@ const AppLayout = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 39,
       columnNumber: 29
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 39,
       columnNumber: 50
     }
-  }, " \uD68C\uC6D0\uAC00\uC785 "))))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 54,
-      columnNumber: 13
-    }
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
-    md: 6,
-    xs: 24,
+  }, " \uD68C\uC6D0\uAC00\uC785 ")))), __jsx("div", {
     style: {
-      display: 'inline-flex',
-      justifyContent: 'center',
-      alignItems: 'center'
+      gridColumnStart: 1,
+      gridColumnEnd: 2,
+      gridRowStart: 2,
+      gridRowEnd: 3,
+      display: 'block',
+      marginLeft: 'auto',
+      marginRight: 'auto'
     },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 43,
       columnNumber: 17
     }
   }, __jsx("div", {
-    style: {},
+    style: {
+      marginTop: 100
+    },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
-      columnNumber: 21
-    }
-  }, __jsx("div", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 46,
       columnNumber: 25
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -318,14 +294,14 @@ const AppLayout = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 47,
       columnNumber: 29
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 47,
       columnNumber: 49
     }
   }, "about"))), __jsx("div", {
@@ -335,7 +311,7 @@ const AppLayout = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 49,
       columnNumber: 25
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -343,14 +319,14 @@ const AppLayout = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 50,
       columnNumber: 29
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 50,
       columnNumber: 49
     }
   }, "study"))), __jsx("div", {
@@ -360,7 +336,7 @@ const AppLayout = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 52,
       columnNumber: 25
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -368,14 +344,14 @@ const AppLayout = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 53,
       columnNumber: 29
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 53,
       columnNumber: 48
     }
   }, "cook"))), __jsx("div", {
@@ -385,7 +361,7 @@ const AppLayout = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 55,
       columnNumber: 25
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -393,38 +369,33 @@ const AppLayout = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 56,
       columnNumber: 29
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 56,
       columnNumber: 48
     }
-  }, "free"))))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
-    md: 12,
-    xs: 24
-    /* style={{ marginTop: 100 }} */
-    // style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}
-    ,
+  }, "free")))), __jsx("div", {
+    style: {
+      gridColumnStart: 2,
+      gridColumnEnd: 3,
+      gridRowStart: 2,
+      gridRowEnd: 4,
+      width: '600px',
+      marginLeft: 'auto',
+      marginRight: 'auto'
+    },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 59,
       columnNumber: 17
     }
-  }, children), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
-    md: 6,
-    xs: 24,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 82,
-      columnNumber: 17
-    }
-  })));
+  }, children)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (AppLayout);
@@ -2360,14 +2331,14 @@ const Blog = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 19,
       columnNumber: 9
     }
   }, __jsx(Component, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 20,
       columnNumber: 12
     }
   })));

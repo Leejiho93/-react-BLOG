@@ -10,13 +10,11 @@ const Home = () => {
 
     return (
         <>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '30px 50px'}}>
-                {allPosts.map(v => {
+            {allPosts.map(v => {
                     return (
                         <PostCard key={v} post={v} />
                     )
                 })}
-            </div>
         </>)
 }
 

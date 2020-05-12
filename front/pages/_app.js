@@ -15,7 +15,6 @@ const Blog = ({ Component, store }) => {
         <Head>
             <title>EASYHO Blog</title>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.2.0/antd.css"/>
-            {/* <link rel="stylesheet" type="text/css" href="../css/style.css" /> */}
         </Head>
         <AppLayout>
            <Component/>

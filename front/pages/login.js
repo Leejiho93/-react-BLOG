@@ -5,22 +5,6 @@ import { LOG_IN_REQUEST } from '../reducers/user';
 import Router from 'next/router';
 
 const Login = () => {
-    const layout = {
-        labelCol: {
-            span: 2,
-        },
-        wrapperCol: {
-            span: 16,
-        },
-    };
-
-    const tailLayout = {
-        wrapperCol: {
-            offset: 4,
-            span: 16,
-        },
-    };
-
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     const { isLoggingIn, me } = useSelector(state => state.user);
@@ -60,7 +44,6 @@ const Login = () => {
     return (
         <>
             <Form 
-            {...layout}
             onFinish={onFinishLogin}>
                 <Form.Item
                     label="아이디"
@@ -72,7 +55,7 @@ const Login = () => {
                         },
                     ]}
                 >
-                    <Input value={id} onChange={onChangeId} style={{ width: '60%' }} />
+                    <Input value={id} onChange={onChangeId} />
                 </Form.Item>
 
                 <Form.Item
@@ -85,10 +68,9 @@ const Login = () => {
                         },
                     ]}
                 >
-                    <Input.Password value={password} onChange={onChangePassword} style={{ width: '60%' }} />
+                    <Input.Password value={password} onChange={onChangePassword} />
                 </Form.Item>
                 <Form.Item
-                {...tailLayout}
                 >
                     <Button type="primary" htmlType="submit" loading={isLoggingIn}>
                         로그인
