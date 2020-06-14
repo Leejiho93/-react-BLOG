@@ -6,7 +6,7 @@ import PostCard from '../components/PostCard';
 
 const Home = () => {
 
-    const { allPosts } = useSelector(state => state.post);
+    const { allPosts } = useSelector(state => state.post)
 
     return (
         <>
