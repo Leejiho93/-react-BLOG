@@ -1,9 +1,20 @@
 import React from 'react';
-import { Row, Col, Menu, Button } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
+import { Layout, Row, Col, Menu, Button } from 'antd';
+import {
+    AppstoreOutlined,
+    BarChartOutlined,
+    CloudOutlined,
+    ShopOutlined,
+    TeamOutlined,
+    UserOutlined,
+    UploadOutlined,
+    VideoCameraOutlined,
+} from '@ant-design/icons';
 import Link from 'next/link';
 import ProfileTop from './ProfileTop';
 import { useSelector } from 'react-redux';
+
+const { Header, Content, Footer, Sider } = Layout;
 
 const AppLayout = ({ children }) => {
     const onClickMenu = () => {
@@ -14,6 +25,55 @@ const AppLayout = ({ children }) => {
 
     return (
         <>
+            {/* <Layout>
+                <Sider
+                    style={{
+                        overflow: 'auto',
+                        position: 'fixed',
+                        left: 0,
+                    }}
+                >
+                    <Menu theme="white" mode="inline">
+                        <Menu.Item key="1">
+                            about
+                    </Menu.Item>
+                        <Menu.Item key="2">
+                            study
+                    </Menu.Item>
+                        <Menu.Item key="3">
+                            cook
+                    </Menu.Item>
+                        <Menu.Item key="4">
+                            free
+                    </Menu.Item>
+                    </Menu>
+                </Sider>
+                <Layout>
+                    <Header style={{ background: 'white' }} >
+                        <Link href="/">
+                            <a>
+                                <img
+                                    src="/logo300.png" alt="EASYHO Blog" />
+                            </a>
+                        </Link>
+
+                        {me ?
+                            <ProfileTop />
+                            :
+                            <>
+                                <Link href="/login"><a> 로그인 </a></Link>
+                                <Link href="/signup"><a> 회원가입 </a></Link>
+                            </>
+                        }
+                    </Header>
+                    <Content>
+                        content
+                </Content>
+                    <Footer>
+
+                    </Footer>
+                </Layout>
+            </Layout> */}
             <div style={{ 
                 display: 'grid',
                 gridTemplateColumns: '1fr 2fr 1fr',
@@ -62,71 +122,6 @@ const AppLayout = ({ children }) => {
                     {children}
                 </div>
             </div>
-
-
-
-
-
-
-            {/* <Row justify="center" style={{flexWrap: 'nowrap', justifyContent: 'spaceEvenly'}}>
-                <Col 
-                md={12} xs={24}
-                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}
-                >
-                    <div style={{ width: '120px', height: '31px'}}>
-                        <Link href="/">
-                            <a>
-                                <img 
-                                style={{ display: 'block', verticalAlign: 'middle' }}
-                                src="/logo300.png" alt="EASYHO Blog" />
-                            </a>
-                        </Link>
-                    </div>
-                    <div>
-                    {me ?
-                        <ProfileTop />
-                        :
-                        <div style={{  }}>
-                            <Link href="/login"><a> 로그인 </a></Link>
-                            <Link href="/signup"><a> 회원가입 </a></Link>
-                        </div>
-                    }
-                    </div>
-                  
-                </Col>
-            </Row> */}
-
-            {/* <Row style={{ flexDirection: 'column'}}>
-                <Col 
-                md={6} xs={24}
-                style={{ display: 'inline-flex', justifyContent: 'center', alignItems: 'center'}}
-                >
-                    <div style={{ }}>
-                        <div>
-                            <Link href="/about"><a>about</a></Link>
-                        </div>
-                        <div  style={{ marginTop: 100 }}>
-                            <Link href="/study"><a>study</a></Link>
-                        </div>
-                        <div  style={{ marginTop: 100 }}>
-                            <Link href="/cook"><a>cook</a></Link>
-                        </div>
-                        <div  style={{ marginTop: 100 }}>
-                            <Link href="/free"><a>free</a></Link>
-                        </div>
-                    </div>
-                </Col>
-
-                <Col 
-                md={12} xs={24}
-                >
-                    {children}
-                </Col>
-
-                <Col md={6} xs={24}>
-
-                </Col>
-            </Row> */}
         </>
     )
 }
