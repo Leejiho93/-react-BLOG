@@ -66,5 +66,5 @@ app.use('/api/posts', postsAPIRouter);
 app.use('/api/search', searchAPIRouter);
 
 app.listen( prod ? process.env.PORT : 3065, () => {
-    console.log('server is running on 3065')
-});
+    console.log('server is running on 3065');
+})

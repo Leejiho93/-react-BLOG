@@ -22,14 +22,14 @@ const dummyComment = {
 
 
 export const initialState = {
-    allPosts: [],
-    imagePaths: [],
-    addPostErrorReason: '',
-    isAddingPost: false,
-    postAdded: false,
-    isAddingComment: false,
-    addCommentErrorReason: '',
-    commentAdded: false,
+    allPosts: [], // 모든 게시글
+    imagePaths: [], // 이미지 저장 주소
+    addPostErrorReason: '', // 게시글 업로드 실패 사유
+    isAddingPost: false, // 게시글 업로드 중
+    postAdded: false, // 게시글 업로드 성공
+    isAddingComment: false, // 댓글 업로드 중
+    addCommentErrorReason: '', // 댓글 업로드 실패 사유
+    commentAdded: false, // 댓글 업로드 성공
 }
 
 export const ADD_POST_REQUEST = 'ADD_POST_REQUEST'
@@ -52,7 +52,7 @@ export default (state = initialState, action) => {
             case ADD_POST_SUCCESS: {
                 draft.isAddingPost = false;
                 draft.postAdded = true;
-                draft.allPosts.unshift(dummyPost);
+                draft.allPosts.unshift(action.data);
                 break;
             }
 

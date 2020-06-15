@@ -7,14 +7,14 @@ const dummyUser = {
 }
 
 export const initialState = {
-    isLoggedIn: false,
-    isLoggingIn: false,
-    isLoggingOut: false,
-    logInErrorReason: '',
-    isSignedUp: false,
-    isSigningUp: false,
-    signUpErrorReason: '',
-    me: null,
+    isLoggedIn: false, // 로그인 성공 여부
+    isLoggingIn: false, // 로그인 진행중
+    isLoggingOut: false, // 로그아웃 진행중
+    logInErrorReason: '', // 로그인 실패 사유
+    isSignedUp: false, // 회원가입 성공
+    isSigningUp: false, // 회원가입 진행중
+    signUpErrorReason: '',  // 회원사입 실패 사유
+    me: null, // 내정보
 }
 
 export const SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
@@ -89,4 +89,3 @@ export default (state = initialState, action) => {
         }
     })
 }
-
