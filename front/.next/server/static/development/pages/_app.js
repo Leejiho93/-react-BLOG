@@ -2428,62 +2428,7 @@ const dummyComment = {
   content: '더미 댓글입니다.'
 };
 const initialState = {
-  allPosts: [{
-    id: 1,
-    title: '첫번째 글',
-    kategorie: null,
-    User: {
-      id: 1,
-      nickname: '보노보노'
-    },
-    content: '',
-    img: '',
-    comments: []
-  }, {
-    id: 2,
-    title: '두번째 글',
-    kategorie: null,
-    User: {
-      id: 1,
-      nickname: '보노보노'
-    },
-    content: '',
-    img: '',
-    comments: []
-  }, {
-    id: 3,
-    title: '세번째 글',
-    kategorie: null,
-    User: {
-      id: 1,
-      nickname: '보노보노'
-    },
-    content: '',
-    img: '',
-    comments: []
-  }, {
-    id: 4,
-    title: '네번째 글',
-    kategorie: null,
-    User: {
-      id: 1,
-      nickname: '보노보노'
-    },
-    content: '',
-    img: '',
-    comments: []
-  }, {
-    id: 5,
-    title: '다섯번째 글',
-    kategorie: null,
-    User: {
-      id: 1,
-      nickname: '보노보노'
-    },
-    content: '',
-    img: '',
-    comments: []
-  }],
+  allPosts: [],
   imagePaths: [],
   addPostErrorReason: '',
   isAddingPost: false,

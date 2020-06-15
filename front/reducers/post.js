@@ -1,3 +1,5 @@
+import produce from 'immer';
+
 const dummyPost = {
     id: 2,
     User: {
@@ -20,66 +22,7 @@ const dummyComment = {
 
 
 export const initialState = {
-    allPosts: [{
-        id: 1,
-        title: '첫번째 글',
-        kategorie: null,
-        User: {
-            id: 1,
-            nickname: '보노보노'
-        },
-        content: '',
-        img: '',
-        comments: [],
-    },
-    {
-        id: 2,
-        title: '두번째 글',
-        kategorie: null,
-        User: {
-            id: 1,
-            nickname: '보노보노'
-        },
-        content: '',
-        img: '',
-        comments: [],
-    },
-    {
-        id: 3,
-        title: '세번째 글',
-        kategorie: null,
-        User: {
-            id: 1,
-            nickname: '보노보노'
-        },
-        content: '',
-        img: '',
-        comments: [],
-    },
-    {
-        id: 4,
-        title: '네번째 글',
-        kategorie: null,
-        User: {
-            id: 1,
-            nickname: '보노보노'
-        },
-        content: '',
-        img: '',
-        comments: [],
-    },
-    {
-        id: 5,
-        title: '다섯번째 글',
-        kategorie: null,
-        User: {
-            id: 1,
-            nickname: '보노보노'
-        },
-        content: '',
-        img: '',
-        comments: [],
-    }],
+    allPosts: [],
     imagePaths: [],
     addPostErrorReason: '',
     isAddingPost: false,
@@ -97,62 +40,49 @@ export const ADD_COMMENT_REQUEST = 'ADD_COMMENT_REQUEST';
 export const ADD_COMMENT_SUCCESS = 'ADD_COMMENT_SUCCESS';
 export const ADD_COMMENT_FAILURE = 'ADD_COMMENT_FAILURE';
 
-
 export default (state = initialState, action) => {
-    switch (action.type) {
-        case ADD_POST_REQUEST: {
-            return {
-                ...state,
-                isAddingPost: true,
-                addPostErrorReason: '',
+    return produce(state, (draft) => {
+        switch (action.type) {
+            case ADD_POST_REQUEST: {
+                draft.isAddingPost = true;
+                draft.addPostErrorReason = '';
+                break;
             }
-        }
 
-        case ADD_POST_SUCCESS: {
-            return {
-                ...state,
-                isAddingPost: false,
-                postAdded: true,
-                allPosts: [dummyPost, ...allPosts],
+            case ADD_POST_SUCCESS: {
+                draft.isAddingPost = false;
+                draft.postAdded = true;
+                draft.allPosts.unshift(dummyPost);
+                break;
             }
-        }
 
-        case ADD_POST_FAILURE: {
-            return {
-                ...state,
-                isAddingPost: false,
-                addPostErrorReason: action.data,
+            case ADD_POST_FAILURE: {
+                draft.isAddingPost = false;
+                draft.addPostErrorReason = action.data;
+                break;
             }
-        }
 
-        case ADD_COMMENT_REQUEST: {
-            return {
-                ...state,
-                isAddingComment: true,
-                addCommentErrorReason: '',
+            case ADD_COMMENT_REQUEST: {
+                draft.isAddingComment = true;
+                draft.addCommentErrorReason = '';
+                break;
             }
-        }
 
-        case ADD_COMMENT_SUCCESS: {
-            return {
-                ...state,
-                isAddingComment: false,
-                postAdded: true,
+            case ADD_COMMENT_SUCCESS: {
+                draft.isAddingComment = false;
+                draft.postAdded = true;
+                break;
             }
-        }
 
-        case ADD_COMMENT_FAILURE: {
-            return {
-                ...state,
-                isAddingComment: false,
-                addCommentErrorReason: action.data,
+            case ADD_COMMENT_FAILURE: {
+                draft.isAddingComment = false;
+                draft.addCommentErrorReason = action.data;
+                break;
             }
-        }
 
-        default: {
-            return {
-                ...state,
+            default: {
+                break;
             }
         }
-    }
+    })
 }

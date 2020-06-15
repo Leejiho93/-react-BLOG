@@ -1,3 +1,5 @@
+import produce from 'immer';
+
 const dummyUser = {
     nickname: '보노보노',
     post: [],
@@ -19,94 +21,72 @@ export const SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
 
-export const LOG_IN_REQUEST = 'LOG_IN_REQUEST'; 
-export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS'; 
-export const LOG_IN_FAILURE = 'LOG_IN_FAILURE'; 
+export const LOG_IN_REQUEST = 'LOG_IN_REQUEST';
+export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
+export const LOG_IN_FAILURE = 'LOG_IN_FAILURE';
 
 export const LOG_OUT_REQUEST = 'LOG_OUT_REQUEST';
 export const LOG_OUT_SUCCESS = 'LOG_OUT_SUCCESS';
 export const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
 
-
 export default (state = initialState, action) => {
-    switch(action.type) {
-        case LOG_IN_REQUEST: {
-            return {
-                ...state,
-                isLoggingIn: true,
-                logInErrorReason: '',
-            }
-        }
-
-        case LOG_IN_SUCCESS: {
-            return {
-                ...state,
-                isLoggedIn: true,
-                isLoggingIn: false,
-                me: dummyUser,
-            }
-        }
-
-        case LOG_IN_FAILURE: {
-            return {
-                ...state,
-                isLoggedIn: false,
-                isLoggingIn: false,
-                logInErrorReason: action.error,
-                me: null,
+    return produce(state, (draft) => {
+        switch (action.type) {
+            case LOG_IN_REQUEST: {
+                draft.isLoggingIn = true;
+                draft.logInErrorReason = '';
+                break;
             }
 
-        }
+            case LOG_IN_SUCCESS: {
+                draft.isLoggedIn = true;
+                draft.isLoggingIn = false;
+                draft.me = dummyUser;
+                break;
+            }
 
-        case LOG_OUT_REQUEST: {
-            return {
-                ...state,
-                me: null,
+            case LOG_IN_FAILURE: {
+                draft.isLoggedIn = false;
+                draft.isLoggingIn = false;
+                draft.logInErrorReason = action.error;
+                draft.me = null;
+                break;
+            }
+
+            case LOG_OUT_REQUEST: {
+                draft.isLoggingOut = true;
+                break;
+            }
+
+            case LOG_OUT_SUCCESS: {
+                draft.isLoggingOut = false;
+                draft.me = null;
+                break;
+            }
+
+            case SIGN_UP_REQUEST: {
+                draft.isSigningUp = true;
+                draft.isSignedUp = false;
+                draft.signUpErrorReason = '';
+                break;
+            }
+
+            case SIGN_UP_SUCCESS: {
+                draft.isSigningUp = false;
+                draft.isSignedUp = true;
+                break;
+            }
+
+            case SIGN_UP_FAILURE: {
+                draft.isSigningUp = false;
+                draft.signUpErrorReason = action.data;
+                break;
+            }
+
+            default: {
+                break;
             }
         }
-
-        // case LOG_OUT_SUCCESS: {
-        //     return {
-        //         ...state,
-        //         me: null,
-        //     }
-        // }
-
-        // case LOG_OUT_FAILURE: {
-        //     return {
-        //         ...state,
-        //     }
-        // }
-
-        case SIGN_UP_REQUEST: {
-            return {
-                ...state,
-                isSigningUp: true,
-                isSignedUp: false,
-                signUpErrorReason: '',
-            }
-        }
-
-        case SIGN_UP_SUCCESS: {
-            return {
-                ...state,
-                isSigningUp: false,
-                isSignedUp: true,
-            }
-        }
-
-        case SIGN_UP_FAILURE: {
-            return {
-                ...state,
-                isSigningUp: false,
-                signUpErrorReason: action.data,
-            }
-        }
-
-        default: {
-            return {
-                ...state,
-            }
-        }
-    }
+    })
 }
+

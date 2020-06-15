@@ -7,9 +7,13 @@ const dotenv = require('dotenv');
 const passport = require('passport');
 const hpp = require('hpp');
 const helmet = require('helmet');
-// const passprotConfig = require('./passport');
-// const db = require('./models');
+const passprotConfig = require('./passport');
+const db = require('./models');
 
+const userAPIRouter = require('./routes/user');
+const postAPIRouter = require('./routes/post');
+const postsAPIRouter = require('./routes/posts');
+const searchAPIRouter = require('./routes/search');
 
 const prod = process.env.NODE_ENV === 'production';
 
@@ -20,7 +24,7 @@ if (prod) {
     app.use(helmet());
     app.use(morgan('combined'));
     app.use(cors({
-        origin: 'http://easyho.com',
+        origin: 'http://easyho93.com',
         credentials: true,
     }))
 
@@ -32,10 +36,35 @@ if (prod) {
     }))
 }
 
-app.get('*', (req, res) => {
-    res.end('hello world');
-})
+app.use('/', express.static('uploads'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser(process.env.COOKIE_SECRET));
+app.use(expressSession({
+    resave: false,
+    saveUninitialized: false,
+    secret: process.env.COOKIE_SECRET,
+    cookie: {
+        httpOnly: true,
+        secure: false,
+        domain: prod && '.easyho93.com',
+    },
+    name: 'ljerk',
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+app.get('/', (req, res) => {
+    res.send('easyho93 백엔드 정상 동작');
+});
+
+app.use('/api/user', userAPIRouter);
+app.use('/api/post', postAPIRouter);
+app.use('/api/posts', postsAPIRouter);
+app.use('/api/search', searchAPIRouter);
 
 app.listen( prod ? process.env.PORT : 3065, () => {
     console.log('server is running on 3065')
-})
+});
