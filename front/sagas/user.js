@@ -1,22 +1,29 @@
-import {all, delay, fork, put, takeLatest} from 'redux-saga/effects';
+import {all, fork, put, takeLatest, call} from 'redux-saga/effects';
 import { 
     SIGN_UP_REQUEST, 
     SIGN_UP_FAILURE, 
     SIGN_UP_SUCCESS, 
     LOG_IN_SUCCESS, 
     LOG_IN_FAILURE,
-    LOG_IN_REQUEST} from '../reducers/user';
+    LOG_IN_REQUEST,
+    LOG_OUT_SUCCESS,
+    LOG_OUT_FAILURE,
+    LOG_OUT_REQUEST
+} from '../reducers/user';
+import axios from 'axios'
 
-
-function loginAPI() {
-
+function loginAPI(loginData) {
+    return axios.post('/user/login', loginData, {
+        withCredentials: true,  
+    })
 }
 
-function* login() {
+function* login(action) {
     try {
-        yield delay(2000);
+        const result = yield call(loginAPI, action.data)
         yield put({
             type: LOG_IN_SUCCESS,
+            data: result.data,
         })
     } catch(e) {
         console.error(e);
@@ -31,13 +38,39 @@ function* watchLogin() {
     yield takeLatest(LOG_IN_REQUEST, login)
 }
 
-function signUpAPI() {
-
+function logOutAPI(logOutData) {
+    return axios.post('/user/logOut', logOutData, {
+        withCredentials: true,  
+    })
 }
 
-function* signUp() {
+function* logOut(action) {
     try {
-        yield delay(2000);
+        const result = yield call(logOutAPI, action.data)
+        yield put({
+            type: LOG_OUT_SUCCESS,
+            data: result.data,
+        })
+    } catch(e) {
+        console.error(e);
+        yield put({
+            type: LOG_OUT_FAILURE,
+            error: e,
+        })
+    }
+}
+
+function* watchLogOut() {
+    yield takeLatest(LOG_OUT_REQUEST, logOut)
+}
+
+function signUpAPI() {
+    return axios.post('/user/', signUpData)
+}
+
+function* signUp(action) {
+    try {
+        yield call(signUpAPI, action.data);
         yield put({
             type: SIGN_UP_SUCCESS,
         })
@@ -54,11 +87,10 @@ function* watchSignUp() {
     yield takeLatest(SIGN_UP_REQUEST, signUp)
 }
 
-
-
 export default function* userSage() {
     yield all([
         fork(watchLogin),
-        fork(watchSignUp)
+        fork(watchSignUp),
+        fork(watchLogOut),
     ])
 }

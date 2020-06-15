@@ -1,15 +1,4 @@
 const express = require('express');
-<<<<<<< HEAD
-
-const app = express();
-
-app.get('/', (req, res) => {
-    res.send('hello server');
-})
-
-app.listen(8080, () => {
-    console.log('server is running on localhost:8080');
-=======
 const morgan = require('morgan');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
@@ -48,6 +37,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen( prod ? process.env.PORT : 3065, () => {
-    console.log('server is running on 3065')
->>>>>>> 58170b4697e45b433acb3bdd554e4fba019056a7
+    console.log('server is running on 3065');
 })
