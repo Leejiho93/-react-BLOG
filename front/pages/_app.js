@@ -14,7 +14,9 @@ const Blog = ({ Component, store }) => {
         <Provider store={store}>
         <Head>
             <title>EASYHO Blog</title>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.2.0/antd.css"/>
+            {/* <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" /> */}
+            {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.2.0/antd.css"/> */}
+            {/* <script src="https://kit.fontawesome.com/d206a06276.js" crossorigin="anonymous"></script>  */}
         </Head>
         <AppLayout>
            <Component/>

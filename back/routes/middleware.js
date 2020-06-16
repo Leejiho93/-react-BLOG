@@ -9,18 +9,18 @@ exports.isLoggedIn = (req, res, next) => {
 }
 
 exports.isNotLoggedIn = (req, res, next) => {
-    if(!req.isAuthenticated()) {
+    if (!req.isAuthenticated()) {
         next();
     } else {
         res.state(401).send('로그인한 사용자는 접근할 수 없습니다.')
     }
 }
 
-exports.isPostExist = async (req, res, next) => {
-    const post = await db.Post.findOne({ where: { id: req.parmas.id }})
-    if (post) {
-        next();
-    } else {
-        res.status(404).send('포스트가 존재하지 않습니다.');
-    }
-}
+// exports.isPostExist = async (req, res, next) => {
+//     const post = await db.Post.findOne({ where: { id: req.parmas.id } })
+//     if (post) {
+//         next();
+//     } else {
+//         res.status(404).send('포스트가 존재하지 않습니다.');
+//     }
+// }

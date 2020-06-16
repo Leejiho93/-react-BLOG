@@ -1,5 +1,4 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { Form, Button, Input } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { LOG_IN_REQUEST } from '../reducers/user';
 import Router from 'next/router';
@@ -18,7 +17,8 @@ const Login = () => {
     }, [me && me.id])
 
 
-    const onFinishLogin = useCallback(() => {
+    const onSubmitLogin = useCallback((e) => {
+        e.preventDefault();
         console.log({
             id,
             password
@@ -27,8 +27,8 @@ const Login = () => {
         return dispatch({
             type: LOG_IN_REQUEST,
             data: {
-                id,
-                password
+                userId: id,
+                password,
             }
         })
     }, [id, password])
@@ -43,7 +43,14 @@ const Login = () => {
     }
     return (
         <>
-            <Form 
+            <form onSubmit={onSubmitLogin}>
+                <label for="id">ID:</label>
+                <input type="text" id="id" name="id" value={id} onChange={onChangeId}></input>
+                <label for="password">PASSWORD:</label>
+                <input type="password" id="password" name="password" value={password} onChange={onChangePassword}></input>
+                <input type="submit" value="로그인"/>
+            </form>
+            {/* <Form 
             onFinish={onFinishLogin}>
                 <Form.Item
                     label="아이디"
@@ -76,7 +83,7 @@ const Login = () => {
                         로그인
                     </Button>
                 </Form.Item>
-            </Form>
+            </Form> */}
         </>
     )
 }

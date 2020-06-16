@@ -2,7 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-const expressSesstion = require('express-session');
+const expressSession = require('express-session');
 const dotenv = require('dotenv');
 const passport = require('passport');
 const hpp = require('hpp');
@@ -17,7 +17,10 @@ const searchAPIRouter = require('./routes/search');
 
 const prod = process.env.NODE_ENV === 'production';
 
+dotenv.config();
 const app = express();
+db.sequelize.sync();
+passprotConfig();
 
 if (prod) {
     app.use(hpp());
@@ -47,7 +50,7 @@ app.use(expressSession({
     cookie: {
         httpOnly: true,
         secure: false,
-        domain: prod && '.easyho93.com',
+        // domain: prod && '.easyho93.com',
     },
     name: 'ljerk',
 }));
