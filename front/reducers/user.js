@@ -1,11 +1,5 @@
 import produce from 'immer';
 
-const dummyUser = {
-    nickname: '보노보노',
-    post: [],
-    id: 1,
-}
-
 export const initialState = {
     isLoggedIn: false, // 로그인 성공 여부
     isLoggingIn: false, // 로그인 진행중
@@ -41,7 +35,7 @@ export default (state = initialState, action) => {
             case LOG_IN_SUCCESS: {
                 draft.isLoggedIn = true;
                 draft.isLoggingIn = false;
-                draft.me = dummyUser;
+                draft.me = action.data;
                 break;
             }
 

@@ -15,7 +15,6 @@ import {
 
 // 로그인
 function logInAPI(loginData) {
-    // 서버에 요청을 보내는 부분
     return axios.post('/user/login', loginData, {
       withCredentials: true,
     });
@@ -24,11 +23,11 @@ function logInAPI(loginData) {
   function* logIn(action) {
     try {
       const result = yield call(logInAPI, action.data);
-      yield put({ // put은 dispatch 동일
+      yield put({ 
         type: LOG_IN_SUCCESS,
         data: result.data,
       });
-    } catch (e) { // loginAPI 실패
+    } catch (e) { 
       console.error(e);
       yield put({
         type: LOG_IN_FAILURE,
@@ -39,32 +38,6 @@ function logInAPI(loginData) {
   function* watchLogIn() {
     yield takeEvery(LOG_IN_REQUEST, logIn);
   }
-// function loginAPI(loginData) {
-//     return axios.post('/user/login', loginData, {
-//         withCredentials: true,  
-//     })
-// }
-
-// function* login(action) {
-//     try {
-//         const result = yield call(loginAPI, action.data)
-//         yield put({
-//             type: LOG_IN_SUCCESS,
-//             data: result.data,
-//         })
-//     } catch(e) {
-//         console.log(e);
-//         console.error(e);
-//         yield put({
-//             type: LOG_IN_FAILURE,
-//             error: e,
-//         })
-//     }
-// }
-
-// function* watchLogin() {
-//     yield takeLatest(LOG_IN_REQUEST, login)
-// }
 
 // 로그아웃
 function logOutAPI() {

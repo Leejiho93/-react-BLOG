@@ -14,7 +14,7 @@ const UserProfile = () => {
 
     return (
         <>
-            <div>{me.nickname}</div>
+            <div>{me && me.nickname}</div>
             <button onClick={onLogout}>로그아웃</button>
         </>
     )

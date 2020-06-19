@@ -10,7 +10,7 @@ import {
 
 
 function addPostAPI() {
-    // axios.post()
+    axios.post('post/id')
 }
 
 function* addPost() {

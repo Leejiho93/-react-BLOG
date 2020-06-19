@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link'
-import { Button } from 'antd';
 import { useSelector } from 'react-redux';
 import PostCard from '../components/PostCard';
 

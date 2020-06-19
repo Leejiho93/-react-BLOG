@@ -15,15 +15,6 @@ const Signup = () => {
     const { isSigningUp, isSignedUp } = useSelector(state => state.user);
     const dispatch = useDispatch();
 
-    // 회원가입 성공 했을 때 성공 페이지 보여주기?????
-    // useEffect(() => {
-    //     if (isSignedUp) {
-    //         setTimeout( ()=> {
-
-    //         }, 5000)
-    //         Router.push('/')
-    //     }
-    // })
     const onFinshSignUpForm = useCallback((e) => {
 
         if (password !== passwordCheck) {

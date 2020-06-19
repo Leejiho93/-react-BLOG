@@ -115,10 +115,10 @@ module.exports = require("next/dist/next-server/lib/utils.js");
 
 /***/ }),
 
-/***/ "./components/AppLayout.js":
-/*!*********************************!*\
-  !*** ./components/AppLayout.js ***!
-  \*********************************/
+/***/ "./components/AppLayout/index.js":
+/*!***************************************!*\
+  !*** ./components/AppLayout/index.js ***!
+  \***************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -126,15 +126,15 @@ module.exports = require("next/dist/next-server/lib/utils.js");
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _containers_UserProfile__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../containers/UserProfile */ "./containers/UserProfile.js");
-/* harmony import */ var _NavBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./NavBar */ "./components/NavBar/index.js");
-var _jsxFileName = "C:\\BLOG\\front\\components\\AppLayout.js";
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _containers_UserProfile__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../containers/UserProfile */ "./containers/UserProfile.js");
+/* harmony import */ var _NavBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../NavBar */ "./components/NavBar/index.js");
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style */ "./components/AppLayout/style.js");
+/* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../theme */ "./components/theme.js");
+var _jsxFileName = "C:\\BLOG\\front\\components\\AppLayout\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -142,62 +142,299 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_3__["createGlobalStyle"]`
-	body {
-		margin: 0;
-    }
-    
-    a {
-        text-decoration: none;
-        color: black;
-    }
-`;
+
 
 const AppLayout = ({
   children
 }) => {
   const {
     me
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.user);
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(GlobalStyle, {
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
+  return __jsx(styled_components__WEBPACK_IMPORTED_MODULE_2__["ThemeProvider"], {
+    theme: _theme__WEBPACK_IMPORTED_MODULE_6__["theme"],
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
-      columnNumber: 13
+      lineNumber: 13,
+      columnNumber: 9
     }
-  }), __jsx(_NavBar__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["GlobalStyle"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
-      columnNumber: 13
+      lineNumber: 15,
+      columnNumber: 17
     }
-  }), me ? __jsx(_containers_UserProfile__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }), __jsx(_NavBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
-      columnNumber: 19
+      lineNumber: 16,
+      columnNumber: 17
     }
-  }) : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
+  }), me ? __jsx(_containers_UserProfile__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
-      columnNumber: 21
+      lineNumber: 18,
+      columnNumber: 23
     }
-  }, "a")), __jsx("div", {
+  }) : null, __jsx("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
-      columnNumber: 13
+      lineNumber: 21,
+      columnNumber: 17
     }
-  }, children, " "));
+  }, "a"), __jsx("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 17
+    }
+  }, children, " ")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (AppLayout);
+
+/***/ }),
+
+/***/ "./components/AppLayout/style.js":
+/*!***************************************!*\
+  !*** ./components/AppLayout/style.js ***!
+  \***************************************/
+/*! exports provided: GlobalStyle */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GlobalStyle", function() { return GlobalStyle; });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+
+const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobalStyle"]`
+	html, body {
+        margin: 0;
+        paddingL 0;
+        box-sizing: border-box;
+    }
+    
+    // a {
+    //     text-decoration: none;
+    //     color: black;
+    // }
+
+    // body {
+    //     align-items: center;
+    //     // background: ${({
+  theme
+}) => theme.primaryHover};
+    //     background: white;
+    //     color: ${({
+  theme
+}) => theme.primaryLight};
+        
+    // }
+`;
+
+/***/ }),
+
+/***/ "./components/LeftNav/index.js":
+/*!*************************************!*\
+  !*** ./components/LeftNav/index.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style */ "./components/LeftNav/style.js");
+var _jsxFileName = "C:\\BLOG\\front\\components\\LeftNav\\index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+const LeftNav = ({
+  open
+}) => {
+  const me = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
+  return __jsx(_style__WEBPACK_IMPORTED_MODULE_3__["Ul"], {
+    open: open,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 9
+    }
+  }, __jsx("li", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 13
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 17
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 32
+    }
+  }, "LeftNav"))), __jsx("li", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 13
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 17
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 32
+    }
+  }, "Home"))), __jsx("li", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 13
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/about",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 17
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 37
+    }
+  }, "About"))), __jsx("li", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14,
+      columnNumber: 13
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/tech",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14,
+      columnNumber: 17
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14,
+      columnNumber: 36
+    }
+  }, "Tech"))), __jsx("li", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 13
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/free",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 17
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 36
+    }
+  }, "Free"))), __jsx("li", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 13
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/gallery",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 17
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 39
+    }
+  }, "Gallery"))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (LeftNav);
+
+/***/ }),
+
+/***/ "./components/LeftNav/style.js":
+/*!*************************************!*\
+  !*** ./components/LeftNav/style.js ***!
+  \*************************************/
+/*! exports provided: Ul */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Ul", function() { return Ul; });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+
+const Ul = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.withConfig({
+  displayName: "style__Ul",
+  componentId: "sc-12m47w4-0"
+})(["list-style:none;display:flex;flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:84px;left:0;height:100vh;width:300px;padding-top:3.5rem;s transition:transform 0.3s ease-in-out;a{text-decoration:none;color:#fff;}li{padding:18px 10px;}@media (max-width:768px){flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:84px;left:0;height:100vh;width:300px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;a{text-decoration:none;color:#fff;}}"], ({
+  open
+}) => open ? 'translateX(0)' : 'translateX(-100%)', ({
+  open
+}) => open ? 'translateX(0)' : 'translateX(-100%)');
 
 /***/ }),
 
@@ -221,6 +458,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "@fortawesome/free-brands-svg-icons");
 /* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style */ "./components/NavBar/style.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ant-design/icons */ "@ant-design/icons");
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_ant_design_icons__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _LeftNav__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../LeftNav */ "./components/LeftNav/index.js");
+/* harmony import */ var _RigthNav__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../RigthNav */ "./components/RigthNav/index.js");
 var _jsxFileName = "C:\\BLOG\\front\\components\\NavBar\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -230,56 +473,108 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
+
+
+
+
 const NavBar = () => {
+  const {
+    0: leftMenuOpened,
+    1: setLeftMenuOpened
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: userMenuOpened,
+    1: setUserMenuOpened
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    me
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_6__["useSelector"])(state => state.user);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (!me) {
+      setUserMenuOpened(false);
+    }
+  }, [me && me.id]);
+  const onToggleLeftMenu = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(() => {
+    if (!leftMenuOpened && userMenuOpened) {
+      setUserMenuOpened(prev => !prev);
+    }
+
+    setLeftMenuOpened(prev => !prev);
+  }, [leftMenuOpened, userMenuOpened]);
+  const onToggleUserMenu = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(() => {
+    if (leftMenuOpened && !userMenuOpened) {
+      setLeftMenuOpened(prev => !prev);
+    }
+
+    setUserMenuOpened(prev => !prev);
+  }, [leftMenuOpened, userMenuOpened]);
   return __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["Nav"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 39,
       columnNumber: 9
     }
-  }, __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["Logo"], {
+  }, __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["Burger"], {
+    icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faBars"],
+    onClick: onToggleLeftMenu,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 40,
       columnNumber: 13
+    }
+  }), __jsx(_LeftNav__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    open: leftMenuOpened,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41,
+      columnNumber: 13
+    }
+  }), __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["Logo"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42,
+      columnNumber: 13
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44,
+      columnNumber: 17
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45,
+      columnNumber: 21
     }
   }, __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["LogoIcon"], {
     icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faCrow"],
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 17
+      lineNumber: 46,
+      columnNumber: 25
     }
-  }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/",
+  }), "EASYHO"))), __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["MenuList"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 17
-    }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 32
-    }
-  }, "EASYHO"))), __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["MenuList"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 51,
       columnNumber: 13
     }
   }, __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 52,
       columnNumber: 17
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -287,43 +582,21 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 52,
       columnNumber: 21
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 52,
       columnNumber: 36
-    }
-  }, "Home"))), __jsx("li", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17,
-      columnNumber: 17
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/about",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17,
-      columnNumber: 21
-    }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17,
-      columnNumber: 41
     }
   }, "About"))), __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 53,
       columnNumber: 17
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -331,21 +604,21 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 53,
       columnNumber: 21
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 53,
       columnNumber: 40
     }
   }, "Tech"))), __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 54,
       columnNumber: 17
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -353,21 +626,21 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 54,
       columnNumber: 21
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 54,
       columnNumber: 40
     }
-  }, "Free"))), __jsx("li", {
+  }, "Talk"))), __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 55,
       columnNumber: 17
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -375,90 +648,114 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 55,
       columnNumber: 21
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 55,
       columnNumber: 43
     }
-  }, "Gallery")))), __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["LoginMenu"], {
+  }, "Gallery")))), me ? __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["UserIcon"], {
+    onClick: onToggleUserMenu,
+    icon: __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_7__["UserOutlined"], {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59,
+        columnNumber: 66
+      }
+    }),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
-      columnNumber: 13
+      lineNumber: 59,
+      columnNumber: 23
+    }
+  }) : __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["LoginMenu"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60,
+      columnNumber: 23
     }
   }, __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
-      columnNumber: 17
+      lineNumber: 61,
+      columnNumber: 25
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/login",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
-      columnNumber: 21
+      lineNumber: 62,
+      columnNumber: 29
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
-      columnNumber: 41
+      lineNumber: 63,
+      columnNumber: 33
     }
-  }, "\uB85C\uADF8\uC778"))), __jsx("li", {
+  }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
+    icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faSignInAlt"],
+    style: {
+      padding: '0 10px'
+    },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
-      columnNumber: 17
+      lineNumber: 64,
+      columnNumber: 37
+    }
+  }), "\uB85C\uADF8\uC778"))), __jsx("li", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69,
+      columnNumber: 25
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/signup",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
-      columnNumber: 21
+      lineNumber: 70,
+      columnNumber: 29
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
-      columnNumber: 42
-    }
-  }, "\uD68C\uC6D0\uAC00\uC785")))), __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["NavToggleBtn"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26,
-      columnNumber: 13
-    }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27,
-      columnNumber: 17
+      lineNumber: 71,
+      columnNumber: 33
     }
   }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
-    icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faBars"],
+    icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faUserPlus"],
+    style: {
+      padding: '0 10px'
+    },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
-      columnNumber: 20
+      lineNumber: 72,
+      columnNumber: 37
     }
-  }))));
+  }), "\uD68C\uC6D0\uAC00\uC785")))), __jsx(_RigthNav__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    open: userMenuOpened,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79,
+      columnNumber: 13
+    }
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
@@ -469,123 +766,274 @@ const NavBar = () => {
 /*!************************************!*\
   !*** ./components/NavBar/style.js ***!
   \************************************/
-/*! exports provided: Nav, Logo, LogoIcon, MenuList, LoginMenu, NavToggleBtn */
+/*! exports provided: Nav, Burger, Logo, LogoIcon, MenuList, LoginMenu, UserIcon */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Nav", function() { return Nav; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Burger", function() { return Burger; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Logo", function() { return Logo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogoIcon", function() { return LogoIcon; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuList", function() { return MenuList; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginMenu", function() { return LoginMenu; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavToggleBtn", function() { return NavToggleBtn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserIcon", function() { return UserIcon; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "@fortawesome/react-fontawesome");
 /* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "@fortawesome/free-solid-svg-icons");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "@fortawesome/free-brands-svg-icons");
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "antd");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "@fortawesome/free-solid-svg-icons");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "@fortawesome/free-brands-svg-icons");
+/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
 
-const Nav = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.nav`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 8px 12px;
 
-    @media (max-width: 768px) {
-        flex-direction: column;
-        align-items: flex-start;
+const Nav = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.nav.withConfig({
+  displayName: "style__Nav",
+  componentId: "dtzue8-0"
+})(["width:100%;height:100px;border-bottom:2px solid #f1f1f1;display:flex;justify-content:space-between;align-items:center;& div{padding:15px 0}a{text-decoration:none;}@media (max-width:768px){display:flex;justify-content:space-between;align-items:center;}"]);
+const Burger = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"]).withConfig({
+  displayName: "style__Burger",
+  componentId: "dtzue8-1"
+})(["display:none;@media (max-width:768px){display:flex;z-index:100;font-size:28px;padding-left:10px;}"]);
+const Logo = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
+  displayName: "style__Logo",
+  componentId: "dtzue8-2"
+})(["font-size:26px;color:black;padding:10px;@media (max-width:768px){display:flex;align-items:center;}"]);
+const LogoIcon = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"]).withConfig({
+  displayName: "style__LogoIcon",
+  componentId: "dtzue8-3"
+})(["color:black;@media (max-width:768px){}"]);
+const MenuList = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.withConfig({
+  displayName: "style__MenuList",
+  componentId: "dtzue8-4"
+})(["display:flex;list-style:none;& > li{padding:8px 12px;#media (max-width:768px){}}@media (max-width:768px){display:none;align-items:center;width:100%;}"]);
+const LoginMenu = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.withConfig({
+  displayName: "style__LoginMenu",
+  componentId: "dtzue8-5"
+})(["display:flex;list-style:none;padding-left:0;& > li{padding:8px 12px;@media (max-width:1024px){align-items:center;}@media (max-width:768px){text-align:center;padding:4px 12px;}}@media (max-width:1024px){align-items:center;}@media (max-width:768px){display:flex;align-items:center;}"]);
+const UserIcon = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(antd__WEBPACK_IMPORTED_MODULE_2__["Avatar"]).withConfig({
+  displayName: "style__UserIcon",
+  componentId: "dtzue8-6"
+})(["display:flex;font-size:28px;padding-right:10px;z-index:100;@media (max-width:768px){z-index:100;display:flex;font-size:28px;padding-right:10px;}"]);
+
+/***/ }),
+
+/***/ "./components/RigthNav/index.js":
+/*!**************************************!*\
+  !*** ./components/RigthNav/index.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style */ "./components/RigthNav/style.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "C:\\BLOG\\front\\components\\RigthNav\\index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const RigthNav = ({
+  open
+}) => {
+  return __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["RigthUl"], {
+    open: open,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7,
+      columnNumber: 9
     }
-
-`;
-const Logo = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div`
-    font-size: 26px;
-    color: black;
-    padding: 10px;
-`;
-const LogoIcon = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"])`
-    color: black;
-`;
-const MenuList = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul`
-    display: flex;
-    list-style: none;
-    padding-left: 0;
-
-    & > li {
-        padding: 8px 12px;
-
-        @media (max-width: 768px) {
-            width: 100%;
-            text-align: center;
-        }
+  }, __jsx("li", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8,
+      columnNumber: 13
     }
-
-    & li:hover {
-        border-top: 2px black solid;
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8,
+      columnNumber: 17
     }
-
-    & .active {
-        display: flase;
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8,
+      columnNumber: 32
     }
-
-    @media (max-width: 768px) {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%
+  }, "RigthNav"))), __jsx("li", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 13
     }
-`;
-const LoginMenu = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul`
-    display: flex;
-    list-style: none;
-    padding-left: 0;
-
-    & > li {
-        padding: 8px 12px;
-
-        @media (max-width: 768px) {
-            width: 100%;
-            text-align: center;
-        }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 17
     }
-
-    & li:hover {
-        border-top: 2px black solid;
-        
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 32
     }
-
-    & .active {
-        display: flase;
+  }, "Home"))), __jsx("li", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 13
     }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/about",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 17
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 37
+    }
+  }, "About"))), __jsx("li", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 13
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/tech",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 17
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 36
+    }
+  }, "Tech"))), __jsx("li", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 13
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/free",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 17
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 36
+    }
+  }, "Free"))), __jsx("li", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 13
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/gallery",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 17
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 39
+    }
+  }, "Gallery"))));
+};
 
-    @media (max-width: 768px) {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }   
-`;
-const NavToggleBtn = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.button`
-    display: none;
-    margin-top: 10px;
-    position: absolute;
-    font-size: 30px;
-    right: 32px;
-    background-color: white;
-    border: none;
-    outline: 0;
+/* harmony default export */ __webpack_exports__["default"] = (RigthNav);
 
-    @media (max-width: 768px) {
-        display: block;
-    }   
-`;
+/***/ }),
+
+/***/ "./components/RigthNav/style.js":
+/*!**************************************!*\
+  !*** ./components/RigthNav/style.js ***!
+  \**************************************/
+/*! exports provided: RigthUl */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RigthUl", function() { return RigthUl; });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+
+const RigthUl = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.withConfig({
+  displayName: "style__RigthUl",
+  componentId: "sc-1aq33tl-0"
+})(["list-style:none;display:'flex';flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:84px;right:0;height:100vh;width:300px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;li{padding:18px 10px;}a{text-decoration:none;}@media (max-width:768px){flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:84px;right:0;height:100vh;width:300px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;& > a{text-decoration:none;color:#fff;}}"], ({
+  open
+}) => open ? 'translateX(0)' : 'translateX(100%)', ({
+  open
+}) => open ? 'translateX(0)' : 'translateX(100%)');
+
+/***/ }),
+
+/***/ "./components/theme.js":
+/*!*****************************!*\
+  !*** ./components/theme.js ***!
+  \*****************************/
+/*! exports provided: theme */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "theme", function() { return theme; });
+const theme = {
+  primaryDark: '#0D0C1D',
+  primaryLight: '#EFFFFA',
+  primaryHover: '#343078',
+  mobile: '768px'
+};
 
 /***/ }),
 
@@ -628,7 +1076,7 @@ const UserProfile = () => {
       lineNumber: 17,
       columnNumber: 13
     }
-  }, me.nickname), __jsx("button", {
+  }, me && me.nickname), __jsx("button", {
     onClick: onLogout,
     __self: undefined,
     __source: {
@@ -2354,11 +2802,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var redux_saga__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux-saga */ "redux-saga");
 /* harmony import */ var redux_saga__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(redux_saga__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_AppLayout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/AppLayout */ "./components/AppLayout.js");
-/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../reducers */ "./reducers/index.js");
-/* harmony import */ var _sagas__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../sagas */ "./sagas/index.js");
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-helmet */ "react-helmet");
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_helmet__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_AppLayout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/AppLayout */ "./components/AppLayout/index.js");
+/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../reducers */ "./reducers/index.js");
+/* harmony import */ var _sagas__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../sagas */ "./sagas/index.js");
 var _jsxFileName = "C:\\BLOG\\front\\pages\\_app.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -2378,36 +2829,36 @@ const Blog = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
-      columnNumber: 9
+      lineNumber: 15,
+      columnNumber: 5
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
-      columnNumber: 9
+      lineNumber: 16,
+      columnNumber: 7
     }
   }, __jsx("title", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
-      columnNumber: 13
+      lineNumber: 17,
+      columnNumber: 9
     }
-  }, "EASYHO Blog")), __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, "EASYHO BLOG")), __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
-      columnNumber: 9
+      lineNumber: 22,
+      columnNumber: 7
     }
   }, __jsx(Component, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
-      columnNumber: 12
+      lineNumber: 23,
+      columnNumber: 9
     }
   })));
 };
@@ -2416,8 +2867,8 @@ const configureStore = (initialState, options) => {
   const sagaMiddleware = redux_saga__WEBPACK_IMPORTED_MODULE_5___default()();
   const middlewares = [sagaMiddleware];
   const enhancer = false ? undefined : Object(redux__WEBPACK_IMPORTED_MODULE_3__["compose"])(Object(redux__WEBPACK_IMPORTED_MODULE_3__["applyMiddleware"])(...middlewares), !options.isServer && typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined' ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f);
-  const store = Object(redux__WEBPACK_IMPORTED_MODULE_3__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_7__["default"], initialState, enhancer);
-  sagaMiddleware.run(_sagas__WEBPACK_IMPORTED_MODULE_8__["default"]);
+  const store = Object(redux__WEBPACK_IMPORTED_MODULE_3__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_8__["default"], initialState, enhancer);
+  sagaMiddleware.run(_sagas__WEBPACK_IMPORTED_MODULE_9__["default"]);
   return store;
 };
 
@@ -2588,11 +3039,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! immer */ "immer");
 /* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(immer__WEBPACK_IMPORTED_MODULE_0__);
 
-const dummyUser = {
-  nickname: '보노보노',
-  post: [],
-  id: 1
-};
 const initialState = {
   isLoggedIn: false,
   // 로그인 성공 여부
@@ -2634,7 +3080,7 @@ const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
         {
           draft.isLoggedIn = true;
           draft.isLoggingIn = false;
-          draft.me = dummyUser;
+          draft.me = action.data;
           break;
         }
 
@@ -2738,7 +3184,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function addPostAPI() {// axios.post()
+function addPostAPI() {
+  axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('post/id');
 }
 
 function* addPost() {
@@ -2805,7 +3252,6 @@ __webpack_require__.r(__webpack_exports__);
  // 로그인
 
 function logInAPI(loginData) {
-  // 서버에 요청을 보내는 부분
   return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/user/login', loginData, {
     withCredentials: true
   });
@@ -2815,12 +3261,10 @@ function* logIn(action) {
   try {
     const result = yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["call"])(logInAPI, action.data);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
-      // put은 dispatch 동일
       type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_SUCCESS"],
       data: result.data
     });
   } catch (e) {
-    // loginAPI 실패
     console.error(e);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
       type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_FAILURE"]
@@ -2830,31 +3274,7 @@ function* logIn(action) {
 
 function* watchLogIn() {
   yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_REQUEST"], logIn);
-} // function loginAPI(loginData) {
-//     return axios.post('/user/login', loginData, {
-//         withCredentials: true,  
-//     })
-// }
-// function* login(action) {
-//     try {
-//         const result = yield call(loginAPI, action.data)
-//         yield put({
-//             type: LOG_IN_SUCCESS,
-//             data: result.data,
-//         })
-//     } catch(e) {
-//         console.log(e);
-//         console.error(e);
-//         yield put({
-//             type: LOG_IN_FAILURE,
-//             error: e,
-//         })
-//     }
-// }
-// function* watchLogin() {
-//     yield takeLatest(LOG_IN_REQUEST, login)
-// }
-// 로그아웃
+} // 로그아웃
 
 
 function logOutAPI() {
@@ -2925,6 +3345,17 @@ module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_
 
 /***/ }),
 
+/***/ "@ant-design/icons":
+/*!************************************!*\
+  !*** external "@ant-design/icons" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@ant-design/icons");
+
+/***/ }),
+
 /***/ "@fortawesome/free-brands-svg-icons":
 /*!*****************************************************!*\
   !*** external "@fortawesome/free-brands-svg-icons" ***!
@@ -2955,6 +3386,17 @@ module.exports = require("@fortawesome/free-solid-svg-icons");
 /***/ (function(module, exports) {
 
 module.exports = require("@fortawesome/react-fontawesome");
+
+/***/ }),
+
+/***/ "antd":
+/*!***********************!*\
+  !*** external "antd" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("antd");
 
 /***/ }),
 
@@ -3032,6 +3474,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-helmet":
+/*!*******************************!*\
+  !*** external "react-helmet" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-helmet");
 
 /***/ }),
 
