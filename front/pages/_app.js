@@ -16,8 +16,9 @@ const Blog = ({ Component, store }) => {
       <Head>
         <title>EASYHO BLOG</title>
         {/* <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" /> */}
-        {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.2.0/antd.css"/> */}
-        {/* <script src="https://kit.fontawesome.com/d206a06276.js" crossorigin="anonymous"></script>  */}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.2.0/antd.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@900&family=Noto+Sans+KR:wght@500&family=Roboto+Slab:wght@500&display=swap" rel="stylesheet" />
+        {/* <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet"></link> */}
       </Head>
       <AppLayout>
         <Component />

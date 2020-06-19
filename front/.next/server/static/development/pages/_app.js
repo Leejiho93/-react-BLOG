@@ -172,25 +172,11 @@ const AppLayout = ({
       lineNumber: 16,
       columnNumber: 17
     }
-  }), me ? __jsx(_containers_UserProfile__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }), __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["ContentWrapper"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18,
-      columnNumber: 23
-    }
-  }) : null, __jsx("div", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21,
-      columnNumber: 17
-    }
-  }, "a"), __jsx("div", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22,
       columnNumber: 17
     }
   }, children, " ")));
@@ -204,12 +190,13 @@ const AppLayout = ({
 /*!***************************************!*\
   !*** ./components/AppLayout/style.js ***!
   \***************************************/
-/*! exports provided: GlobalStyle */
+/*! exports provided: GlobalStyle, ContentWrapper */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GlobalStyle", function() { return GlobalStyle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentWrapper", function() { return ContentWrapper; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
 
@@ -219,24 +206,12 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobal
         paddingL 0;
         box-sizing: border-box;
     }
-    
-    // a {
-    //     text-decoration: none;
-    //     color: black;
-    // }
-
-    // body {
-    //     align-items: center;
-    //     // background: ${({
-  theme
-}) => theme.primaryHover};
-    //     background: white;
-    //     color: ${({
-  theme
-}) => theme.primaryLight};
-        
-    // }
+ }
 `;
+const ContentWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
+  displayName: "style__ContentWrapper",
+  componentId: "sc-1rxs5bx-0"
+})(["display:flex;"]);
 
 /***/ }),
 
@@ -430,7 +405,7 @@ __webpack_require__.r(__webpack_exports__);
 const Ul = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.withConfig({
   displayName: "style__Ul",
   componentId: "sc-12m47w4-0"
-})(["list-style:none;display:flex;flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:84px;left:0;height:100vh;width:300px;padding-top:3.5rem;s transition:transform 0.3s ease-in-out;a{text-decoration:none;color:#fff;}li{padding:18px 10px;}@media (max-width:768px){flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:84px;left:0;height:100vh;width:300px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;a{text-decoration:none;color:#fff;}}"], ({
+})(["list-style:none;display:flex;flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:100px;left:0;height:100vh;width:300px;padding-top:3.5rem;s transition:transform 0.3s ease-in-out;opacity:.2;z-index:500;a{text-decoration:none;color:#fff;}li{padding:18px 10px;}@media (max-width:768px){flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:100px;left:0;height:100vh;width:300px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;opacity:.2;z-index:500;a{text-decoration:none;color:#fff;}}"], ({
   open
 }) => open ? 'translateX(0)' : 'translateX(-100%)', ({
   open
@@ -513,7 +488,7 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 41,
       columnNumber: 9
     }
   }, __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["Burger"], {
@@ -522,7 +497,7 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 42,
       columnNumber: 13
     }
   }), __jsx(_LeftNav__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -530,14 +505,14 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 43,
       columnNumber: 13
     }
   }), __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["Logo"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 44,
       columnNumber: 13
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -545,14 +520,14 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 45,
       columnNumber: 17
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 46,
       columnNumber: 21
     }
   }, __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["LogoIcon"], {
@@ -560,21 +535,33 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 47,
       columnNumber: 25
     }
-  }), "EASYHO"))), __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["MenuList"], {
+  }), "EASYHO"))), __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["Searching"], {
+    placeholder: "\uB2E8\uC5B4 \uAC80\uC0C9",
+    onSearch: value => console.log(value),
+    style: {
+      width: 200
+    },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 52,
+      columnNumber: 13
+    }
+  }), __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["MenuList"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57,
       columnNumber: 13
     }
   }, __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 58,
       columnNumber: 17
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -582,21 +569,43 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 58,
       columnNumber: 21
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 58,
       columnNumber: 36
+    }
+  }, "Home"))), __jsx("li", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59,
+      columnNumber: 17
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/about",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59,
+      columnNumber: 21
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59,
+      columnNumber: 41
     }
   }, "About"))), __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 60,
       columnNumber: 17
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -604,21 +613,21 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 60,
       columnNumber: 21
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 60,
       columnNumber: 40
     }
   }, "Tech"))), __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 61,
       columnNumber: 17
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -626,21 +635,21 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 61,
       columnNumber: 21
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 61,
       columnNumber: 40
     }
   }, "Talk"))), __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 62,
       columnNumber: 17
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -648,14 +657,14 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 62,
       columnNumber: 21
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 62,
       columnNumber: 43
     }
   }, "Gallery")))), me ? __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["UserIcon"], {
@@ -664,28 +673,28 @@ const NavBar = () => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59,
+        lineNumber: 66,
         columnNumber: 66
       }
     }),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 66,
       columnNumber: 23
     }
   }) : __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["LoginMenu"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 67,
       columnNumber: 23
     }
   }, __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 68,
       columnNumber: 25
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -693,32 +702,29 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 69,
       columnNumber: 29
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 70,
       columnNumber: 33
     }
   }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
     icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faSignInAlt"],
-    style: {
-      padding: '0 10px'
-    },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 71,
       columnNumber: 37
     }
   }), "\uB85C\uADF8\uC778"))), __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 76,
       columnNumber: 25
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -726,25 +732,22 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 77,
       columnNumber: 29
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 78,
       columnNumber: 33
     }
   }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
     icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faUserPlus"],
-    style: {
-      padding: '0 10px'
-    },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 79,
       columnNumber: 37
     }
   }), "\uD68C\uC6D0\uAC00\uC785")))), __jsx(_RigthNav__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -752,7 +755,7 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 86,
       columnNumber: 13
     }
   }));
@@ -766,7 +769,7 @@ const NavBar = () => {
 /*!************************************!*\
   !*** ./components/NavBar/style.js ***!
   \************************************/
-/*! exports provided: Nav, Burger, Logo, LogoIcon, MenuList, LoginMenu, UserIcon */
+/*! exports provided: Nav, Burger, Logo, LogoIcon, Searching, MenuList, LoginMenu, UserIcon */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -775,6 +778,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Burger", function() { return Burger; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Logo", function() { return Logo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogoIcon", function() { return LogoIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Searching", function() { return Searching; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuList", function() { return MenuList; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginMenu", function() { return LoginMenu; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserIcon", function() { return UserIcon; });
@@ -796,30 +800,34 @@ __webpack_require__.r(__webpack_exports__);
 const Nav = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.nav.withConfig({
   displayName: "style__Nav",
   componentId: "dtzue8-0"
-})(["width:100%;height:100px;border-bottom:2px solid #f1f1f1;display:flex;justify-content:space-between;align-items:center;& div{padding:15px 0}a{text-decoration:none;}@media (max-width:768px){display:flex;justify-content:space-between;align-items:center;}"]);
+})(["width:100%;height:100px;border-bottom:2px solid #f1f1f1;display:flex;justify-content:space-between;align-items:center;& div{}& a{text-decoration:none;}@media (max-width:768px){display:flex;justify-content:space-between;align-items:center;}"]);
 const Burger = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"]).withConfig({
   displayName: "style__Burger",
   componentId: "dtzue8-1"
-})(["display:none;@media (max-width:768px){display:flex;z-index:100;font-size:28px;padding-left:10px;}"]);
+})(["display:none;@media (max-width:768px){display:flex;z-index:100;font-size:28px;}"]);
 const Logo = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
   displayName: "style__Logo",
   componentId: "dtzue8-2"
-})(["font-size:26px;color:black;padding:10px;@media (max-width:768px){display:flex;align-items:center;}"]);
+})(["font-size:30px;color:black;font-family:'MuseoModerno',cursive;& a{color:black;}& a:hover{opacity:.6}@media (max-width:768px){font-family:'MuseoModerno',cursive;display:flex;align-items:center;}"]);
 const LogoIcon = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"]).withConfig({
   displayName: "style__LogoIcon",
   componentId: "dtzue8-3"
 })(["color:black;@media (max-width:768px){}"]);
+const Searching = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(antd__WEBPACK_IMPORTED_MODULE_2__["Input"].Search).withConfig({
+  displayName: "style__Searching",
+  componentId: "dtzue8-4"
+})(["border-radius:20px;&::selection{background:black}@media (max-width:1024px){display:none;}"]);
 const MenuList = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.withConfig({
   displayName: "style__MenuList",
-  componentId: "dtzue8-4"
-})(["display:flex;list-style:none;& > li{padding:8px 12px;#media (max-width:768px){}}@media (max-width:768px){display:none;align-items:center;width:100%;}"]);
+  componentId: "dtzue8-5"
+})(["display:flex;list-style:none;font-family:'Roboto Slab',serif;margin:0;& > li{padding:8px 12px;#media (max-width:768px){}}& a{color:#495057;opacity:.6;}& a:hover{color:black;}@media (max-width:768px){display:none;}"]);
 const LoginMenu = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.withConfig({
   displayName: "style__LoginMenu",
-  componentId: "dtzue8-5"
-})(["display:flex;list-style:none;padding-left:0;& > li{padding:8px 12px;@media (max-width:1024px){align-items:center;}@media (max-width:768px){text-align:center;padding:4px 12px;}}@media (max-width:1024px){align-items:center;}@media (max-width:768px){display:flex;align-items:center;}"]);
+  componentId: "dtzue8-6"
+})(["display:flex;list-style:none;padding-left:0;margin:0;font-family:'Noto Sans KR',sans-serif;& a{color:#495057;opacity:.6;@media (max-width:1024px){align-items:center;}}& a:hover{color:black;}& > li{padding:8px 12px;@media (max-width:1024px){align-items:center;}}@media (max-width:768px){display:flex;align-items:center;}"]);
 const UserIcon = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(antd__WEBPACK_IMPORTED_MODULE_2__["Avatar"]).withConfig({
   displayName: "style__UserIcon",
-  componentId: "dtzue8-6"
+  componentId: "dtzue8-7"
 })(["display:flex;font-size:28px;padding-right:10px;z-index:100;@media (max-width:768px){z-index:100;display:flex;font-size:28px;padding-right:10px;}"]);
 
 /***/ }),
@@ -838,8 +846,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style */ "./components/RigthNav/style.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../reducers/user */ "./reducers/user.js");
 var _jsxFileName = "C:\\BLOG\\front\\components\\RigthNav\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 
@@ -847,147 +860,67 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const RigthNav = ({
   open
 }) => {
+  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
+
+  const onLogout = () => {
+    dispatch({
+      type: _reducers_user__WEBPACK_IMPORTED_MODULE_4__["LOG_OUT_REQUEST"]
+    });
+  };
+
   return __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["RigthUl"], {
     open: open,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7,
+      lineNumber: 17,
       columnNumber: 9
     }
   }, __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 19,
       columnNumber: 13
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/",
+    href: "/profile",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 19,
       columnNumber: 17
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
-      columnNumber: 32
-    }
-  }, "RigthNav"))), __jsx("li", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9,
-      columnNumber: 13
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9,
-      columnNumber: 17
-    }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9,
-      columnNumber: 32
-    }
-  }, "Home"))), __jsx("li", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10,
-      columnNumber: 13
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/about",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10,
-      columnNumber: 17
-    }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10,
-      columnNumber: 37
-    }
-  }, "About"))), __jsx("li", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 13
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/tech",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 17
-    }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 36
-    }
-  }, "Tech"))), __jsx("li", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 13
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/free",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 17
-    }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 36
-    }
-  }, "Free"))), __jsx("li", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 13
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/gallery",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 17
-    }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 19,
       columnNumber: 39
     }
-  }, "Gallery"))));
+  }, "\uB0B4\uC815\uBCF4"))), __jsx("li", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 13
+    }
+  }, "\uB0B4\uAC00 \uC4F4 \uAE00"), __jsx("li", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 13
+    }
+  }, "\uB0B4\uAC00 \uC4F4 \uB313\uAE00"), __jsx("li", {
+    onClick: onLogout,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 13
+    }
+  }, "\uB85C\uADF8\uC544\uC6C3"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (RigthNav);
@@ -1010,7 +943,7 @@ __webpack_require__.r(__webpack_exports__);
 const RigthUl = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.withConfig({
   displayName: "style__RigthUl",
   componentId: "sc-1aq33tl-0"
-})(["list-style:none;display:'flex';flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:84px;right:0;height:100vh;width:300px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;li{padding:18px 10px;}a{text-decoration:none;}@media (max-width:768px){flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:84px;right:0;height:100vh;width:300px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;& > a{text-decoration:none;color:#fff;}}"], ({
+})(["list-style:none;display:'flex';flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:100px;right:0;height:100vh;width:300px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;opacity:.2;z-index:500;& li{padding:18px 10px;color:#fff;cursor:pointer;}& a{text-decoration:none;color:#fff;}@media (max-width:768px){flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:100px;right:0;height:100vh;width:300px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;opacity:.2;z-index:500;}"], ({
   open
 }) => open ? 'translateX(0)' : 'translateX(100%)', ({
   open
@@ -2846,18 +2779,36 @@ const Blog = ({
       lineNumber: 17,
       columnNumber: 9
     }
-  }, "EASYHO BLOG")), __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, "EASYHO BLOG"), __jsx("link", {
+    rel: "stylesheet",
+    href: "https://cdnjs.cloudflare.com/ajax/libs/antd/4.2.0/antd.css",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 19,
+      columnNumber: 9
+    }
+  }), __jsx("link", {
+    href: "https://fonts.googleapis.com/css2?family=MuseoModerno:wght@900&family=Noto+Sans+KR:wght@500&family=Roboto+Slab:wght@500&display=swap",
+    rel: "stylesheet",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 9
+    }
+  })), __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23,
       columnNumber: 7
     }
   }, __jsx(Component, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 24,
       columnNumber: 9
     }
   })));

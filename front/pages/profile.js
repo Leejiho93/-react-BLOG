@@ -35,15 +35,7 @@ const Profile = () => {
     return (
         <>
             <div>
-                <Avatar
-                    onClick={onClickProfile}
-                    style={{
-                        backgroundColor: color,
-                    }}
-                    size="large"
-                    icon={<UserOutlined />}
-                >
-                </Avatar>
+                사용자 정보 프로필 화면
             </div>
         </>
     )

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 	html, body {
@@ -6,17 +6,9 @@ export const GlobalStyle = createGlobalStyle`
         paddingL 0;
         box-sizing: border-box;
     }
-    
-    // a {
-    //     text-decoration: none;
-    //     color: black;
-    // }
-
-    // body {
-    //     align-items: center;
-    //     // background: ${({theme}) => theme.primaryHover};
-    //     background: white;
-    //     color: ${({theme}) => theme.primaryLight};
-        
-    // }
+ }
 `;
+
+export const ContentWrapper = styled.div`
+    display: flex;
+`

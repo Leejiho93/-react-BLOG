@@ -5,7 +5,7 @@ import { Button } from 'antd';
 const About = () => {
     return (
     <>
-        <div>나</div>
+        <div>내 정보</div>
         <Link href="/"><Button>홈</Button></Link>
         
     </>)

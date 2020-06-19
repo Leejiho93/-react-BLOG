@@ -9,6 +9,7 @@ const Home = () => {
 
     return (
         <>
+            <div>메인 화면</div>
             {allPosts.map(v => {
                     return (
                         <PostCard key={v} post={v} />

@@ -7,12 +7,14 @@ export const Ul = styled.ul`
     background-color: #0D2538;
     position: fixed;
     transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
-    top: 84px;
+    top: 100px;
     left: 0;
     height: 100vh;
     width: 300px;
     padding-top: 3.5rem;s
     transition: transform 0.3s ease-in-out;
+    opacity: .2;
+    z-index: 500;
     
     a {
         text-decoration: none;
@@ -28,12 +30,14 @@ export const Ul = styled.ul`
         background-color: #0D2538;
         position: fixed;
         transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
-        top: 84px;
+        top: 100px;
         left: 0;
         height: 100vh;
         width: 300px;
         padding-top: 3.5rem;
         transition: transform 0.3s ease-in-out;  
+        opacity: .2;
+        z-index: 500;
 
         a {
             text-decoration: none;
