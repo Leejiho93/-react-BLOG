@@ -15,8 +15,6 @@ const NavBar = () => {
     const [userMenuOpened, setUserMenuOpened] = useState(false);
     const { me } = useSelector(state => state.user);
 
-
-
     useEffect(() => {
         if (!me) {
             setUserMenuOpened(false);

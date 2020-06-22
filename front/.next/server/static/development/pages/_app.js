@@ -405,7 +405,7 @@ __webpack_require__.r(__webpack_exports__);
 const Ul = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.withConfig({
   displayName: "style__Ul",
   componentId: "sc-12m47w4-0"
-})(["list-style:none;display:flex;flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:100px;left:0;height:100vh;width:300px;padding-top:3.5rem;s transition:transform 0.3s ease-in-out;opacity:.2;z-index:500;a{text-decoration:none;color:#fff;}li{padding:18px 10px;}@media (max-width:768px){flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:100px;left:0;height:100vh;width:300px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;opacity:.2;z-index:500;a{text-decoration:none;color:#fff;}}"], ({
+})(["list-style:none;display:flex;flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:100px;left:0;height:100vh;width:200px;padding-top:3.5rem;s transition:transform 0.3s ease-in-out;opacity:.2;z-index:500;a{text-decoration:none;color:#fff;}li{padding:18px 10px;}@media (max-width:768px){flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:100px;left:0;height:100vh;width:200px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;opacity:.2;z-index:500;a{text-decoration:none;color:#fff;}}"], ({
   open
 }) => open ? 'translateX(0)' : 'translateX(-100%)', ({
   open
@@ -488,7 +488,7 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 39,
       columnNumber: 9
     }
   }, __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["Burger"], {
@@ -497,7 +497,7 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 40,
       columnNumber: 13
     }
   }), __jsx(_LeftNav__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -505,14 +505,14 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 41,
       columnNumber: 13
     }
   }), __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["Logo"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 42,
       columnNumber: 13
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -520,14 +520,14 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 43,
       columnNumber: 17
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 44,
       columnNumber: 21
     }
   }, __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["LogoIcon"], {
@@ -535,7 +535,7 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 45,
       columnNumber: 25
     }
   }), "EASYHO"))), __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["Searching"], {
@@ -547,21 +547,21 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 50,
       columnNumber: 13
     }
   }), __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["MenuList"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 55,
       columnNumber: 13
     }
   }, __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 56,
       columnNumber: 17
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -569,21 +569,21 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 56,
       columnNumber: 21
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 56,
       columnNumber: 36
     }
   }, "Home"))), __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 57,
       columnNumber: 17
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -591,21 +591,21 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 57,
       columnNumber: 21
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 57,
       columnNumber: 41
     }
   }, "About"))), __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 58,
       columnNumber: 17
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -613,21 +613,21 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 58,
       columnNumber: 21
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 58,
       columnNumber: 40
     }
   }, "Tech"))), __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 59,
       columnNumber: 17
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -635,21 +635,21 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 59,
       columnNumber: 21
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 59,
       columnNumber: 40
     }
   }, "Talk"))), __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 60,
       columnNumber: 17
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -657,14 +657,14 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 60,
       columnNumber: 21
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 60,
       columnNumber: 43
     }
   }, "Gallery")))), me ? __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["UserIcon"], {
@@ -673,28 +673,28 @@ const NavBar = () => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66,
+        lineNumber: 64,
         columnNumber: 66
       }
     }),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 64,
       columnNumber: 23
     }
   }) : __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["LoginMenu"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 65,
       columnNumber: 23
     }
   }, __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 66,
       columnNumber: 25
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -702,14 +702,14 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 67,
       columnNumber: 29
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 68,
       columnNumber: 33
     }
   }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
@@ -717,14 +717,14 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 69,
       columnNumber: 37
     }
   }), "\uB85C\uADF8\uC778"))), __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 74,
       columnNumber: 25
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -732,14 +732,14 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 75,
       columnNumber: 29
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 76,
       columnNumber: 33
     }
   }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
@@ -747,7 +747,7 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 77,
       columnNumber: 37
     }
   }), "\uD68C\uC6D0\uAC00\uC785")))), __jsx(_RigthNav__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -755,7 +755,7 @@ const NavBar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 84,
       columnNumber: 13
     }
   }));
@@ -943,7 +943,7 @@ __webpack_require__.r(__webpack_exports__);
 const RigthUl = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.withConfig({
   displayName: "style__RigthUl",
   componentId: "sc-1aq33tl-0"
-})(["list-style:none;display:'flex';flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:100px;right:0;height:100vh;width:300px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;opacity:.2;z-index:500;& li{padding:18px 10px;color:#fff;cursor:pointer;}& a{text-decoration:none;color:#fff;}@media (max-width:768px){flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:100px;right:0;height:100vh;width:300px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;opacity:.2;z-index:500;}"], ({
+})(["list-style:none;display:'flex';flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:100px;right:0;height:100vh;width:200px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;opacity:.2;z-index:500;& li{padding:18px 10px;color:#fff;cursor:pointer;}& a{text-decoration:none;color:#fff;}@media (max-width:768px){flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:100px;right:0;height:100vh;width:200px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;opacity:.2;z-index:500;}"], ({
   open
 }) => open ? 'translateX(0)' : 'translateX(100%)', ({
   open
@@ -2870,24 +2870,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! immer */ "immer");
 /* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(immer__WEBPACK_IMPORTED_MODULE_0__);
 
-const dummyPost = {
-  id: 2,
-  User: {
-    id: 1,
-    nickname: '제로초'
-  },
-  content: '나는 더미입니다.',
-  comments: []
-};
-const dummyComment = {
-  id: 1,
-  User: {
-    id: 1,
-    nickname: '포로리'
-  },
-  createdAt: new Date(),
-  content: '더미 댓글입니다.'
-};
 const initialState = {
   allPosts: [],
   // 모든 게시글
@@ -2972,7 +2954,7 @@ const ADD_COMMENT_FAILURE = 'ADD_COMMENT_FAILURE';
 /*!**************************!*\
   !*** ./reducers/user.js ***!
   \**************************/
-/*! exports provided: initialState, SIGN_UP_REQUEST, SIGN_UP_SUCCESS, SIGN_UP_FAILURE, LOG_IN_REQUEST, LOG_IN_SUCCESS, LOG_IN_FAILURE, LOG_OUT_REQUEST, LOG_OUT_SUCCESS, LOG_OUT_FAILURE, default */
+/*! exports provided: initialState, SIGN_UP_REQUEST, SIGN_UP_SUCCESS, SIGN_UP_FAILURE, LOG_IN_ERRORREASON_RESET_REQUEST, LOG_IN_REQUEST, LOG_IN_SUCCESS, LOG_IN_FAILURE, LOG_OUT_REQUEST, LOG_OUT_SUCCESS, LOG_OUT_FAILURE, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2981,6 +2963,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP_REQUEST", function() { return SIGN_UP_REQUEST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP_SUCCESS", function() { return SIGN_UP_SUCCESS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP_FAILURE", function() { return SIGN_UP_FAILURE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_ERRORREASON_RESET_REQUEST", function() { return LOG_IN_ERRORREASON_RESET_REQUEST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_REQUEST", function() { return LOG_IN_REQUEST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_SUCCESS", function() { return LOG_IN_SUCCESS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_FAILURE", function() { return LOG_IN_FAILURE; });
@@ -2989,10 +2972,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_OUT_FAILURE", function() { return LOG_OUT_FAILURE; });
 /* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! immer */ "immer");
 /* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(immer__WEBPACK_IMPORTED_MODULE_0__);
+ // const produce = require('immer');
 
 const initialState = {
-  isLoggedIn: false,
-  // 로그인 성공 여부
   isLoggingIn: false,
   // 로그인 진행중
   isLoggingOut: false,
@@ -3011,6 +2993,7 @@ const initialState = {
 const SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
 const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
+const LOG_IN_ERRORREASON_RESET_REQUEST = 'LOG_IN_ERRORREASON_RESET_REQUEST';
 const LOG_IN_REQUEST = 'LOG_IN_REQUEST';
 const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
 const LOG_IN_FAILURE = 'LOG_IN_FAILURE';
@@ -3020,6 +3003,12 @@ const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
 /* harmony default export */ __webpack_exports__["default"] = ((state = initialState, action) => {
   return immer__WEBPACK_IMPORTED_MODULE_0___default()(state, draft => {
     switch (action.type) {
+      case LOG_IN_ERRORREASON_RESET_REQUEST:
+        {
+          draft.logInErrorReason = '';
+          break;
+        }
+
       case LOG_IN_REQUEST:
         {
           draft.isLoggingIn = true;
@@ -3029,7 +3018,6 @@ const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
 
       case LOG_IN_SUCCESS:
         {
-          draft.isLoggedIn = true;
           draft.isLoggingIn = false;
           draft.me = action.data;
           break;
@@ -3037,9 +3025,8 @@ const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
 
       case LOG_IN_FAILURE:
         {
-          draft.isLoggedIn = false;
           draft.isLoggingIn = false;
-          draft.logInErrorReason = action.error;
+          draft.logInErrorReason = action.reason;
           draft.me = null;
           break;
         }
@@ -3218,7 +3205,8 @@ function* logIn(action) {
   } catch (e) {
     console.error(e);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
-      type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_FAILURE"]
+      type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_FAILURE"],
+      reason: e.response && e.response.data
     });
   }
 }

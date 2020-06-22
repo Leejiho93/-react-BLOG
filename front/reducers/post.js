@@ -1,26 +1,5 @@
 import produce from 'immer';
 
-const dummyPost = {
-    id: 2,
-    User: {
-        id: 1,
-        nickname: '제로초',
-    },
-    content: '나는 더미입니다.',
-    comments: [],
-};
-
-const dummyComment = {
-    id: 1,
-    User: {
-        id: 1,
-        nickname: '포로리',
-    },
-    createdAt: new Date(),
-    content: '더미 댓글입니다.',
-};
-
-
 export const initialState = {
     allPosts: [], // 모든 게시글
     imagePaths: [], // 이미지 저장 주소

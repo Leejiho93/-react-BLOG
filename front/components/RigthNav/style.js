@@ -10,7 +10,7 @@ export const RigthUl = styled.ul`
     top: 100px;
     right: 0;
     height: 100vh;
-    width: 300px;
+    width: 200px;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
     opacity: .2;
@@ -35,7 +35,7 @@ export const RigthUl = styled.ul`
     top: 100px;
     right: 0;
     height: 100vh;
-    width: 300px;
+    width: 200px;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
     opacity: .2;

@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const passport = require('passport');
 const db = require('../models');
 const { isLoggedIn } = require('./middleware');
+const { default: user } = require('../../front/reducers/user');
 
 const router = express.Router();
 
@@ -42,7 +43,6 @@ router.post('/', async (req, res, next) => {
 // 로그인
 router.post('/login', async (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
-        console.log('로그인 routes 실행')
         if (err) {
             console.error(err);
             return next(err)
@@ -75,6 +75,29 @@ router.post('/login', async (req, res, next) => {
         })
     })(req, res, next);
 });
+
+// 회원가입 유효성확인
+// router.post('/checkid', async (req, res, next) => {
+//     const checkId = /^[a-z0-9]{5,20}$/;
+//     if (!checkId.test(req.body.id)) {
+//         return res.status(401).send('5~20자의 영문 소문자, 숫자만 사용 가능합니다.')
+//     }
+//     try {
+//         const existId = await db.User.fineOne({
+//             where: { id: req.body.id},
+//             attributes: ['userId'],
+//         })
+        
+//         if (existId) {
+//             return res.status(401).send('이미 사용중인 아이디입니다.')
+//         }
+
+//         return res.send(existId);
+//     } catch(e) {
+//         console.error(e);
+//         next(e);
+//     }
+// });
 
 // 로그아웃
 router.post('/logout', (req, res) => {

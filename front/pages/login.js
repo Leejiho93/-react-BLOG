@@ -1,23 +1,24 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { LOG_IN_REQUEST } from '../reducers/user';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Router from 'next/router';
 import LoginForm from '../containers/LoginForm';
-import SigninForm from '../containers/SigninForm';
+import { LOG_IN_ERRORREASON_RESET_REQUEST } from '../reducers/user';
 
 const Login = () => {
     const {  me } = useSelector(state => state.user);
-
+    
+    const dispatch = useDispatch();
     useEffect(() => {
         if (me) {
             Router.push('/');
         }
     }, [me && me.id])
 
+  
+
     return (
         <>
-        <SigninForm />
-            {/* <LoginForm /> */}
+            <LoginForm />
         </>
     )
 }
