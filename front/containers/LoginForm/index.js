@@ -49,13 +49,15 @@ const LoginForm = () => {
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
+
       <div className={classes.paper}>
+        <Typography component="h1" variant="h5">
+          로그인
+        </Typography>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        {/* <Typography component="h1" variant="h5">
-          Login
-        </Typography> */}
+        
         <form className={classes.form} onSubmit={onSubmitForm}>
           <TextField
             variant="outlined"
@@ -99,7 +101,7 @@ const LoginForm = () => {
 
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="/signup" variant="body2">
+              <Link href="/signup">
                 <a>
                 회원가입 하기
                 </a>

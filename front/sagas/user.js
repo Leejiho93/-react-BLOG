@@ -9,7 +9,13 @@ import {
     LOG_IN_REQUEST,
     LOG_OUT_SUCCESS,
     LOG_OUT_FAILURE,
-    LOG_OUT_REQUEST
+    LOG_OUT_REQUEST,
+    ID_CHECK_SUCCESS,
+    ID_CHECK_FAILURE,
+    ID_CHECK_REQUEST,
+    NICKNAME_CHECK_SUCCESS,
+    NICKNAME_CHECK_FAILURE,
+    NICKNAME_CHECK_REQUEST
 
 } from '../reducers/user';
 
@@ -91,10 +97,62 @@ function* watchSignUp() {
     yield takeLatest(SIGN_UP_REQUEST, signUp)
 }
 
+// 아이디 유효성 검사
+function signUpIdCheckAPI(id) {
+    return axios.post('/user/checkid', id)
+}
+
+function* signUpIdCheck(action) {
+    try {
+        const result = yield call(signUpIdCheckAPI, action.data);
+        yield put({
+            type: ID_CHECK_SUCCESS,
+            data: result.data,
+        })
+    } catch(e) {
+        console.error(e);
+        yield put({
+            type: ID_CHECK_FAILURE,
+            reason: e.response && e.response.data,
+        })
+    }
+}
+
+function* watchSignUpIdCheck() {
+    yield takeLatest(ID_CHECK_REQUEST, signUpIdCheck)
+}
+
+//닉네임 유효성검사
+function signUpNicknameCheckAPI(nickname) {
+    return axios.post('/user/checknickname', nickname)
+}
+
+function* signUpNicknameCheck(action) {
+    try {
+        const result = yield call(signUpNicknameCheckAPI, action.data);
+        yield put({
+            type: NICKNAME_CHECK_SUCCESS,
+            data: result.data,
+        })
+    } catch(e) {
+        console.error(e);
+        yield put({
+            type: NICKNAME_CHECK_FAILURE,
+            reason: e.response && e.response.data,
+        })
+    }
+}
+
+function* watchSignUpNicknameCheck() {
+    yield takeLatest(NICKNAME_CHECK_REQUEST, signUpNicknameCheck)
+}
+
 export default function* userSage() {
     yield all([
         fork(watchLogIn),
         fork(watchSignUp),
         fork(watchLogOut),
+        fork(watchSignUpIdCheck),
+        fork(watchSignUpNicknameCheck),
     ])
 }

@@ -2871,7 +2871,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(immer__WEBPACK_IMPORTED_MODULE_0__);
 
 const initialState = {
-  allPosts: [],
+  allPosts: [{
+    id: 1,
+    User: {
+      id: 2,
+      nickname: '보노보노'
+    },
+    content: '테크내용1',
+    category: 'tech',
+    Comments: []
+  }, {
+    id: 2,
+    User: {
+      id: 2,
+      nickname: '보노보노'
+    },
+    content: '테크내용1',
+    category: 'talk',
+    Comments: []
+  }, {
+    id: 3,
+    User: {
+      id: 2,
+      nickname: '보노보노'
+    },
+    content: '테크내용2',
+    category: 'tech',
+    Comments: []
+  }, {
+    id: 4,
+    User: {
+      id: 2,
+      nickname: '보노보노'
+    },
+    content: '테크내용3',
+    category: 'tech',
+    Comments: []
+  }],
   // 모든 게시글
   imagePaths: [],
   // 이미지 저장 주소
@@ -2954,7 +2990,7 @@ const ADD_COMMENT_FAILURE = 'ADD_COMMENT_FAILURE';
 /*!**************************!*\
   !*** ./reducers/user.js ***!
   \**************************/
-/*! exports provided: initialState, SIGN_UP_REQUEST, SIGN_UP_SUCCESS, SIGN_UP_FAILURE, LOG_IN_ERRORREASON_RESET_REQUEST, LOG_IN_REQUEST, LOG_IN_SUCCESS, LOG_IN_FAILURE, LOG_OUT_REQUEST, LOG_OUT_SUCCESS, LOG_OUT_FAILURE, default */
+/*! exports provided: initialState, SIGN_UP_REQUEST, SIGN_UP_SUCCESS, SIGN_UP_FAILURE, ID_CHECK_REQUEST, ID_CHECK_SUCCESS, ID_CHECK_FAILURE, NICKNAME_CHECK_REQUEST, NICKNAME_CHECK_SUCCESS, NICKNAME_CHECK_FAILURE, PASSWORD_CHECK_REQUEST, PASSWORD_CHECK_SUCCESS, PASSWORD_CHECK_FAILURE, LOG_IN_ERRORREASON_RESET_REQUEST, LOG_IN_REQUEST, LOG_IN_SUCCESS, LOG_IN_FAILURE, LOG_OUT_REQUEST, LOG_OUT_SUCCESS, LOG_OUT_FAILURE, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2963,6 +2999,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP_REQUEST", function() { return SIGN_UP_REQUEST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP_SUCCESS", function() { return SIGN_UP_SUCCESS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP_FAILURE", function() { return SIGN_UP_FAILURE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ID_CHECK_REQUEST", function() { return ID_CHECK_REQUEST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ID_CHECK_SUCCESS", function() { return ID_CHECK_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ID_CHECK_FAILURE", function() { return ID_CHECK_FAILURE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NICKNAME_CHECK_REQUEST", function() { return NICKNAME_CHECK_REQUEST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NICKNAME_CHECK_SUCCESS", function() { return NICKNAME_CHECK_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NICKNAME_CHECK_FAILURE", function() { return NICKNAME_CHECK_FAILURE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PASSWORD_CHECK_REQUEST", function() { return PASSWORD_CHECK_REQUEST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PASSWORD_CHECK_SUCCESS", function() { return PASSWORD_CHECK_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PASSWORD_CHECK_FAILURE", function() { return PASSWORD_CHECK_FAILURE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_ERRORREASON_RESET_REQUEST", function() { return LOG_IN_ERRORREASON_RESET_REQUEST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_REQUEST", function() { return LOG_IN_REQUEST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_SUCCESS", function() { return LOG_IN_SUCCESS; });
@@ -2986,13 +3031,34 @@ const initialState = {
   isSigningUp: false,
   // 회원가입 진행중
   signUpErrorReason: '',
-  // 회원사입 실패 사유
+  // 회원가입 실패 사유
+  signUpIdErrorReason: '',
+  // 아이디 유효성 검사 실패
+  signUpIdSuccessReason: '',
+  // 아이디 유효성 검사 성공
+  signUpNicknameErrorReason: '',
+  // 닉네임 유효성 검사 실패 
+  signUpNicknameSuccessReason: '',
+  // 닉네임 유효성 검사 성공
+  signUpPasswordErrorReason: '',
+  // 비밀번호 유효성 검사 실패
+  signUpPasswordSuccessReason: '',
+  // 비밀번호 유효성 검사 성공
   me: null // 내정보
 
 };
 const SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
 const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
+const ID_CHECK_REQUEST = 'ID_CHECK_REQUEST';
+const ID_CHECK_SUCCESS = 'ID_CHECK_SUCCESS';
+const ID_CHECK_FAILURE = 'ID_CHECK_FAILURE';
+const NICKNAME_CHECK_REQUEST = 'NICKNAME_CHECK_REQUEST';
+const NICKNAME_CHECK_SUCCESS = 'NICKNAME_CHECK_SUCCESS';
+const NICKNAME_CHECK_FAILURE = 'NICKNAME_CHECK_FAILURE';
+const PASSWORD_CHECK_REQUEST = 'PASSWORD_CHECK_REQUEST';
+const PASSWORD_CHECK_SUCCESS = 'PASSWORD_CHECK_SUCCESS';
+const PASSWORD_CHECK_FAILURE = 'PASSWORD_CHECK_FAILURE';
 const LOG_IN_ERRORREASON_RESET_REQUEST = 'LOG_IN_ERRORREASON_RESET_REQUEST';
 const LOG_IN_REQUEST = 'LOG_IN_REQUEST';
 const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
@@ -3062,7 +3128,49 @@ const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
       case SIGN_UP_FAILURE:
         {
           draft.isSigningUp = false;
-          draft.signUpErrorReason = action.data;
+          draft.signUpErrorReason = action.reason;
+          break;
+        }
+
+      case ID_CHECK_REQUEST:
+        {
+          draft.signUpIdErrorReason = '';
+          draft.signUpIdSuccessReason = '';
+          break;
+        }
+
+      case ID_CHECK_SUCCESS:
+        {
+          draft.signUpIdErrorReason = '';
+          draft.signUpIdSuccessReason = action.data;
+          break;
+        }
+
+      case ID_CHECK_FAILURE:
+        {
+          draft.signUpIdErrorReason = action.reason;
+          draft.signUpIdSuccessReason = '';
+          break;
+        }
+
+      case NICKNAME_CHECK_REQUEST:
+        {
+          draft.signUpNicknameErrorReason = '';
+          draft.signUpNicknameSuccessReason = '';
+          break;
+        }
+
+      case NICKNAME_CHECK_SUCCESS:
+        {
+          draft.signUpNicknameErrorReason = '';
+          draft.signUpNicknameSuccessReason = action.data;
+          break;
+        }
+
+      case NICKNAME_CHECK_FAILURE:
+        {
+          draft.signUpNicknameErrorReason = action.reason;
+          draft.signUpNicknameSuccessReason = '';
           break;
         }
 
@@ -3264,10 +3372,60 @@ function* signUp(action) {
 
 function* watchSignUp() {
   yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeLatest"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_REQUEST"], signUp);
+} // 아이디 유효성 검사
+
+
+function signUpIdCheckAPI(id) {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/user/checkid', id);
+}
+
+function* signUpIdCheck(action) {
+  try {
+    const result = yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["call"])(signUpIdCheckAPI, action.data);
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
+      type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["ID_CHECK_SUCCESS"],
+      data: result.data
+    });
+  } catch (e) {
+    console.error(e);
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
+      type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["ID_CHECK_FAILURE"],
+      reason: e.response && e.response.data
+    });
+  }
+}
+
+function* watchSignUpIdCheck() {
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeLatest"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["ID_CHECK_REQUEST"], signUpIdCheck);
+} //닉네임 유효성검사
+
+
+function signUpNicknameCheckAPI(nickname) {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/user/checknickname', nickname);
+}
+
+function* signUpNicknameCheck(action) {
+  try {
+    const result = yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["call"])(signUpNicknameCheckAPI, action.data);
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
+      type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["NICKNAME_CHECK_SUCCESS"],
+      data: result.data
+    });
+  } catch (e) {
+    console.error(e);
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
+      type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["NICKNAME_CHECK_FAILURE"],
+      reason: e.response && e.response.data
+    });
+  }
+}
+
+function* watchSignUpNicknameCheck() {
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeLatest"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["NICKNAME_CHECK_REQUEST"], signUpNicknameCheck);
 }
 
 function* userSage() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchLogIn), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchSignUp), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchLogOut)]);
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchLogIn), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchSignUp), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchLogOut), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchSignUpIdCheck), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchSignUpNicknameCheck)]);
 }
 
 /***/ }),

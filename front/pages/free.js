@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link'
 import { Button } from 'antd';
 
-const Free = () => {
+const Talk = () => {
     return (
     <>
         <div>자유게시판</div>
@@ -11,4 +11,4 @@ const Free = () => {
     </>)
 }
 
-export default Free;
+export default Talk;

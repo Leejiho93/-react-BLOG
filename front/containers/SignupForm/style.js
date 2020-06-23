@@ -20,3 +20,11 @@ export const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(3, 0, 2),
     },
 }));
+
+export const ErrorMessage = styled.div`
+    color: red;
+`
+
+export const SuccessMessage = styled.div`
+    color: green;
+`

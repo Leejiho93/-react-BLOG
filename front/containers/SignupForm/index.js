@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback ,useEffect, useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -9,34 +9,83 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { useInput } from '../LoginForm';
-import { useState } from 'react';
-import { useStyles } from './style';
-import axios from 'axios';
+import { useStyles, ErrorMessage, SuccessMessage } from './style';
+import { useDispatch, useSelector } from 'react-redux';
+import { ID_CHECK_REQUEST, NICKNAME_CHECK_REQUEST, SIGN_UP_REQUEST } from '../../reducers/user';
+import Router from 'next/router'
 
 const SignupForm = () => {
-  const [id, setId] = useState('');
-  const [idErrorMessage, setIdError] = useState(false);
-  const [isDuplicateId, setIsDuplicateId] = useState(false);
-  const [nickname, setNickname] = useState('');
-  const [isDuplicateNickname, setIsDuplicateNickname] = useState(false);
+  const [id, onChangeId] = useInput('');
+  const [nickname, onChangeNickname] = useInput('');
   const [password, setPassword] = useState('');
   const [passwordCheck, setPasswordCheck] = useState('');
+  const [passwordError, setPasswordError] = useState(false);
+  const [passwordErrorMessage, setPasswordErrorMessage] = useState('');
 
-  const checkId = /^[a-z0-9]{5,20}$/;
-  const checkNickname = /^[a-zA-Z0-9가-힣]{2,20}$/;
-  const checkPassword = /^[a-zA-Z0-9]{8, 20}$/;
+  const {
+    signUpIdErrorReason,
+    signUpIdSuccessReason,
+    signUpNicknameErrorReason,
+    signUpNicknameSuccessReason,
+    isSignedUp,
+  } = useSelector(state => state.user);
 
-  const onChangeId = (e) => {
-    setId(e.target.value);
+  const dispatch = useDispatch();
 
-    // const userIdCheck = await axios.get();
-  }
+  useEffect( ()=> {
+    if (isSignedUp) {
+      alert('회원가입 완료했습니다.');
+      Router.push('/login');
+    }
+  }, [isSignedUp]);
 
-  const onCheckId = async() => {  
-    // const userIdCheck = await axios.post('/user/checkid', id);
+  const onSubmitForm = useCallback((e) => {
+    e.preventDefault();
+    if (password !== passwordCheck) {
+      return setPasswordError(true);  
+    }
+    dispatch({
+      type: SIGN_UP_REQUEST,
+      data: {
+        userId: id,
+        password,
+        nickname,
+      }
+    })
+  }, [id, password, nickname, passwordCheck])
 
+  const onChangePassword = useCallback((e) => {
+    setPasswordError(passwordCheck !== e.target.value);
+    setPassword(e.target.value);
+  }, [passwordCheck])
 
-  }
+  const onChangePasswordCheck = useCallback((e) => {
+    setPasswordError(password !== e.target.value);
+    setPasswordCheck(e.target.value);
+  }, [password])
+
+  const onCheckId = useCallback(() => {
+    dispatch({
+      type: ID_CHECK_REQUEST,
+      data: id,
+    })
+  }, [id]);
+
+  const onCheckNickname = useCallback(() => {
+    dispatch({
+      type: NICKNAME_CHECK_REQUEST,
+      data: nickname,
+    })
+  }, [nickname]);
+
+  const onCheckPassword = useCallback(() => {
+    const checkPassword = /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[0-9]).{8,20}$/;
+    if (!checkPassword.test(password)) {
+      setPasswordErrorMessage('8~20자의 영문자, 숫자, 특수문자를 사용하세요.')
+    } else {
+      setPasswordErrorMessage('');
+    }
+  }, [password]);
 
   const classes = useStyles();
 
@@ -45,18 +94,18 @@ const SignupForm = () => {
       <CssBaseline />
 
       <div className={classes.paper}>
+         <Typography component="h1" variant="h5">
+          회원가입
+        </Typography>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        {/* <Typography component="h1" variant="h5">
-          Sign up
-        </Typography> */}
-        <form className={classes.form}>
+      
+        <form className={classes.form} onSubmit={onSubmitForm}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
-                autoComplete="fname"
-                name="firstName"
+                name="id"
                 variant="outlined"
                 required
                 fullWidth
@@ -64,22 +113,42 @@ const SignupForm = () => {
                 label="아이디"
                 vaule={id}
                 onChange={onChangeId}
-                // onBlur={onCheckId}
+                onBlur={onCheckId}
                 autoFocus
               />
             </Grid>
-        
+
+            <ErrorMessage>
+              {signUpIdErrorReason}
+            </ErrorMessage>
+
+            <SuccessMessage>
+              {signUpIdSuccessReason}
+            </SuccessMessage>
+
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
-                id="email"
+                id="nickname"
                 label="닉네임"
-                name="email"
-                autoComplete="email"
+                name="nickname"
+                autoComplete="nickname"
+                value={nickname}
+                onChange={onChangeNickname}
+                onBlur={onCheckNickname}
               />
             </Grid>
+
+            <ErrorMessage>
+              {signUpNicknameErrorReason}
+            </ErrorMessage>
+
+            <SuccessMessage>
+              {signUpNicknameSuccessReason}
+            </SuccessMessage>
+
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -90,20 +159,33 @@ const SignupForm = () => {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                value={password}
+                onChange={onChangePassword}
+                onBlur={onCheckPassword}
               />
             </Grid>
+
+            <ErrorMessage>
+              {passwordErrorMessage}
+            </ErrorMessage>
+
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
-                name="password"
+                name="passwordCheck"
                 label="비밀번호 확인"
                 type="password"
-                id="password"
+                id="passwordCheck"
                 autoComplete="current-password"
+                value={passwordCheck}
+                onChange={onChangePasswordCheck}
               />
             </Grid>
+            <ErrorMessage>
+              {passwordError && '비밀번호가 일치하지 않습니다.'}
+            </ErrorMessage>
           </Grid>
           <Button
             type="submit"
@@ -116,16 +198,15 @@ const SignupForm = () => {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="/login" variant="body2">
+              <Link href="/login">
                 <a>
-                로그인 하기
+                  로그인 하기
                 </a>
               </Link>
             </Grid>
           </Grid>
         </form>
       </div>
-      
     </Container>
   );
 }

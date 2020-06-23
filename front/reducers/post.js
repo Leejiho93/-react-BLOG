@@ -1,7 +1,48 @@
 import produce from 'immer';
 
 export const initialState = {
-    allPosts: [], // 모든 게시글
+    allPosts: [
+        {
+            id: 1,
+            User: {
+                id: 2,
+                nickname: '보노보노'
+            },
+            content: '테크내용1',
+            category: 'tech',
+            Comments: [],
+        },
+        {
+            id: 2,
+            User: {
+                id: 2,
+                nickname: '보노보노'
+            },
+            content: '테크내용1',
+            category: 'talk',
+            Comments: [],
+        },
+        {
+            id: 3,
+            User: {
+                id: 2,
+                nickname: '보노보노'
+            },
+            content: '테크내용2',
+            category: 'tech',
+            Comments: [],
+        },
+        {
+            id: 4,
+            User: {
+                id: 2,
+                nickname: '보노보노'
+            },
+            content: '테크내용3',
+            category: 'tech',
+            Comments: [],
+        },
+    ], // 모든 게시글
     imagePaths: [], // 이미지 저장 주소
     addPostErrorReason: '', // 게시글 업로드 실패 사유
     isAddingPost: false, // 게시글 업로드 중

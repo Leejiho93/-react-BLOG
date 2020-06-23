@@ -22,16 +22,6 @@ const Profile = () => {
     }, [me && me.id])
 
 
-    const onClickLogout = () => {
-        dispatch({
-            type: LOG_OUT_REQUEST,
-        })
-    }
-
-    const onClickProfile = () => {
-
-    }
-
     return (
         <>
             <div>

@@ -30,7 +30,11 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/login": [
+    "/signup": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/tech": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
