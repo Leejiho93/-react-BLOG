@@ -1,160 +1,160 @@
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Avatar, Input } from 'antd'
-import { faCrow, } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons'
+import List from '@material-ui/core/List';
+import { makeStyles } from '@material-ui/core/styles';
 
-export const Nav = styled.nav`
-    width: 100%;
-    height: 100px;
-    border-bottom: 2px solid #f1f1f1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+const drawerWidth = 240;
 
-    & div {
-        // padding: 15px 0
-    }
+export const useStyles = makeStyles((theme) => ({
+  grow: {
+    // flexGrow: 1,
+  },
+  appbar: {
+    background: 'white',
+    minHeight: '64px',
+    [theme.breakpoints.down('xs')]: {
+      display: 'flex',
+      width: '100%',
+      justifyContent: 'space-between',
+      alignItems: 'center;'
+    },
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth,
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  toolbar: {
+    minHeight: '64px', 
+    display: 'flex', 
+    width: '100%', 
+    justifyContent: 'space-between', 
+    alignItems: 'center',
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+    color: '#1890FF',
+    visibility: 'hidden',
+    [theme.breakpoints.down('sm')]: {
+      width: 'auto',
+      margin: 0,
+      display: 'flex',
+      visibility: 'visible',
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: 'auto',
+      margin: 0,
+      display: 'flex',
+      visibility: 'visible',
+    },
+  },
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: 'auto',
+  },
+  title: {
+    display: 'block',
+    [theme.breakpoints.down('xs')]: {
+      justifyContent: 'flex-center'
+    },
+    fontFamily: 'MuseoModerno, cursive',
+  },
+  search: {
+    position: 'relative',
+    borderRadius: '30px',
+    backgroundColor: '#1890FF',
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: '100%',
+    marginLeft: theme.spacing(3),
+    width: 'auto',
+    [theme.breakpoints.down('xs')]: {
+      display: 'none',
+    },
+  },
+  searchIcon: {
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inputRoot: {
+    color: 'white',
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 0),
+    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    width: 'auto',
+  },
+  userIcon: {
+    color: '#1890FF',
+  },
+  sectionDesktop: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    width: '100%',
+    [theme.breakpoints.down('xs')]: {
+      width: 'auto'
+    },
 
-    & a {
-        text-decoration: none;
-    }
+  },
+  sectionMobile: {
+    display: 'flex',
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
+    },
+  },
+}));
 
-
-    @media (max-width: 768px) {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-`;
-
-export const Burger = styled(FontAwesomeIcon)`
-    display: none;
-
-    @media (max-width: 768px) {
-        display: flex;
-        z-index: 100;
-        font-size: 28px;
-    }
-`
-
-export const Logo = styled.div`
-    font-size: 30px;
-    color: black;
-    font-family: 'MuseoModerno', cursive;
-
-    & a {
-        color: black;
-    }
-
-    & a:hover {
-        opacity: .6
-    }
-
-    @media (max-width: 768px) {
-        font-family: 'MuseoModerno', cursive;
-        display: flex;
-        align-items: center;
-    
-    }
-
-`
-
-export const LogoIcon = styled(FontAwesomeIcon)`
-    color: black;
-
-    @media (max-width: 768px) {
-       
-    }
-`
-
-export const Searching = styled(Input.Search)`
-    border-radius: 20px;
-
-    &::selection {
-        background: black
-    }
-
-    @media (max-width: 1024px) {
-        display: none;
-    }
-`
-
-export const MenuList = styled.ul`
+export const AppMenu = styled.ul`
     display: flex;
     list-style: none;
     font-family: 'Roboto Slab', serif;
     margin: 0;
 
     & > li {
-        padding: 8px 12px;
-
-        #media (max-width: 768px) {
-            
-        }
+      padding: 8px 12px; 
     }
-
-    & a {
-        color: #495057;
-        opacity: .6;
+    
+    @media(max-width: 960px) {
+      display: none;
     }
+  `
 
-    & a:hover {
-        color: black;
-    }
-
-    @media (max-width: 768px) {
-        display: none;
-    }  
-`
-
-export const LoginMenu = styled.ul`
+export const Logout = styled.div`
     display: flex;
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
     font-family: 'Noto Sans KR', sans-serif;
 
+    & span {
+      font-size: 16px;
+    }
+
     & a {
-        color: #495057;
-        opacity: .6;
-
-        @media (max-width: 1024px) {
-            align-items: center;
-            
-        }   
+      padding: 3px;
+      @media (max-width: 1024px) {
+          & span {
+              display: none;
+          }
+      }   
     }
-
-    & a:hover {
-        color: black;
-    }
-
-    & > li {
-        padding: 8px 12px;
-
-        @media (max-width: 1024px) {
-            align-items: center;
-
-        }   
-    }
-
-    @media (max-width: 768px) {
-        display: flex;
-        align-items: center;
-       
-    }     
-`;
-
-export const UserIcon = styled(Avatar)`
-    display: flex;
-    font-size: 28px;
-    padding-right: 10px;
-    z-index: 100;
-
-    @media (max-width: 768px) {
-        z-index: 100;
-        display: flex;
-        font-size: 28px;
-        padding-right: 10px;
-    }
-`;
+`
+export const ListFlex = styled(List)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  & a {
+   width: 100%;
+  }
+`

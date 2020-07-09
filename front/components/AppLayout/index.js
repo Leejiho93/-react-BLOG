@@ -1,10 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import  { ThemeProvider } from 'styled-components';
-import UserProfile from '../../containers/UserProfile';
-import NavBar from '../NavBar';
+import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, ContentWrapper } from './style';
-import { theme } from '../theme';
+import Grid from '@material-ui/core/Grid';
+import NavBar from '../NavBar';
+
+const theme = {};
 
 const AppLayout = ({ children }) => {
     const { me } = useSelector(state => state.user);
@@ -14,8 +15,18 @@ const AppLayout = ({ children }) => {
             <>
                 <GlobalStyle />
                 <NavBar />
-
-                <ContentWrapper>{children} </ContentWrapper>
+                <Grid container>
+                    <Grid item xs>
+                        
+                    </Grid>
+                    <Grid item xs={12} md={8} >
+                        {children}
+                    </Grid>
+                    <Grid item xs>
+                        
+                    </Grid>
+                </Grid>
+                {/* <ContentWrapper>{children} </ContentWrapper> */}
             </>
         </ThemeProvider>
     )

@@ -6,8 +6,8 @@ const About = () => {
     return (
     <>
         <div>내 정보</div>
-        <Link href="/"><Button>홈</Button></Link>
-        
+        <div> 할것들  sign up - alert 경고</div>
+        <div> 아이콘 hover - popover </div>
     </>)
 }
 

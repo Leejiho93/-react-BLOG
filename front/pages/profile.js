@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Button, Avatar } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
 import { useSelector, useDispatch } from 'react-redux';
 import { LOG_OUT_REQUEST } from '../reducers/user';
-import  Router from 'next/router';
+import Router from 'next/router';
+import UserProfile from '../containers/UserProfile';
 
 
 const Profile = () => {
@@ -24,9 +23,9 @@ const Profile = () => {
 
     return (
         <>
-            <div>
-                사용자 정보 프로필 화면
-            </div>
+
+            <UserProfile />
+
         </>
     )
 }

@@ -6,13 +6,13 @@ export const initialState = {
     logInErrorReason: '', // 로그인 실패 사유
     isSignedUp: false, // 회원가입 성공
     isSigningUp: false, // 회원가입 진행중
-    signUpErrorReason: '',  // 회원가입 실패 사유
-    signUpIdErrorReason: '',  // 아이디 유효성 검사 실패
-    signUpIdSuccessReason: '', // 아이디 유효성 검사 성공
-    signUpNicknameErrorReason: '', // 닉네임 유효성 검사 실패 
-    signUpNicknameSuccessReason: '', // 닉네임 유효성 검사 성공
-    signUpPasswordErrorReason: '', // 비밀번호 유효성 검사 실패
-    signUpPasswordSuccessReason: '', // 비밀번호 유효성 검사 성공
+    signUpError: null,  // 회원가입 실패 사유
+    signUpIdError: null,  // 아이디 유효성 검사 실패
+    signUpIdSuccess: null, // 아이디 유효성 검사 성공
+    signUpNicknameError: null, // 닉네임 유효성 검사 실패 
+    signUpNicknameSuccess: null, // 닉네임 유효성 검사 성공
+    signUpPasswordError: null, // 비밀번호 유효성 검사 실패
+    signUpPasswordSuccess: null, // 비밀번호 유효성 검사 성공
     me: null, // 내정보
 }
 
@@ -46,13 +46,13 @@ export default (state = initialState, action) => {
     return produce(state, (draft) => {
         switch (action.type) {
             case LOG_IN_ERRORREASON_RESET_REQUEST: {
-                draft.logInErrorReason ='';
+                draft.logInError = null;
                 break;
             }
 
             case LOG_IN_REQUEST: {
                 draft.isLoggingIn = true;
-                draft.logInErrorReason = '';
+                draft.logInError = null;
                 break;
             }
 
@@ -64,7 +64,7 @@ export default (state = initialState, action) => {
 
             case LOG_IN_FAILURE: {
                 draft.isLoggingIn = false;
-                draft.logInErrorReason = action.reason;
+                draft.logInError = action.reason;
                 draft.me = null;
                 break;
             }
@@ -83,7 +83,7 @@ export default (state = initialState, action) => {
             case SIGN_UP_REQUEST: {
                 draft.isSigningUp = true;
                 draft.isSignedUp = false;
-                draft.signUpErrorReason = '';
+                draft.signUpError = null;
                 break;
             }
 
@@ -95,43 +95,43 @@ export default (state = initialState, action) => {
 
             case SIGN_UP_FAILURE: {
                 draft.isSigningUp = false;
-                draft.signUpErrorReason = action.reason;
+                draft.signUpError = action.reason;
                 break;
             }
 
             case ID_CHECK_REQUEST: {
-                draft.signUpIdErrorReason = '';
-                draft.signUpIdSuccessReason = '';
+                draft.signUpIdError = null;
+                draft.signUpIdSuccess = null;
                 break;
             }
 
             case ID_CHECK_SUCCESS: {
-                draft.signUpIdErrorReason = '';
-                draft.signUpIdSuccessReason = action.data;
+                draft.signUpIdError = null;
+                draft.signUpIdSuccess = action.data;
                 break;
             }
 
             case ID_CHECK_FAILURE: {
-                draft.signUpIdErrorReason = action.reason;
-                draft.signUpIdSuccessReason = '';
+                draft.signUpIdError = action.reason;
+                draft.signUpIdSuccess = null;
                 break;
             }
 
             case NICKNAME_CHECK_REQUEST: {
-                draft.signUpNicknameErrorReason = '';
-                draft.signUpNicknameSuccessReason = '';
+                draft.signUpNicknameError = null;
+                draft.signUpNicknameSuccess = null;
                 break;
             }
 
             case NICKNAME_CHECK_SUCCESS: {
-                draft.signUpNicknameErrorReason = '';
-                draft.signUpNicknameSuccessReason = action.data;
+                draft.signUpNicknameError = null;
+                draft.signUpNicknameSuccess = action.data;
                 break;
             }
 
             case NICKNAME_CHECK_FAILURE: {
-                draft.signUpNicknameErrorReason = action.reason;
-                draft.signUpNicknameSuccessReason = '';
+                draft.signUpNicknameError = action.eason;
+                draft.signUpNicknameSuccess = null;
                 break;
             }
 

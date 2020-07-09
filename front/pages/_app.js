@@ -4,7 +4,6 @@ import withRedux from 'next-redux-wrapper';
 import { applyMiddleware, compose, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-import { Helmet } from 'react-helmet';
 
 import AppLayout from '../components/AppLayout'
 import reducer from '../reducers';
@@ -15,16 +14,18 @@ const Blog = ({ Component, store }) => {
     <Provider store={store}>
       <Head>
         <title>EASYHO BLOG</title>
-        {/* <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" /> */}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.2.0/antd.css"/>
         <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@900&family=Noto+Sans+KR:wght@500&family=Roboto+Slab:wght@500&display=swap" rel="stylesheet" />
-        {/* <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet"></link> */}
       </Head>
       <AppLayout>
         <Component />
       </AppLayout>
     </Provider>
   )
+}
+
+Blog.getInitialProps = async (context) => {
+
 }
 
 const configureStore = (initialState, options) => {

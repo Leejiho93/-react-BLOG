@@ -9,6 +9,7 @@ const hpp = require('hpp');
 const helmet = require('helmet');
 const passprotConfig = require('./passport');
 const db = require('./models');
+// const bodyParser = require('body-parser');
 
 const userAPIRouter = require('./routes/user');
 const postAPIRouter = require('./routes/post');
@@ -22,24 +23,29 @@ const app = express();
 db.sequelize.sync();
 passprotConfig();
 
-if (prod) {
-    app.use(hpp());
-    app.use(helmet());
-    app.use(morgan('combined'));
-    app.use(cors({
-        origin: 'http://easyho93.com',
-        credentials: true,
-    }))
+// if (prod) {
+//     app.use(hpp());
+//     app.use(helmet());
+//     app.use(morgan('combined'));
+//     app.use(cors({
+//         origin: 'http://easyho93.com',
+//         credentials: true,
+//     }))
 
-} else {
-    app.use(morgan('dev'));
-    app.use(cors({
-        origin: true,
-        credentials: true,
-    }))
-}
+// } else {
+//     app.use(morgan('dev'));
+//     app.use(cors({
+//         origin: true,
+//         credentials: true,
+//     }))
+// }
 
-app.use('/', express.static('uploads'));
+app.use(morgan('dev'));
+app.use(cors({
+    origin: true,
+    credentials: true,
+}))
+// app.use('/', express.static('uploads'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
@@ -68,6 +74,10 @@ app.use('/api/post', postAPIRouter);
 app.use('/api/posts', postsAPIRouter);
 app.use('/api/search', searchAPIRouter);
 
-app.listen( prod ? process.env.PORT : 3065, () => {
+// app.listen(prod ? process.env.PORT : 3065, () => {
+//     console.log('server is running on 3065');
+// })
+
+app.listen(3065, () => {
     console.log('server is running on 3065');
 })

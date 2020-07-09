@@ -130,10 +130,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _containers_UserProfile__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../containers/UserProfile */ "./containers/UserProfile.js");
-/* harmony import */ var _NavBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../NavBar */ "./components/NavBar/index.js");
-/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style */ "./components/AppLayout/style.js");
-/* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../theme */ "./components/theme.js");
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style */ "./components/AppLayout/style.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _NavBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../NavBar */ "./components/NavBar/index.js");
 var _jsxFileName = "C:\\BLOG\\front\\components\\AppLayout\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -142,7 +142,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
+const theme = {};
 
 const AppLayout = ({
   children
@@ -151,35 +151,64 @@ const AppLayout = ({
     me
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
   return __jsx(styled_components__WEBPACK_IMPORTED_MODULE_2__["ThemeProvider"], {
-    theme: _theme__WEBPACK_IMPORTED_MODULE_6__["theme"],
+    theme: theme,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 14,
       columnNumber: 9
     }
-  }, __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["GlobalStyle"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15,
-      columnNumber: 17
-    }
-  }), __jsx(_NavBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_style__WEBPACK_IMPORTED_MODULE_3__["GlobalStyle"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16,
       columnNumber: 17
     }
-  }), __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["ContentWrapper"], {
+  }), __jsx(_NavBar__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 17
+    }
+  }), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    container: true,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18,
       columnNumber: 17
     }
-  }, children, " ")));
+  }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    item: true,
+    xs: true,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 21
+    }
+  }), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    item: true,
+    xs: 12,
+    md: 8,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 21
+    }
+  }, children), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    item: true,
+    xs: true,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25,
+      columnNumber: 21
+    }
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (AppLayout);
@@ -201,10 +230,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
 
 const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobalStyle"]`
-	html, body {
+	* {
         margin: 0;
-        paddingL 0;
+        padding 0;
+        outline: 0;
         box-sizing: border-box;
+    },
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
  }
 `;
@@ -212,204 +247,6 @@ const ContentWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.
   displayName: "style__ContentWrapper",
   componentId: "sc-1rxs5bx-0"
 })(["display:flex;"]);
-
-/***/ }),
-
-/***/ "./components/LeftNav/index.js":
-/*!*************************************!*\
-  !*** ./components/LeftNav/index.js ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style */ "./components/LeftNav/style.js");
-var _jsxFileName = "C:\\BLOG\\front\\components\\LeftNav\\index.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
-const LeftNav = ({
-  open
-}) => {
-  const me = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
-  return __jsx(_style__WEBPACK_IMPORTED_MODULE_3__["Ul"], {
-    open: open,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10,
-      columnNumber: 9
-    }
-  }, __jsx("li", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 13
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 17
-    }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 32
-    }
-  }, "LeftNav"))), __jsx("li", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 13
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 17
-    }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 32
-    }
-  }, "Home"))), __jsx("li", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 13
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/about",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 17
-    }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 37
-    }
-  }, "About"))), __jsx("li", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14,
-      columnNumber: 13
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/tech",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14,
-      columnNumber: 17
-    }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14,
-      columnNumber: 36
-    }
-  }, "Tech"))), __jsx("li", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15,
-      columnNumber: 13
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/free",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15,
-      columnNumber: 17
-    }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15,
-      columnNumber: 36
-    }
-  }, "Free"))), __jsx("li", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16,
-      columnNumber: 13
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/gallery",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16,
-      columnNumber: 17
-    }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16,
-      columnNumber: 39
-    }
-  }, "Gallery"))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (LeftNav);
-
-/***/ }),
-
-/***/ "./components/LeftNav/style.js":
-/*!*************************************!*\
-  !*** ./components/LeftNav/style.js ***!
-  \*************************************/
-/*! exports provided: Ul */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Ul", function() { return Ul; });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
-
-const Ul = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.withConfig({
-  displayName: "style__Ul",
-  componentId: "sc-12m47w4-0"
-})(["list-style:none;display:flex;flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:100px;left:0;height:100vh;width:200px;padding-top:3.5rem;s transition:transform 0.3s ease-in-out;opacity:.2;z-index:500;a{text-decoration:none;color:#fff;}li{padding:18px 10px;}@media (max-width:768px){flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:100px;left:0;height:100vh;width:200px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;opacity:.2;z-index:500;a{text-decoration:none;color:#fff;}}"], ({
-  open
-}) => open ? 'translateX(0)' : 'translateX(-100%)', ({
-  open
-}) => open ? 'translateX(0)' : 'translateX(-100%)');
 
 /***/ }),
 
@@ -424,23 +261,75 @@ const Ul = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.withConfi
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "@fortawesome/react-fontawesome");
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "@fortawesome/free-solid-svg-icons");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "@fortawesome/free-brands-svg-icons");
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style */ "./components/NavBar/style.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ant-design/icons */ "@ant-design/icons");
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_ant_design_icons__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _LeftNav__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../LeftNav */ "./components/LeftNav/index.js");
-/* harmony import */ var _RigthNav__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../RigthNav */ "./components/RigthNav/index.js");
+/* harmony import */ var _material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/AppBar */ "@material-ui/core/AppBar");
+/* harmony import */ var _material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Toolbar */ "@material-ui/core/Toolbar");
+/* harmony import */ var _material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/IconButton */ "@material-ui/core/IconButton");
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/InputBase */ "@material-ui/core/InputBase");
+/* harmony import */ var _material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/MenuItem */ "@material-ui/core/MenuItem");
+/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Menu */ "@material-ui/core/Menu");
+/* harmony import */ var _material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/icons/Menu */ "@material-ui/icons/Menu");
+/* harmony import */ var _material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/icons/Search */ "@material-ui/icons/Search");
+/* harmony import */ var _material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _material_ui_icons_AccountCircle__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/icons/AccountCircle */ "@material-ui/icons/AccountCircle");
+/* harmony import */ var _material_ui_icons_AccountCircle__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_AccountCircle__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "@fortawesome/react-fontawesome");
+/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "@fortawesome/free-solid-svg-icons");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./style */ "./components/NavBar/style.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../reducers/user */ "./reducers/user.js");
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! clsx */ "clsx");
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(clsx__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _material_ui_core_SwipeableDrawer__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @material-ui/core/SwipeableDrawer */ "@material-ui/core/SwipeableDrawer");
+/* harmony import */ var _material_ui_core_SwipeableDrawer__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_SwipeableDrawer__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _material_ui_core_List__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/core/List */ "@material-ui/core/List");
+/* harmony import */ var _material_ui_core_List__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_List__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @material-ui/core/Divider */ "@material-ui/core/Divider");
+/* harmony import */ var _material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @material-ui/core/ListItem */ "@material-ui/core/ListItem");
+/* harmony import */ var _material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_21__);
+/* harmony import */ var _material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @material-ui/core/ListItemIcon */ "@material-ui/core/ListItemIcon");
+/* harmony import */ var _material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_22__);
+/* harmony import */ var _material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @material-ui/core/ListItemText */ "@material-ui/core/ListItemText");
+/* harmony import */ var _material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_23__);
+/* harmony import */ var _material_ui_icons_MoveToInbox__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @material-ui/icons/MoveToInbox */ "@material-ui/icons/MoveToInbox");
+/* harmony import */ var _material_ui_icons_MoveToInbox__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_MoveToInbox__WEBPACK_IMPORTED_MODULE_24__);
 var _jsxFileName = "C:\\BLOG\\front\\components\\NavBar\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -454,311 +343,685 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 const NavBar = () => {
+  const classes = Object(_style__WEBPACK_IMPORTED_MODULE_13__["useStyles"])();
   const {
-    0: leftMenuOpened,
-    1: setLeftMenuOpened
+    0: anchorEl,
+    1: setAnchorEl
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
   const {
-    0: userMenuOpened,
-    1: setUserMenuOpened
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+    0: state,
+    1: setState
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    top: false
+  });
   const {
     me
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_6__["useSelector"])(state => state.user);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    if (!me) {
-      setUserMenuOpened(false);
-    }
-  }, [me && me.id]);
-  const onToggleLeftMenu = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(() => {
-    if (!leftMenuOpened && userMenuOpened) {
-      setUserMenuOpened(prev => !prev);
-    }
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_15__["useSelector"])(state => state.user);
+  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_15__["useDispatch"])();
+  const isMenuOpen = anchorEl;
 
-    setLeftMenuOpened(prev => !prev);
-  }, [leftMenuOpened, userMenuOpened]);
-  const onToggleUserMenu = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(() => {
-    if (leftMenuOpened && !userMenuOpened) {
-      setLeftMenuOpened(prev => !prev);
-    }
+  const handleProfileMenuOpen = event => {
+    console.log('event.curr: ', event.currentTarget);
+    setAnchorEl(event.currentTarget);
+  };
 
-    setUserMenuOpened(prev => !prev);
-  }, [leftMenuOpened, userMenuOpened]);
-  return __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["Nav"], {
+  const handleMenuClose = () => {
+    setAnchorEl(false);
+  };
+
+  const onClickLogout = () => {
+    setAnchorEl(false);
+    dispatch({
+      type: _reducers_user__WEBPACK_IMPORTED_MODULE_16__["LOG_OUT_REQUEST"]
+    });
+  };
+
+  const menuId = 'primary-search-account-menu'; // userIcon 클릭시
+
+  const renderMenu = __jsx(_material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    anchorEl: anchorEl,
+    anchorOrigin: {
+      vertical: 'top',
+      horizontal: 'right'
+    },
+    id: menuId,
+    keepMounted: true,
+    transformOrigin: {
+      vertical: 'top',
+      horizontal: 'right'
+    },
+    open: isMenuOpen,
+    onClose: handleMenuClose,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
-      columnNumber: 9
+      lineNumber: 61,
+      columnNumber: 5
     }
-  }, __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["Burger"], {
-    icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faBars"],
-    onClick: onToggleLeftMenu,
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
+    href: "/profile",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
-      columnNumber: 13
-    }
-  }), __jsx(_LeftNav__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    open: leftMenuOpened,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41,
-      columnNumber: 13
-    }
-  }), __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["Logo"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42,
-      columnNumber: 13
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43,
-      columnNumber: 17
+      lineNumber: 70,
+      columnNumber: 7
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
-      columnNumber: 21
+      lineNumber: 70,
+      columnNumber: 29
     }
-  }, __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["LogoIcon"], {
-    icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faCrow"],
+  }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    onClick: handleMenuClose,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 70,
+      columnNumber: 32
+    }
+  }, "\uB0B4\uC815\uBCF4"))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
+    href: "/",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71,
+      columnNumber: 7
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71,
+      columnNumber: 22
+    }
+  }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    onClick: handleMenuClose,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71,
       columnNumber: 25
     }
-  }), "EASYHO"))), __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["Searching"], {
-    placeholder: "\uB2E8\uC5B4 \uAC80\uC0C9",
-    onSearch: value => console.log(value),
+  }, "\uB0B4\uAC00\uC4F4 \uAE00"))), __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    onClick: onClickLogout,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72,
+      columnNumber: 7
+    }
+  }, "\uB85C\uADF8\uC544\uC6C3"));
+
+  const toggleDrawer = (anchor, open) => event => {
+    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+
+    setState(_objectSpread({}, state, {
+      [anchor]: open
+    }));
+  };
+
+  const list = anchor => __jsx("div", {
+    className: clsx__WEBPACK_IMPORTED_MODULE_17___default()(classes.list, {
+      [classes.fullList]: anchor === 'top'
+    }),
+    role: "presentation",
+    onClick: toggleDrawer(anchor, false),
+    onKeyDown: toggleDrawer(anchor, false),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85,
+      columnNumber: 5
+    }
+  }, __jsx(_style__WEBPACK_IMPORTED_MODULE_13__["ListFlex"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 93,
+      columnNumber: 7
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
+    href: "/",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 94,
+      columnNumber: 9
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 95,
+      columnNumber: 11
+    }
+  }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_21___default.a, {
+    button: true,
+    key: 'home',
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 96,
+      columnNumber: 13
+    }
+  }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_23___default.a, {
+    primary: 'Home',
     style: {
-      width: 200
+      textAlign: 'center'
     },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
-      columnNumber: 13
+      lineNumber: 97,
+      columnNumber: 15
     }
-  }), __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["MenuList"], {
+  })))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
+    href: "/about",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 102,
+      columnNumber: 9
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 103,
+      columnNumber: 11
+    }
+  }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_21___default.a, {
+    button: true,
+    key: 'about',
+    style: {
+      textAlign: 'center'
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 104,
+      columnNumber: 13
+    }
+  }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_23___default.a, {
+    primary: 'About',
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 105,
+      columnNumber: 15
+    }
+  })))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
+    href: "/tech",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 110,
+      columnNumber: 9
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 110,
+      columnNumber: 28
+    }
+  }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_21___default.a, {
+    button: true,
+    key: 'tech',
+    style: {
+      textAlign: 'center'
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 111,
+      columnNumber: 11
+    }
+  }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_23___default.a, {
+    primary: 'Tech',
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 112,
+      columnNumber: 13
+    }
+  })))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
+    href: "/free",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 117,
+      columnNumber: 9
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 118,
+      columnNumber: 11
+    }
+  }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_21___default.a, {
+    button: true,
+    key: 'free',
+    style: {
+      textAlign: 'center'
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 119,
+      columnNumber: 13
+    }
+  }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_23___default.a, {
+    primary: 'Talk',
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 120,
+      columnNumber: 15
+    }
+  })))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
+    href: "/gallery",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 125,
+      columnNumber: 9
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 126,
+      columnNumber: 11
+    }
+  }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_21___default.a, {
+    button: true,
+    key: 'gallery',
+    style: {
+      textAlign: 'center'
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 127,
+      columnNumber: 13
+    }
+  }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_23___default.a, {
+    primary: 'Gallery',
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 128,
+      columnNumber: 15
+    }
+  }))))), __jsx(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_20___default.a, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 133,
+      columnNumber: 7
+    }
+  }));
+
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
+    className: classes.grow,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 139,
+      columnNumber: 7
+    }
+  }, __jsx(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    position: "fixed",
+    className: classes.appbar,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 140,
+      columnNumber: 9
+    }
+  }, __jsx(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    className: classes.toolbar,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 141,
+      columnNumber: 11
+    }
+  }, __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+    key: "top",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 142,
+      columnNumber: 13
+    }
+  }, __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    className: classes.menuButton,
+    onClick: toggleDrawer('top', true),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 143,
+      columnNumber: 15
+    }
+  }, __jsx(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_8___default.a, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 147,
+      columnNumber: 17
+    }
+  })), __jsx(_material_ui_core_SwipeableDrawer__WEBPACK_IMPORTED_MODULE_18___default.a, {
+    anchor: "top",
+    open: state['top'],
+    onClose: toggleDrawer('top', false),
+    onOpen: toggleDrawer('top', true),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 150,
+      columnNumber: 15
+    }
+  }, list('top'))), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    className: classes.title,
+    variant: "h4",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 160,
+      columnNumber: 13
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
+    href: "/",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 161,
+      columnNumber: 15
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 162,
+      columnNumber: 17
+    }
+  }, __jsx("span", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 163,
+      columnNumber: 19
+    }
+  }, "EASYHO")))), __jsx("div", {
+    className: classes.search,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 168,
+      columnNumber: 13
+    }
+  }, __jsx("div", {
+    className: classes.searchIcon,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 169,
+      columnNumber: 15
+    }
+  }, __jsx(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_9___default.a, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 170,
+      columnNumber: 17
+    }
+  })), __jsx(_material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    placeholder: "Search\u2026",
+    classes: {
+      root: classes.inputRoot,
+      input: classes.inputInput
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 172,
+      columnNumber: 15
+    }
+  })), __jsx(_style__WEBPACK_IMPORTED_MODULE_13__["AppMenu"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 180,
       columnNumber: 13
     }
   }, __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
-      columnNumber: 17
+      lineNumber: 181,
+      columnNumber: 15
     }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
     href: "/",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
-      columnNumber: 21
+      lineNumber: 181,
+      columnNumber: 19
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
-      columnNumber: 36
+      lineNumber: 181,
+      columnNumber: 34
     }
   }, "Home"))), __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
-      columnNumber: 17
+      lineNumber: 182,
+      columnNumber: 15
     }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
     href: "/about",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
-      columnNumber: 21
+      lineNumber: 182,
+      columnNumber: 19
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
-      columnNumber: 41
+      lineNumber: 182,
+      columnNumber: 39
     }
   }, "About"))), __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
-      columnNumber: 17
+      lineNumber: 183,
+      columnNumber: 15
     }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
     href: "/tech",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
-      columnNumber: 21
+      lineNumber: 183,
+      columnNumber: 19
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
-      columnNumber: 40
+      lineNumber: 183,
+      columnNumber: 38
     }
   }, "Tech"))), __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
-      columnNumber: 17
+      lineNumber: 184,
+      columnNumber: 15
     }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
     href: "/free",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
-      columnNumber: 21
+      lineNumber: 184,
+      columnNumber: 19
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
-      columnNumber: 40
+      lineNumber: 184,
+      columnNumber: 38
     }
   }, "Talk"))), __jsx("li", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
-      columnNumber: 17
+      lineNumber: 185,
+      columnNumber: 15
     }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
     href: "/gallery",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 185,
+      columnNumber: 19
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 185,
+      columnNumber: 41
+    }
+  }, "Gallery")))), __jsx("div", {
+    className: classes.sectionDesktop,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 188,
+      columnNumber: 13
+    }
+  }, me ? __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_3___default.a // aria-controls={menuId}
+  // aria-haspopup="true"
+  , {
+    onClick: handleProfileMenuOpen,
+    color: "inherit",
+    className: classes.userIcon,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 190,
+      columnNumber: 17
+    }
+  }, __jsx(_material_ui_icons_AccountCircle__WEBPACK_IMPORTED_MODULE_10___default.a, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 197,
+      columnNumber: 19
+    }
+  })) : __jsx(_style__WEBPACK_IMPORTED_MODULE_13__["Logout"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 201,
+      columnNumber: 17
+    }
+  }, __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_3___default.a // color="inherit"
+  , {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 202,
+      columnNumber: 19
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
+    href: "/login",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 205,
       columnNumber: 21
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
-      columnNumber: 43
-    }
-  }, "Gallery")))), me ? __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["UserIcon"], {
-    onClick: onToggleUserMenu,
-    icon: __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_7__["UserOutlined"], {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 64,
-        columnNumber: 66
-      }
-    }),
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 206,
       columnNumber: 23
     }
-  }) : __jsx(_style__WEBPACK_IMPORTED_MODULE_5__["LoginMenu"], {
+  }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_11__["FontAwesomeIcon"], {
+    icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_12__["faSignInAlt"],
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
-      columnNumber: 23
-    }
-  }, __jsx("li", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 207,
       columnNumber: 25
     }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/login",
+  }), __jsx("span", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
-      columnNumber: 29
-    }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 68,
-      columnNumber: 33
-    }
-  }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
-    icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faSignInAlt"],
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 69,
-      columnNumber: 37
-    }
-  }), "\uB85C\uADF8\uC778"))), __jsx("li", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 208,
       columnNumber: 25
     }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  }, "\uB85C\uADF8\uC778")))), __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_3___default.a // color="inherit"
+  , {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 212,
+      columnNumber: 19
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
     href: "/signup",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
-      columnNumber: 29
+      lineNumber: 215,
+      columnNumber: 21
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
-      columnNumber: 33
+      lineNumber: 216,
+      columnNumber: 23
     }
-  }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
-    icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faUserPlus"],
+  }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_11__["FontAwesomeIcon"], {
+    icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_12__["faUserPlus"],
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
-      columnNumber: 37
+      lineNumber: 217,
+      columnNumber: 25
     }
-  }), "\uD68C\uC6D0\uAC00\uC785")))), __jsx(_RigthNav__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    open: userMenuOpened,
+  }), __jsx("span", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
-      columnNumber: 13
+      lineNumber: 218,
+      columnNumber: 25
     }
-  }));
+  }, "\uD68C\uC6D0\uAC00\uC785")))))))), renderMenu));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
@@ -769,258 +1032,147 @@ const NavBar = () => {
 /*!************************************!*\
   !*** ./components/NavBar/style.js ***!
   \************************************/
-/*! exports provided: Nav, Burger, Logo, LogoIcon, Searching, MenuList, LoginMenu, UserIcon */
+/*! exports provided: useStyles, AppMenu, Logout, ListFlex */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Nav", function() { return Nav; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Burger", function() { return Burger; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Logo", function() { return Logo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogoIcon", function() { return LogoIcon; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Searching", function() { return Searching; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuList", function() { return MenuList; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginMenu", function() { return LoginMenu; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserIcon", function() { return UserIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useStyles", function() { return useStyles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppMenu", function() { return AppMenu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Logout", function() { return Logout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListFlex", function() { return ListFlex; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "@fortawesome/react-fontawesome");
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "antd");
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "@fortawesome/free-solid-svg-icons");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "@fortawesome/free-brands-svg-icons");
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_core_List__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/List */ "@material-ui/core/List");
+/* harmony import */ var _material_ui_core_List__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_List__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
-
-
-const Nav = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.nav.withConfig({
-  displayName: "style__Nav",
+const drawerWidth = 240;
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])(theme => ({
+  grow: {// flexGrow: 1,
+  },
+  appbar: {
+    background: 'white',
+    minHeight: '64px',
+    [theme.breakpoints.down('xs')]: {
+      display: 'flex',
+      width: '100%',
+      justifyContent: 'space-between',
+      alignItems: 'center;'
+    },
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen
+    })
+  },
+  appBarShift: {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth,
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen
+    })
+  },
+  toolbar: {
+    minHeight: '64px',
+    display: 'flex',
+    width: '100%',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+    color: '#1890FF',
+    visibility: 'hidden',
+    [theme.breakpoints.down('sm')]: {
+      width: 'auto',
+      margin: 0,
+      display: 'flex',
+      visibility: 'visible'
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: 'auto',
+      margin: 0,
+      display: 'flex',
+      visibility: 'visible'
+    }
+  },
+  list: {
+    width: 250
+  },
+  fullList: {
+    width: 'auto'
+  },
+  title: {
+    display: 'block',
+    [theme.breakpoints.down('xs')]: {
+      justifyContent: 'flex-center'
+    },
+    fontFamily: 'MuseoModerno, cursive'
+  },
+  search: {
+    position: 'relative',
+    borderRadius: '30px',
+    backgroundColor: '#1890FF',
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: '100%',
+    marginLeft: theme.spacing(3),
+    width: 'auto',
+    [theme.breakpoints.down('xs')]: {
+      display: 'none'
+    }
+  },
+  searchIcon: {
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  inputRoot: {
+    color: 'white'
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 0),
+    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    width: 'auto'
+  },
+  userIcon: {
+    color: '#1890FF'
+  },
+  sectionDesktop: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    width: '100%',
+    [theme.breakpoints.down('xs')]: {
+      width: 'auto'
+    }
+  },
+  sectionMobile: {
+    display: 'flex',
+    [theme.breakpoints.up('sm')]: {
+      display: 'none'
+    }
+  }
+}));
+const AppMenu = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.withConfig({
+  displayName: "style__AppMenu",
   componentId: "dtzue8-0"
-})(["width:100%;height:100px;border-bottom:2px solid #f1f1f1;display:flex;justify-content:space-between;align-items:center;& div{}& a{text-decoration:none;}@media (max-width:768px){display:flex;justify-content:space-between;align-items:center;}"]);
-const Burger = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"]).withConfig({
-  displayName: "style__Burger",
+})(["display:flex;list-style:none;font-family:'Roboto Slab',serif;margin:0;& > li{padding:8px 12px;}@media(max-width:960px){display:none;}"]);
+const Logout = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
+  displayName: "style__Logout",
   componentId: "dtzue8-1"
-})(["display:none;@media (max-width:768px){display:flex;z-index:100;font-size:28px;}"]);
-const Logo = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
-  displayName: "style__Logo",
+})(["display:flex;font-family:'Noto Sans KR',sans-serif;& span{font-size:16px;}& a{padding:3px;@media (max-width:1024px){& span{display:none;}}}"]);
+const ListFlex = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(_material_ui_core_List__WEBPACK_IMPORTED_MODULE_1___default.a).withConfig({
+  displayName: "style__ListFlex",
   componentId: "dtzue8-2"
-})(["font-size:30px;color:black;font-family:'MuseoModerno',cursive;& a{color:black;}& a:hover{opacity:.6}@media (max-width:768px){font-family:'MuseoModerno',cursive;display:flex;align-items:center;}"]);
-const LogoIcon = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"]).withConfig({
-  displayName: "style__LogoIcon",
-  componentId: "dtzue8-3"
-})(["color:black;@media (max-width:768px){}"]);
-const Searching = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(antd__WEBPACK_IMPORTED_MODULE_2__["Input"].Search).withConfig({
-  displayName: "style__Searching",
-  componentId: "dtzue8-4"
-})(["border-radius:20px;&::selection{background:black}@media (max-width:1024px){display:none;}"]);
-const MenuList = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.withConfig({
-  displayName: "style__MenuList",
-  componentId: "dtzue8-5"
-})(["display:flex;list-style:none;font-family:'Roboto Slab',serif;margin:0;& > li{padding:8px 12px;#media (max-width:768px){}}& a{color:#495057;opacity:.6;}& a:hover{color:black;}@media (max-width:768px){display:none;}"]);
-const LoginMenu = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.withConfig({
-  displayName: "style__LoginMenu",
-  componentId: "dtzue8-6"
-})(["display:flex;list-style:none;padding-left:0;margin:0;font-family:'Noto Sans KR',sans-serif;& a{color:#495057;opacity:.6;@media (max-width:1024px){align-items:center;}}& a:hover{color:black;}& > li{padding:8px 12px;@media (max-width:1024px){align-items:center;}}@media (max-width:768px){display:flex;align-items:center;}"]);
-const UserIcon = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(antd__WEBPACK_IMPORTED_MODULE_2__["Avatar"]).withConfig({
-  displayName: "style__UserIcon",
-  componentId: "dtzue8-7"
-})(["display:flex;font-size:28px;padding-right:10px;z-index:100;@media (max-width:768px){z-index:100;display:flex;font-size:28px;padding-right:10px;}"]);
-
-/***/ }),
-
-/***/ "./components/RigthNav/index.js":
-/*!**************************************!*\
-  !*** ./components/RigthNav/index.js ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style */ "./components/RigthNav/style.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../reducers/user */ "./reducers/user.js");
-var _jsxFileName = "C:\\BLOG\\front\\components\\RigthNav\\index.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
-
-const RigthNav = ({
-  open
-}) => {
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
-
-  const onLogout = () => {
-    dispatch({
-      type: _reducers_user__WEBPACK_IMPORTED_MODULE_4__["LOG_OUT_REQUEST"]
-    });
-  };
-
-  return __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["RigthUl"], {
-    open: open,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17,
-      columnNumber: 9
-    }
-  }, __jsx("li", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19,
-      columnNumber: 13
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/profile",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19,
-      columnNumber: 17
-    }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19,
-      columnNumber: 39
-    }
-  }, "\uB0B4\uC815\uBCF4"))), __jsx("li", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20,
-      columnNumber: 13
-    }
-  }, "\uB0B4\uAC00 \uC4F4 \uAE00"), __jsx("li", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21,
-      columnNumber: 13
-    }
-  }, "\uB0B4\uAC00 \uC4F4 \uB313\uAE00"), __jsx("li", {
-    onClick: onLogout,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22,
-      columnNumber: 13
-    }
-  }, "\uB85C\uADF8\uC544\uC6C3"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (RigthNav);
-
-/***/ }),
-
-/***/ "./components/RigthNav/style.js":
-/*!**************************************!*\
-  !*** ./components/RigthNav/style.js ***!
-  \**************************************/
-/*! exports provided: RigthUl */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RigthUl", function() { return RigthUl; });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
-
-const RigthUl = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.withConfig({
-  displayName: "style__RigthUl",
-  componentId: "sc-1aq33tl-0"
-})(["list-style:none;display:'flex';flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:100px;right:0;height:100vh;width:200px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;opacity:.2;z-index:500;& li{padding:18px 10px;color:#fff;cursor:pointer;}& a{text-decoration:none;color:#fff;}@media (max-width:768px){flex-flow:column nowrap;background-color:#0D2538;position:fixed;transform:", ";top:100px;right:0;height:100vh;width:200px;padding-top:3.5rem;transition:transform 0.3s ease-in-out;opacity:.2;z-index:500;}"], ({
-  open
-}) => open ? 'translateX(0)' : 'translateX(100%)', ({
-  open
-}) => open ? 'translateX(0)' : 'translateX(100%)');
-
-/***/ }),
-
-/***/ "./components/theme.js":
-/*!*****************************!*\
-  !*** ./components/theme.js ***!
-  \*****************************/
-/*! exports provided: theme */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "theme", function() { return theme; });
-const theme = {
-  primaryDark: '#0D0C1D',
-  primaryLight: '#EFFFFA',
-  primaryHover: '#343078',
-  mobile: '768px'
-};
-
-/***/ }),
-
-/***/ "./containers/UserProfile.js":
-/*!***********************************!*\
-  !*** ./containers/UserProfile.js ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
-var _jsxFileName = "C:\\BLOG\\front\\containers\\UserProfile.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-const UserProfile = () => {
-  const {
-    me
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
-
-  const onLogout = () => {
-    dispatch({
-      type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_OUT_REQUEST"]
-    });
-  };
-
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17,
-      columnNumber: 13
-    }
-  }, me && me.nickname), __jsx("button", {
-    onClick: onLogout,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18,
-      columnNumber: 13
-    }
-  }, "\uB85C\uADF8\uC544\uC6C3"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (UserProfile);
+})(["display:flex;flex-direction:column;align-items:center;justify-content:center;& a{width:100%;}"]);
 
 /***/ }),
 
@@ -2735,14 +2887,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var redux_saga__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux-saga */ "redux-saga");
 /* harmony import */ var redux_saga__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(redux_saga__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-helmet */ "react-helmet");
-/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_helmet__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _components_AppLayout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/AppLayout */ "./components/AppLayout/index.js");
-/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../reducers */ "./reducers/index.js");
-/* harmony import */ var _sagas__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../sagas */ "./sagas/index.js");
+/* harmony import */ var _components_AppLayout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/AppLayout */ "./components/AppLayout/index.js");
+/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../reducers */ "./reducers/index.js");
+/* harmony import */ var _sagas__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../sagas */ "./sagas/index.js");
 var _jsxFileName = "C:\\BLOG\\front\\pages\\_app.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -2762,21 +2911,21 @@ const Blog = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 14,
       columnNumber: 5
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 15,
       columnNumber: 7
     }
   }, __jsx("title", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 16,
       columnNumber: 9
     }
   }, "EASYHO BLOG"), __jsx("link", {
@@ -2785,7 +2934,7 @@ const Blog = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 17,
       columnNumber: 9
     }
   }), __jsx("link", {
@@ -2794,32 +2943,34 @@ const Blog = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 18,
       columnNumber: 9
     }
-  })), __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  })), __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 20,
       columnNumber: 7
     }
   }, __jsx(Component, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 21,
       columnNumber: 9
     }
   })));
 };
 
+Blog.getInitialProps = async context => {};
+
 const configureStore = (initialState, options) => {
   const sagaMiddleware = redux_saga__WEBPACK_IMPORTED_MODULE_5___default()();
   const middlewares = [sagaMiddleware];
   const enhancer = false ? undefined : Object(redux__WEBPACK_IMPORTED_MODULE_3__["compose"])(Object(redux__WEBPACK_IMPORTED_MODULE_3__["applyMiddleware"])(...middlewares), !options.isServer && typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined' ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f);
-  const store = Object(redux__WEBPACK_IMPORTED_MODULE_3__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_8__["default"], initialState, enhancer);
-  sagaMiddleware.run(_sagas__WEBPACK_IMPORTED_MODULE_9__["default"]);
+  const store = Object(redux__WEBPACK_IMPORTED_MODULE_3__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_7__["default"], initialState, enhancer);
+  sagaMiddleware.run(_sagas__WEBPACK_IMPORTED_MODULE_8__["default"]);
   return store;
 };
 
@@ -2855,7 +3006,7 @@ const rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"]
 /*!**************************!*\
   !*** ./reducers/post.js ***!
   \**************************/
-/*! exports provided: initialState, ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_POST_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, ADD_COMMENT_FAILURE, default */
+/*! exports provided: initialState, ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_POST_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, ADD_COMMENT_FAILURE, LOAD_POST_REQUEST, LOAD_POST_SUCCESS, LOAD_POST_FAILURE, LOAD_MAIN_POSTS_REQUEST, LOAD_MAIN_POSTS_SUCCESS, LOAD_MAIN_POSTS_FAILURE, UPLOAD_IMAGES_REQUEST, UPLOAD_IMAGES_SUCCESS, UPLOAD_IMAGES_FAILURE, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2867,51 +3018,211 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_COMMENT_REQUEST", function() { return ADD_COMMENT_REQUEST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_COMMENT_SUCCESS", function() { return ADD_COMMENT_SUCCESS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_COMMENT_FAILURE", function() { return ADD_COMMENT_FAILURE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOAD_POST_REQUEST", function() { return LOAD_POST_REQUEST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOAD_POST_SUCCESS", function() { return LOAD_POST_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOAD_POST_FAILURE", function() { return LOAD_POST_FAILURE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOAD_MAIN_POSTS_REQUEST", function() { return LOAD_MAIN_POSTS_REQUEST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOAD_MAIN_POSTS_SUCCESS", function() { return LOAD_MAIN_POSTS_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOAD_MAIN_POSTS_FAILURE", function() { return LOAD_MAIN_POSTS_FAILURE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPLOAD_IMAGES_REQUEST", function() { return UPLOAD_IMAGES_REQUEST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPLOAD_IMAGES_SUCCESS", function() { return UPLOAD_IMAGES_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPLOAD_IMAGES_FAILURE", function() { return UPLOAD_IMAGES_FAILURE; });
 /* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! immer */ "immer");
 /* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(immer__WEBPACK_IMPORTED_MODULE_0__);
 
 const initialState = {
-  allPosts: [{
-    id: 1,
-    User: {
-      id: 2,
-      nickname: '보노보노'
-    },
-    content: '테크내용1',
-    category: 'tech',
-    Comments: []
-  }, {
-    id: 2,
-    User: {
-      id: 2,
-      nickname: '보노보노'
-    },
-    content: '테크내용1',
-    category: 'talk',
-    Comments: []
-  }, {
-    id: 3,
-    User: {
-      id: 2,
-      nickname: '보노보노'
-    },
-    content: '테크내용2',
-    category: 'tech',
-    Comments: []
-  }, {
-    id: 4,
-    User: {
-      id: 2,
-      nickname: '보노보노'
-    },
-    content: '테크내용3',
-    category: 'tech',
-    Comments: []
-  }],
+  allPosts: [// {
+    //     id: 1,
+    //     User: {
+    //         id: 2,
+    //         nickname: '보노보노'
+    //     },
+    //     title: '테크제목1',
+    //     content: '테크내용1',
+    //     category: 'tech',
+    //     Comments: [],
+    // },
+    // {
+    //     id: 2,
+    //     User: {
+    //         id: 2,
+    //         nickname: '보노보노'
+    //     },
+    //     title: '토크1',
+    //     content: '토크1@#$% 토크내용!!',
+    //     category: 'talk',
+    //     Comments: [],
+    // },
+    // {
+    //     id: 3,
+    //     User: {
+    //         id: 2,
+    //         nickname: '보노보노'
+    //     },
+    //     title: '테크제목2',
+    //     content: '테크내용2 테크내용이 길면 height 테크내용이 길면 height 테크내용이 길면 height 테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용2 테크내용이 길면 height 테크내용이 길면 height 테크내용이 길면 height 테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height테크내용이 길면 height',
+    //     category: 'tech',
+    //     Comments: [],
+    // },
+    // {
+    //     id: 4,
+    //     User: { 
+    //         id: 2,
+    //         nickname: '보노보노'
+    //     },
+    //     title: '테크제목3',
+    //     content: '테크내용3',
+    //     category: 'tech',
+    //     Comments: [],
+    // },
+    // {
+    //     id: 5,
+    //     User: {
+    //         id: 2,
+    //         nickname: '보노보노'
+    //     },
+    //     title: '다시 토크',
+    //     content: '토크ㅁㄴㅇ',
+    //     category: 'talk',
+    //     Comments: [],
+    // },
+    // {
+    //     id: 6,
+    //     User: {
+    //         id: 2,
+    //         nickname: '보노보노'
+    //     },
+    //     title: '이건 갤러리1',
+    //     content: '갤러리!!',
+    //     category: 'gallery',
+    //     Comments: [],
+    // },
+    // {
+    //     id: 7,
+    //     User: {
+    //         id: 2,
+    //         nickname: '보노보노'
+    //     },
+    //     title: '이건 갤러리1',
+    //     content: '갤러리!!',
+    //     category: 'gallery',
+    //     Comments: [],
+    // },
+    // {
+    //     id: 8,
+    //     User: {
+    //         id: 2,
+    //         nickname: '보노보노'
+    //     },
+    //     title: '이건 갤러리1',
+    //     content: '갤러리!!',
+    //     category: 'gallery',
+    //     Comments: [],
+    // },
+    // {
+    //     id: 9,
+    //     User: {
+    //         id: 2,
+    //         nickname: '보노보노'
+    //     },
+    //     title: '이건 갤러리1',
+    //     content: '갤러리!!',
+    //     category: 'gallery',
+    //     Comments: [],
+    // },
+    // {
+    //     id: 17,
+    //     User: {
+    //         id: 2,
+    //         nickname: '보노보노'
+    //     },
+    //     title: '이건 갤러리1',
+    //     content: '갤러리!!',
+    //     category: 'gallery',
+    //     Comments: [],
+    // },
+    // {
+    //     id: 10,
+    //     User: {
+    //         id: 2,
+    //         nickname: '보노보노'
+    //     },
+    //     title: '이건 갤러리1',
+    //     content: '갤러리!!',
+    //     category: 'gallery',
+    //     Comments: [],
+    // },
+    // {
+    //     id: 11,
+    //     User: {
+    //         id: 2,
+    //         nickname: '보노보노'
+    //     },
+    //     title: '이건 갤러리1',
+    //     content: '갤러리!!',
+    //     category: 'gallery',
+    //     Comments: [],
+    // },
+    // {
+    //     id: 12,
+    //     User: {
+    //         id: 2,
+    //         nickname: '보노보노'
+    //     },
+    //     title: '이건 갤러리1',
+    //     content: '갤러리!!',
+    //     category: 'gallery',
+    //     Comments: [],
+    // },
+    // {
+    //     id: 13,
+    //     User: {
+    //         id: 2,
+    //         nickname: '보노보노'
+    //     },
+    //     title: '이건 갤러리444',
+    //     content: '갤러리!!',
+    //     category: 'gallery',
+    //     Comments: [],
+    // },
+    // {
+    //     id: 14,
+    //     User: {
+    //         id: 2,
+    //         nickname: '보노보노'
+    //     },
+    //     title: '이건 갤러리1',
+    //     content: '갤러리!!',
+    //     category: 'gallery',
+    //     Comments: [],
+    // },
+    // {
+    //     id: 15,
+    //     User: {
+    //         id: 2,
+    //         nickname: '보노보노'
+    //     },
+    //     title: '이건 갤러리1',
+    //     content: '갤러리!!',
+    //     category: 'gallery',
+    //     Comments: [],
+    // },
+    // {
+    //     id: 16,
+    //     User: {
+    //         id: 2,
+    //         nickname: '보노보노'
+    //     },
+    //     title: '이건 갤러리1',
+    //     content: '갤러리!!',
+    //     category: 'gallery',
+    //     Comments: [],
+    // },
+  ],
   // 모든 게시글
   imagePaths: [],
   // 이미지 저장 주소
-  addPostErrorReason: '',
+  addPostError: null,
   // 게시글 업로드 실패 사유
   isAddingPost: false,
   // 게시글 업로드 중
@@ -2919,10 +3230,11 @@ const initialState = {
   // 게시글 업로드 성공
   isAddingComment: false,
   // 댓글 업로드 중
-  addCommentErrorReason: '',
+  addCommentError: null,
   // 댓글 업로드 실패 사유
-  commentAdded: false // 댓글 업로드 성공
-
+  commentAdded: false,
+  // 댓글 업로드 성공
+  singlePost: null
 };
 const ADD_POST_REQUEST = 'ADD_POST_REQUEST';
 const ADD_POST_SUCCESS = 'ADD_POST_SUCCESS';
@@ -2930,13 +3242,22 @@ const ADD_POST_FAILURE = 'ADD_POST_FAILURE';
 const ADD_COMMENT_REQUEST = 'ADD_COMMENT_REQUEST';
 const ADD_COMMENT_SUCCESS = 'ADD_COMMENT_SUCCESS';
 const ADD_COMMENT_FAILURE = 'ADD_COMMENT_FAILURE';
+const LOAD_POST_REQUEST = 'LOAD_POST_REQUEST';
+const LOAD_POST_SUCCESS = 'LOAD_POST_SUCCESS';
+const LOAD_POST_FAILURE = 'LOAD_POST_FAILURE';
+const LOAD_MAIN_POSTS_REQUEST = 'LOAD_MAIN_POSTS_REQUEST';
+const LOAD_MAIN_POSTS_SUCCESS = 'LOAD_MAIN_POSTS_SUCCESS';
+const LOAD_MAIN_POSTS_FAILURE = 'LOAD_MAIN_POSTS_FAILURE';
+const UPLOAD_IMAGES_REQUEST = 'UPLOAD_IMAGES_REQUEST';
+const UPLOAD_IMAGES_SUCCESS = 'UPLOAD_IMAGES_SUCCESS';
+const UPLOAD_IMAGES_FAILURE = 'UPLOAD_IMAGES_FAILURE';
 /* harmony default export */ __webpack_exports__["default"] = ((state = initialState, action) => {
   return immer__WEBPACK_IMPORTED_MODULE_0___default()(state, draft => {
     switch (action.type) {
       case ADD_POST_REQUEST:
         {
           draft.isAddingPost = true;
-          draft.addPostErrorReason = '';
+          draft.addPostError = null;
           break;
         }
 
@@ -2945,20 +3266,21 @@ const ADD_COMMENT_FAILURE = 'ADD_COMMENT_FAILURE';
           draft.isAddingPost = false;
           draft.postAdded = true;
           draft.allPosts.unshift(action.data);
+          draft.imagePaths = [];
           break;
         }
 
       case ADD_POST_FAILURE:
         {
           draft.isAddingPost = false;
-          draft.addPostErrorReason = action.data;
+          draft.addPostError = action.data;
           break;
         }
 
       case ADD_COMMENT_REQUEST:
         {
           draft.isAddingComment = true;
-          draft.addCommentErrorReason = '';
+          draft.addCommentError = null;
           break;
         }
 
@@ -2972,7 +3294,41 @@ const ADD_COMMENT_FAILURE = 'ADD_COMMENT_FAILURE';
       case ADD_COMMENT_FAILURE:
         {
           draft.isAddingComment = false;
-          draft.addCommentErrorReason = action.data;
+          draft.addCommentError = action.data;
+          break;
+        }
+
+      case LOAD_POST_REQUEST:
+        {
+          break;
+        }
+
+      case LOAD_POST_SUCCESS:
+        {
+          draft.singlePost = action.data;
+          break;
+        }
+
+      case LOAD_POST_FAILURE:
+        {
+          break;
+        }
+
+      case LOAD_MAIN_POSTS_REQUEST:
+        {
+          break;
+        }
+
+      case LOAD_MAIN_POSTS_REQUEST:
+        {
+          action.data.forEach(d => {
+            draft.allPosts.push(d);
+          });
+          break;
+        }
+
+      case LOAD_MAIN_POSTS_REQUEST:
+        {
           break;
         }
 
@@ -3030,19 +3386,19 @@ const initialState = {
   // 회원가입 성공
   isSigningUp: false,
   // 회원가입 진행중
-  signUpErrorReason: '',
+  signUpError: null,
   // 회원가입 실패 사유
-  signUpIdErrorReason: '',
+  signUpIdError: null,
   // 아이디 유효성 검사 실패
-  signUpIdSuccessReason: '',
+  signUpIdSuccess: null,
   // 아이디 유효성 검사 성공
-  signUpNicknameErrorReason: '',
+  signUpNicknameError: null,
   // 닉네임 유효성 검사 실패 
-  signUpNicknameSuccessReason: '',
+  signUpNicknameSuccess: null,
   // 닉네임 유효성 검사 성공
-  signUpPasswordErrorReason: '',
+  signUpPasswordError: null,
   // 비밀번호 유효성 검사 실패
-  signUpPasswordSuccessReason: '',
+  signUpPasswordSuccess: null,
   // 비밀번호 유효성 검사 성공
   me: null // 내정보
 
@@ -3071,14 +3427,14 @@ const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
     switch (action.type) {
       case LOG_IN_ERRORREASON_RESET_REQUEST:
         {
-          draft.logInErrorReason = '';
+          draft.logInError = null;
           break;
         }
 
       case LOG_IN_REQUEST:
         {
           draft.isLoggingIn = true;
-          draft.logInErrorReason = '';
+          draft.logInError = null;
           break;
         }
 
@@ -3092,7 +3448,7 @@ const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
       case LOG_IN_FAILURE:
         {
           draft.isLoggingIn = false;
-          draft.logInErrorReason = action.reason;
+          draft.logInError = action.reason;
           draft.me = null;
           break;
         }
@@ -3114,7 +3470,7 @@ const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
         {
           draft.isSigningUp = true;
           draft.isSignedUp = false;
-          draft.signUpErrorReason = '';
+          draft.signUpError = null;
           break;
         }
 
@@ -3128,49 +3484,49 @@ const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
       case SIGN_UP_FAILURE:
         {
           draft.isSigningUp = false;
-          draft.signUpErrorReason = action.reason;
+          draft.signUpError = action.reason;
           break;
         }
 
       case ID_CHECK_REQUEST:
         {
-          draft.signUpIdErrorReason = '';
-          draft.signUpIdSuccessReason = '';
+          draft.signUpIdError = null;
+          draft.signUpIdSuccess = null;
           break;
         }
 
       case ID_CHECK_SUCCESS:
         {
-          draft.signUpIdErrorReason = '';
-          draft.signUpIdSuccessReason = action.data;
+          draft.signUpIdError = null;
+          draft.signUpIdSuccess = action.data;
           break;
         }
 
       case ID_CHECK_FAILURE:
         {
-          draft.signUpIdErrorReason = action.reason;
-          draft.signUpIdSuccessReason = '';
+          draft.signUpIdError = action.reason;
+          draft.signUpIdSuccess = null;
           break;
         }
 
       case NICKNAME_CHECK_REQUEST:
         {
-          draft.signUpNicknameErrorReason = '';
-          draft.signUpNicknameSuccessReason = '';
+          draft.signUpNicknameError = null;
+          draft.signUpNicknameSuccess = null;
           break;
         }
 
       case NICKNAME_CHECK_SUCCESS:
         {
-          draft.signUpNicknameErrorReason = '';
-          draft.signUpNicknameSuccessReason = action.data;
+          draft.signUpNicknameError = null;
+          draft.signUpNicknameSuccess = action.data;
           break;
         }
 
       case NICKNAME_CHECK_FAILURE:
         {
-          draft.signUpNicknameErrorReason = action.reason;
-          draft.signUpNicknameSuccessReason = '';
+          draft.signUpNicknameError = action.eason;
+          draft.signUpNicknameSuccess = null;
           break;
         }
 
@@ -3230,26 +3586,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function addPostAPI() {
-  axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('post/id');
+function addPostAPI(postData) {
+  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/post', postData, {
+    withCredentials: true
+  });
 }
 
-function* addPost() {
+function* addPost(action) {
+  console.log('add post action', action);
+
   try {
-    yield delay(2000);
-    Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_SUCCESS"]
+    // console.log('add post action', action)
+    const result = yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(addPostAPI, action.data);
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_SUCCESS"],
+      data: result.data
     });
   } catch (e) {
-    console.error(e);
-    Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_FAILURE"]
-    });
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_FAILURE"],
+      error: e.response && e.response.data
+    }); // alert(e.response && e.response.data);
   }
-}
-
-function* watchAddPost() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_REQUEST"], addPost);
 }
 
 function addCommentAPI() {}
@@ -3268,12 +3626,40 @@ function* addComment() {
   }
 }
 
+function loadPostAPI(data) {
+  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`/post/${data}`);
+}
+
+function* loadPost() {
+  try {
+    const result = yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(loadPostAPI, action.data);
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["LOAD_POST_SUCCESS"],
+      data: result.data
+    });
+  } catch (e) {
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["LOAD_POST_FAILURE"],
+      data: e.response.data
+    });
+  }
+}
+
+function* watchAddPost() {
+  console.log('watch add Post');
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_REQUEST"], addPost);
+}
+
 function* watchAddComment() {
   yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_COMMENT_REQUEST"], addComment);
 }
 
+function* watchLoadPost() {
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_2__["LOAD_POST_REQUEST"], loadPost);
+}
+
 function* postSage() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddPost), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddComment)]);
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddPost), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddComment), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchLoadPost)]);
 }
 
 /***/ }),
@@ -3442,28 +3828,6 @@ module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_
 
 /***/ }),
 
-/***/ "@ant-design/icons":
-/*!************************************!*\
-  !*** external "@ant-design/icons" ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@ant-design/icons");
-
-/***/ }),
-
-/***/ "@fortawesome/free-brands-svg-icons":
-/*!*****************************************************!*\
-  !*** external "@fortawesome/free-brands-svg-icons" ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@fortawesome/free-brands-svg-icons");
-
-/***/ }),
-
 /***/ "@fortawesome/free-solid-svg-icons":
 /*!****************************************************!*\
   !*** external "@fortawesome/free-solid-svg-icons" ***!
@@ -3486,14 +3850,212 @@ module.exports = require("@fortawesome/react-fontawesome");
 
 /***/ }),
 
-/***/ "antd":
-/*!***********************!*\
-  !*** external "antd" ***!
-  \***********************/
+/***/ "@material-ui/core/AppBar":
+/*!*******************************************!*\
+  !*** external "@material-ui/core/AppBar" ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("antd");
+module.exports = require("@material-ui/core/AppBar");
+
+/***/ }),
+
+/***/ "@material-ui/core/Divider":
+/*!********************************************!*\
+  !*** external "@material-ui/core/Divider" ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Divider");
+
+/***/ }),
+
+/***/ "@material-ui/core/Grid":
+/*!*****************************************!*\
+  !*** external "@material-ui/core/Grid" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Grid");
+
+/***/ }),
+
+/***/ "@material-ui/core/IconButton":
+/*!***********************************************!*\
+  !*** external "@material-ui/core/IconButton" ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/IconButton");
+
+/***/ }),
+
+/***/ "@material-ui/core/InputBase":
+/*!**********************************************!*\
+  !*** external "@material-ui/core/InputBase" ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/InputBase");
+
+/***/ }),
+
+/***/ "@material-ui/core/List":
+/*!*****************************************!*\
+  !*** external "@material-ui/core/List" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/List");
+
+/***/ }),
+
+/***/ "@material-ui/core/ListItem":
+/*!*********************************************!*\
+  !*** external "@material-ui/core/ListItem" ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/ListItem");
+
+/***/ }),
+
+/***/ "@material-ui/core/ListItemIcon":
+/*!*************************************************!*\
+  !*** external "@material-ui/core/ListItemIcon" ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/ListItemIcon");
+
+/***/ }),
+
+/***/ "@material-ui/core/ListItemText":
+/*!*************************************************!*\
+  !*** external "@material-ui/core/ListItemText" ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/ListItemText");
+
+/***/ }),
+
+/***/ "@material-ui/core/Menu":
+/*!*****************************************!*\
+  !*** external "@material-ui/core/Menu" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Menu");
+
+/***/ }),
+
+/***/ "@material-ui/core/MenuItem":
+/*!*********************************************!*\
+  !*** external "@material-ui/core/MenuItem" ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/MenuItem");
+
+/***/ }),
+
+/***/ "@material-ui/core/SwipeableDrawer":
+/*!****************************************************!*\
+  !*** external "@material-ui/core/SwipeableDrawer" ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/SwipeableDrawer");
+
+/***/ }),
+
+/***/ "@material-ui/core/Toolbar":
+/*!********************************************!*\
+  !*** external "@material-ui/core/Toolbar" ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Toolbar");
+
+/***/ }),
+
+/***/ "@material-ui/core/Typography":
+/*!***********************************************!*\
+  !*** external "@material-ui/core/Typography" ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Typography");
+
+/***/ }),
+
+/***/ "@material-ui/core/styles":
+/*!*******************************************!*\
+  !*** external "@material-ui/core/styles" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/styles");
+
+/***/ }),
+
+/***/ "@material-ui/icons/AccountCircle":
+/*!***************************************************!*\
+  !*** external "@material-ui/icons/AccountCircle" ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/AccountCircle");
+
+/***/ }),
+
+/***/ "@material-ui/icons/Menu":
+/*!******************************************!*\
+  !*** external "@material-ui/icons/Menu" ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/Menu");
+
+/***/ }),
+
+/***/ "@material-ui/icons/MoveToInbox":
+/*!*************************************************!*\
+  !*** external "@material-ui/icons/MoveToInbox" ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/MoveToInbox");
+
+/***/ }),
+
+/***/ "@material-ui/icons/Search":
+/*!********************************************!*\
+  !*** external "@material-ui/icons/Search" ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/Search");
 
 /***/ }),
 
@@ -3505,6 +4067,17 @@ module.exports = require("antd");
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
+
+/***/ }),
+
+/***/ "clsx":
+/*!***********************!*\
+  !*** external "clsx" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("clsx");
 
 /***/ }),
 
@@ -3571,17 +4144,6 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
-
-/***/ }),
-
-/***/ "react-helmet":
-/*!*******************************!*\
-  !*** external "react-helmet" ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-helmet");
 
 /***/ }),
 

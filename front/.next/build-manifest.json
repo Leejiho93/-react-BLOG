@@ -29,14 +29,6 @@
     "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
-    ],
-    "/signup": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/tech": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
     ]
   }
 }

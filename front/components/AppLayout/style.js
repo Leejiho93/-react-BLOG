@@ -1,10 +1,16 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-	html, body {
+	* {
         margin: 0;
-        paddingL 0;
+        padding 0;
+        outline: 0;
         box-sizing: border-box;
+    },
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
  }
 `;
