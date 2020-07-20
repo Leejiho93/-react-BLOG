@@ -22,17 +22,28 @@ export const CardWrapper = styled.div`
     margin-bottom: 40px;
 `
 
-export const CardTitle = styled.div`
-    text-align: center;
-    font-size: 30px;
-    // height: 40px;
-    border: 1px solid #f0f0f0;
-    color: #1890FF;
+export const PostTitle = styled.p`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 50%;
+    font-weight: bold;
 `
 
 export const PostContent = styled.p`
-overflow: hidden;
-display: -webkit-box;
--webkit-box-orient: vertical;
--webkit-line-clamp: 3;
+    word-break: break-all;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+`
+
+export const PostCardWrapper = styled.div`
+    width: 100%;
+    a {
+        color: black;
+    }
+`
+
+export const PostImage = styled.img`
+    // max-width: 100%
 `

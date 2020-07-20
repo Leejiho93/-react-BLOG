@@ -23,10 +23,10 @@ const SignupForm = () => {
   const [passwordErrorMessage, setPasswordErrorMessage] = useState('');
 
   const {
-    signUpIdErrorReason,
-    signUpIdSuccessReason,
-    signUpNicknameErrorReason,
-    signUpNicknameSuccessReason,
+    signUpIdError,
+    signUpIdSuccess,
+    signUpNicknameError,
+    signUpNicknameSuccess,
     isSignedUp,
   } = useSelector(state => state.user);
 
@@ -119,11 +119,11 @@ const SignupForm = () => {
             </Grid>
 
             <ErrorMessage>
-              {signUpIdErrorReason}
+              {signUpIdError}
             </ErrorMessage>
 
             <SuccessMessage>
-              {signUpIdSuccessReason}
+              {signUpIdSuccess}
             </SuccessMessage>
 
             <Grid item xs={12}>
@@ -142,11 +142,11 @@ const SignupForm = () => {
             </Grid>
 
             <ErrorMessage>
-              {signUpNicknameErrorReason}
+              {signUpNicknameError}
             </ErrorMessage>
 
             <SuccessMessage>
-              {signUpNicknameSuccessReason}
+              {signUpNicknameSuccess}
             </SuccessMessage>
 
             <Grid item xs={12}>

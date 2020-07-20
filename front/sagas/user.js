@@ -1,10 +1,10 @@
 import axios from 'axios';
-import {all, fork, put, takeLatest, call, takeEvery} from 'redux-saga/effects';
-import { 
-    SIGN_UP_REQUEST, 
-    SIGN_UP_FAILURE, 
-    SIGN_UP_SUCCESS, 
-    LOG_IN_SUCCESS, 
+import { all, fork, put, takeLatest, call, takeEvery } from 'redux-saga/effects';
+import {
+    SIGN_UP_REQUEST,
+    SIGN_UP_FAILURE,
+    SIGN_UP_SUCCESS,
+    LOG_IN_SUCCESS,
     LOG_IN_FAILURE,
     LOG_IN_REQUEST,
     LOG_OUT_SUCCESS,
@@ -15,36 +15,35 @@ import {
     ID_CHECK_REQUEST,
     NICKNAME_CHECK_SUCCESS,
     NICKNAME_CHECK_FAILURE,
-    NICKNAME_CHECK_REQUEST
+    NICKNAME_CHECK_REQUEST,
+    LOAD_MY_INFO_REQUEST,
+    LOAD_MY_INFO_FAILURE,
+    LOAD_MY_INFO_SUCCESS
 
 } from '../reducers/user';
 
 // 로그인
 function logInAPI(loginData) {
     return axios.post('/user/login', loginData, {
-      withCredentials: true,
+        withCredentials: true,
     });
-  }
-  
-  function* logIn(action) {
+}
+
+function* logIn(action) {
     try {
-      const result = yield call(logInAPI, action.data);
-      yield put({ 
-        type: LOG_IN_SUCCESS,
-        data: result.data,
-      });
-    } catch (e) { 
-      console.error(e);
-      yield put({
-        type: LOG_IN_FAILURE,
-        reason: e.response && e.response.data,
-      });
+        const result = yield call(logInAPI, action.data);
+        yield put({
+            type: LOG_IN_SUCCESS,
+            data: result.data,
+        });
+    } catch (e) {
+        console.error(e);
+        yield put({
+            type: LOG_IN_FAILURE,
+            reason: e.response && e.response.data,
+        });
     }
-  }
-  
-  function* watchLogIn() {
-    yield takeEvery(LOG_IN_REQUEST, logIn);
-  }
+}
 
 // 로그아웃
 function logOutAPI() {
@@ -59,17 +58,13 @@ function* logOut() {
         yield put({
             type: LOG_OUT_SUCCESS,
         });
-    } catch(e) {
+    } catch (e) {
         console.error(e);
         yield put({
             type: LOG_OUT_FAILURE,
             error: e,
         })
     }
-}
-
-function* watchLogOut() {
-    yield takeLatest(LOG_OUT_REQUEST, logOut)
 }
 
 // 회원가입
@@ -84,17 +79,13 @@ function* signUp(action) {
             type: SIGN_UP_SUCCESS,
             data: result.data,
         })
-    } catch(e) {
+    } catch (e) {
         console.error(e);
         yield put({
             type: SIGN_UP_FAILURE,
             error: e,
         })
     }
-}
-
-function* watchSignUp() {
-    yield takeLatest(SIGN_UP_REQUEST, signUp)
 }
 
 // 아이디 유효성 검사
@@ -109,7 +100,7 @@ function* signUpIdCheck(action) {
             type: ID_CHECK_SUCCESS,
             data: result.data,
         })
-    } catch(e) {
+    } catch (e) {
         console.error(e);
         yield put({
             type: ID_CHECK_FAILURE,
@@ -118,9 +109,7 @@ function* signUpIdCheck(action) {
     }
 }
 
-function* watchSignUpIdCheck() {
-    yield takeLatest(ID_CHECK_REQUEST, signUpIdCheck)
-}
+
 
 //닉네임 유효성검사
 function signUpNicknameCheckAPI(nickname) {
@@ -134,7 +123,7 @@ function* signUpNicknameCheck(action) {
             type: NICKNAME_CHECK_SUCCESS,
             data: result.data,
         })
-    } catch(e) {
+    } catch (e) {
         console.error(e);
         yield put({
             type: NICKNAME_CHECK_FAILURE,
@@ -143,8 +132,48 @@ function* signUpNicknameCheck(action) {
     }
 }
 
+function loadMyInfoAPI() {
+    return axios.get('/user');
+}
+
+function* loadMyInfo() {
+    try {
+        const result = yield call(loadMyInfoAPI)
+        yield put({
+            type: LOAD_MY_INFO_SUCCESS,
+            data: result.data,
+        })
+    } catch(e) {
+        console.error(e);
+        yield put({
+            type: LOAD_MY_INFO_FAILURE,
+            error: e.response.data,
+        })
+    }
+}
+
+function* watchLogIn() {
+    yield takeEvery(LOG_IN_REQUEST, logIn);
+}
+
+function* watchLogOut() {
+    yield takeLatest(LOG_OUT_REQUEST, logOut)
+}
+
+function* watchSignUp() {
+    yield takeLatest(SIGN_UP_REQUEST, signUp)
+}
+
+function* watchSignUpIdCheck() {
+    yield takeLatest(ID_CHECK_REQUEST, signUpIdCheck)
+}
+
 function* watchSignUpNicknameCheck() {
     yield takeLatest(NICKNAME_CHECK_REQUEST, signUpNicknameCheck)
+}
+
+function* watchLoadMyInfo() {
+    yield takeLatest(LOAD_MY_INFO_REQUEST, loadMyInfo)
 }
 
 export default function* userSage() {
@@ -154,5 +183,6 @@ export default function* userSage() {
         fork(watchLogOut),
         fork(watchSignUpIdCheck),
         fork(watchSignUpNicknameCheck),
+        fork(watchLoadMyInfo)
     ])
 }

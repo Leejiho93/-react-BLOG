@@ -38,7 +38,7 @@ const NavBar = () => {
   const isMenuOpen = anchorEl;
 
   const handleProfileMenuOpen = (event) => {
-    console.log('event.curr: ', event.currentTarget)
+    // console.log('event.curr: ', event.currentTarget)
     setAnchorEl(event.currentTarget);
   };
 
@@ -68,7 +68,7 @@ const NavBar = () => {
       onClose={handleMenuClose}
     >
       <Link href="/profile"><a><MenuItem onClick={handleMenuClose}>내정보</MenuItem></a></Link>
-      <Link href="/"><a><MenuItem onClick={handleMenuClose}>내가쓴 글</MenuItem></a></Link>
+      <Link href="/user/[id]" as={`/user/${0}`}><a><MenuItem onClick={handleMenuClose}>내가쓴 글</MenuItem></a></Link>
       <MenuItem onClick={onClickLogout}>로그아웃</MenuItem>
     </Menu>
   );

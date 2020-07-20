@@ -34,7 +34,7 @@ const LoginForm = () => {
 
   const onSubmitForm = useCallback((e) => {
     e.preventDefault();
-    console.log('id, password', id, password);
+    // console.log('id, password', id, password);
     dispatch({
       type: LOG_IN_REQUEST,
       data: {

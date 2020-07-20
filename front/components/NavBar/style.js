@@ -6,7 +6,7 @@ const drawerWidth = 240;
 
 export const useStyles = makeStyles((theme) => ({
   grow: {
-    // flexGrow: 1,
+    flexGrow: 1,
   },
   appbar: {
     background: 'white',

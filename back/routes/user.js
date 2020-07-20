@@ -101,7 +101,7 @@ router.post('/login', async (req, res, next) => {
                     }],
                     attributes: ['id', 'nickname', 'userId'],
                 });
-                console.log(fullUser)
+                // console.log(fullUser)
                 return res.json(fullUser);
 
             } catch (e) {
@@ -156,7 +156,7 @@ router.post('/checknickname', async (req, res, next) => {
             attributes: ['nickname'],
         })
 
-        console.log('existNickname: ', existNickname);
+        // console.log('existNickname: ', existNickname);
 
         if (existNickname) {
             return res.status(401).send('이미 사용 중인 닉네임입니다.')
@@ -176,4 +176,51 @@ router.post('/logout', (req, res) => {
     res.send('logout 성공');
 });
 
+router.get('/:id', async (req, res, next) => {
+    try {
+        const user = await db.User.findAll({
+            where: { id: parseInt(req.params.id) },
+            include: [{
+                model: db.Post,
+            }],
+            attributes: ['id', 'nickname']
+        });
+        res.json(user)
+    } catch (e) {
+        console.error(e);
+        next(e);
+    }
+})
+
+router.get('/:id/posts', async (req, res, next) => {
+    try {
+        const user = await db.User.findOne({ where: { id: req.params.id } });
+        if (user) {
+            const posts = await user.getPosts({
+                include: [{
+                    model: db.Image,
+                }, {
+                    model: db.Comment,
+                    include: [{
+                        model: db.User,
+                        attributes: ['id', 'nickname'],
+                    }]
+                }, {
+                    model: db.User,
+                    attributes: ['id', 'nickname'],
+                }],
+                order: [['createdAt', 'DESC']]
+            })
+            console.log('[back] load user posts: ', posts);
+
+            res.status(200).json(posts);
+        } else {
+            res.status(404).send('존재하지 않는 사용자입니다.')
+        }
+       
+    } catch (e) {
+        console.error(e);
+        next(e);
+    }
+});
 module.exports = router;

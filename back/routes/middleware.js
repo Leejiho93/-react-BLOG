@@ -16,11 +16,11 @@ exports.isNotLoggedIn = (req, res, next) => {
     }
 }
 
-// exports.isPostExist = async (req, res, next) => {
-//     const post = await db.Post.findOne({ where: { id: req.parmas.id } })
-//     if (post) {
-//         next();
-//     } else {
-//         res.status(404).send('포스트가 존재하지 않습니다.');
-//     }
-// }
+exports.isPostExist = async (req, res, next) => {
+    const post = await db.Post.findOne({ where: { id: req.parmas.id } })
+    if (post) {
+        next();
+    } else {
+        res.status(404).send('포스트가 존재하지 않습니다.');
+    }
+}

@@ -4,43 +4,58 @@ import withRedux from 'next-redux-wrapper';
 import { applyMiddleware, compose, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
+import withReduxSaga from 'next-redux-saga';
+import axios from 'axios';
+import wrapper from '../store/configureStore';
 
 import AppLayout from '../components/AppLayout'
 import reducer from '../reducers';
 import rootSaga from '../sagas';
+import { LOAD_MAIN_POSTS_REQUEST } from '../reducers/post';
 
-const Blog = ({ Component, store }) => {
+const Blog = ({ Component }) => {
   return (
-    <Provider store={store}>
+    <>
       <Head>
         <title>EASYHO BLOG</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.2.0/antd.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.2.0/antd.css" />
         <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@900&family=Noto+Sans+KR:wght@500&family=Roboto+Slab:wght@500&display=swap" rel="stylesheet" />
       </Head>
       <AppLayout>
         <Component />
       </AppLayout>
-    </Provider>
+    </>
   )
 }
 
-Blog.getInitialProps = async (context) => {
+// Blog.getInitialProps = async (context) => {
+//   // console.log('app context: ', context);
+//   const { ctx, Component} = context;
+//   let pageProps = {};
 
-}
+//   const state = ctx.store.getState();
+//   const cookie = ctx.isServer ? ctx.req.headers.cookie : '';
 
-const configureStore = (initialState, options) => {
-  const sagaMiddleware = createSagaMiddleware();
-  const middlewares = [sagaMiddleware];
-  const enhancer = process.env.NODE_ENV === 'production'
-    ? compose(applyMiddleware(...middlewares))
-    : compose(
-      applyMiddleware(...middlewares),
-      !options.isServer && typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined' ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f,
-    );
-  const store = createStore(reducer, initialState, enhancer);
-  sagaMiddleware.run(rootSaga);
-  return store;
-};
+//   if (ctx.isServer && cookie) {
+//     axios.defaults.headers.cookie = cookie;
+//   }
+
+//   if (!state.user.me) {
+
+//   }
+
+//   if (Component.getInitialProps) {
+//     pageProps = await Component.getInitialProps(ctx) || {};
+//   }
+
+//   // if (!state.post.singlePost) {
+//   //   ctx.store.dispatch({
+//   //     type: LOAD_MAIN_POSTS_REQUEST,
+//   //   })
+//   // }
+
+//   return { pageProps }
+// }
 
 
-export default withRedux(configureStore)(Blog);
+export default wrapper.withRedux(Blog);

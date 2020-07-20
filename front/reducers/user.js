@@ -1,4 +1,5 @@
-import produce from 'immer';
+import produce from '../util/produce';
+
 // const produce = require('immer');
 export const initialState = {
     isLoggingIn: false, // 로그인 진행중
@@ -15,6 +16,10 @@ export const initialState = {
     signUpPasswordSuccess: null, // 비밀번호 유효성 검사 성공
     me: null, // 내정보
 }
+
+export const LOAD_MY_INFO_REQUEST = 'LOAD_MY_INFO_REQUEST';
+export const LOAD_MY_INFO_SUCCESS = 'LOAD_MY_INFO_SUCCESS';
+export const LOAD_MY_INFO_FAILURE = 'LOAD_MY_INFO_FAILURE';
 
 export const SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
@@ -132,6 +137,18 @@ export default (state = initialState, action) => {
             case NICKNAME_CHECK_FAILURE: {
                 draft.signUpNicknameError = action.eason;
                 draft.signUpNicknameSuccess = null;
+                break;
+            }
+
+            case LOAD_MY_INFO_REQUEST: {
+                break;
+            }
+
+            case LOAD_MY_INFO_SUCCESS: {
+                draft.me = action.data;
+            }
+
+            case LOAD_MY_INFO_FAILURE: {
                 break;
             }
 
