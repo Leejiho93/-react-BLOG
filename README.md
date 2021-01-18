@@ -18,6 +18,8 @@ next.js, react, redux, redux-saga, express, mysql (sequelize), material-ui, styl
 ## 구현 기능
 
 1. passport.js를 이용한 로그인과 회원가입 인증 <br/>
+   
+   * 정규표현식을 통한 유효성 검사
 2. redux-saga로 비동기 처리 <br/>
 3. 게시물 추가, 삭제 <br/>
    
