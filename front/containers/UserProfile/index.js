@@ -14,9 +14,11 @@ const UserProfile = () => {
     }
 
     return (
-        <>
-            <ProfileWrapper>{me && me.nickname}</ProfileWrapper>
-        </>
+
+        <ProfileWrapper>
+            {me && me.nickname}
+        </ProfileWrapper>
+
     )
 }
 

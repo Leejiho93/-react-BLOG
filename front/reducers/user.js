@@ -135,7 +135,7 @@ export default (state = initialState, action) => {
             }
 
             case NICKNAME_CHECK_FAILURE: {
-                draft.signUpNicknameError = action.eason;
+                draft.signUpNicknameError = action.reason;
                 draft.signUpNicknameSuccess = null;
                 break;
             }

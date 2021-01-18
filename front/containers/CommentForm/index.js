@@ -27,6 +27,10 @@ const CommentForm = ({ post, id }) => {
     }, [commentAdded === true]);
 
     const onSubmitComment = useCallback((e) => {
+        if (!commentText || !commentText.trim()) {
+            return alert('댓글을 작성하세요')
+        }
+
         dispatch({
             type: ADD_COMMENT_REQUEST,
             data: {

@@ -24,8 +24,6 @@ const upload = multer({
 
 router.post('/', isLoggedIn, upload.none(), async(req, res, next) => {
     try {
-        // console.log('req.body', req.body)
-        // console.log('req.user', req.user.id)
         const newPost = await db.Post.create({
             title: req.body.title,
             content: req.body.content,
@@ -33,9 +31,7 @@ router.post('/', isLoggedIn, upload.none(), async(req, res, next) => {
             category: req.body.category,
         })
 
-        console.log('req.body.image', req.body.image);
         if (req.body.image) {
-            console.log('req.body.image', req.body.image);
             if (Array.isArray(req.body.image)) {
                 const images = await Promise.all(req.body.image.map((image) => {
                     return db.Image.create({ src: image });
@@ -46,8 +42,6 @@ router.post('/', isLoggedIn, upload.none(), async(req, res, next) => {
                 await newPost.addImage(image);
             }   
         }
-
-        // console.log('newPost', newPost);
 
         const fullPost = await db.Post.findOne({
             where: { id: newPost.id },
@@ -80,13 +74,11 @@ router.delete('/:id', async(req, res, next) => {
 })
 
 router.post('/images', upload.array('image'), (req, res) => {
-    console.log('req.files: ', req.files)
     res.json(req.files.map(v => v.filename));
 })
 
 router.get('/:id', async (req, res, next) => {
     try {
-        // console.log('req.parmas: ', req.params);
         const post = await db.Post.findOne({
             where: { id: req.params.id },
             include: [{
@@ -103,8 +95,6 @@ router.get('/:id', async (req, res, next) => {
                 }]
             }]
         })
-        // console.log('load post: ', post)
-        
         res.json(post);
     } catch (e) {
         console.error(e);
@@ -133,8 +123,6 @@ router.get('/:id', async (req, res, next) => {
 
 router.post('/:id/comment', isLoggedIn,  async (req, res, next) => {
     try {
-        // console.log('req.params.id: ', req.params.id);
-        // const post = await db.Post.findOne({ where: { id: req.parmas.id } })
         const post = await db.Post.findOne({ where: { id: req.params.id }});
         if (!post) {
             res.status(404).send('포스트가 존재하지 않습니다.');
@@ -155,13 +143,31 @@ router.post('/:id/comment', isLoggedIn,  async (req, res, next) => {
                 attributes: ['id', 'nickname'],
             }]
         })
-        // console.log('comment: ', comment)
         res.json(comment);
     } catch (e) {
         console.error(e);
         return next(e);
     }
 })
-// router.post('images', )
+
+router.delete('/:id/comment', async(req, res, next) => {
+    try {
+        const post = await db.Post.findOne({ where: { id: req.params.id }});
+        if (!post) {
+            return res.status(404).send('포스트가 존재하지 않습니다.');
+        };
+
+        const comment = await db.Comment.findOne({ where: { id: req.query.commentId }});
+        if (!comment) {
+            return res.status(404).send('댓글이 존재하지 않습니다.');
+        }
+
+        await db.Comment.destroy({ where: { id: req.query.commentId }});
+        res.json({ postId: req.params.id, commentId: req.query.commentId });
+    } catch(e) {
+        console.error(e);
+        next(e);
+    }
+})
 
 module.exports = router;

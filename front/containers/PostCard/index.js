@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Card, Avatar, List, Space, Button } from 'antd';
+import { Card, Avatar, List, Space, Button, Divider } from 'antd';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
 import CommentForm from '../CommentForm';
@@ -35,28 +35,23 @@ const PostCard = ({ post }) => {
         }}
         dataSource={post}
         renderItem={item => (
+          <>
           <Link
             href="/post/[id]" as={`/post/${item.id}`}>
             <a>
               <List.Item
+              style={{margin : '0', padding: '10px'}}
                 key={item.title}
                 actions={[
                   <IconText icon={MessageOutlined} text={item.Comments ? item.Comments.length : 0} key="list-vertical-message" />,
                   <p>{moment(item.createdAt).format('YYYY MMMM Do, h:mm:ss a')}</p>,
                 ]}
-                // {
-                // <div>
-                //   <IconText icon={MessageOutlined} text={item.Comments ? item.Comments.length : 0} key="list-vertical-message" />,
-                //   <p>{moment(item.createdAt).format('YYYY MMMM Do, h:mm:ss a')}</p>,
-                // </div>
-                // }
-
                 extra={
                   (item.Images && item.Images[0])
                     ?
                     <img
-                      width={270}
-                      height={180}
+                      width={200}
+                      height={120}
                       alt="thumbnail"
                       src={`http://localhost:3065/${item.Images[0].src}`}
                     />
@@ -72,20 +67,20 @@ const PostCard = ({ post }) => {
                       </a>
                     </Link>}
                   title={<PostTitle>{item.title}</PostTitle>}
-                  description={[
-      
-                  ]}
                 />
                 <PostContent>
                   {item.content}
                 </PostContent>
               </List.Item >
-        
             </a>
           </Link>
+          <Divider />
+          </>
         )}
       />
+
     </PostCardWrapper>
+
   )
 };
 

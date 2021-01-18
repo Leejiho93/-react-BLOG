@@ -152,18 +152,6 @@ export default (state = initialState, action) => {
                 break;
             }
 
-            case LOAD_USER_POSTS_REQUEST: {
-                break;
-            }
-
-            case LOAD_USER_POSTS_SUCCESS: {
-                break;
-            }
-
-            case LOAD_USER_POSTS_FAILURE: {
-                break;
-            }
-
             // case LOAD_COMMENTS_REQUEST: {
             //     break;
             // }
@@ -194,6 +182,25 @@ export default (state = initialState, action) => {
                 draft.removePost = false;
                 break;
             }
+
+            case REMOVE_COMMENT_REQUEST: {
+                draft.removeComment = false;
+                break;
+            }
+
+            case REMOVE_COMMENT_SUCCESS: {
+                const postIndex = draft.allPosts.findIndex(v => v.id === action.data.postId);
+                const commentIndex = draft.allPosts[postIndex].Comments.findIndex(v => v.id === action.data.commentId);
+                draft.allPosts[postIndex].Comments.splice(commentIndex, 1);
+                draft.removeComment = true;
+                break;
+            }
+
+            case REMOVE_COMMENT_FAILURE: {
+                draft.removeComment = false;
+                break;
+            }
+
 
             default: {
                 break;

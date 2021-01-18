@@ -24,8 +24,12 @@ import {
     LOAD_USER_POSTS_SUCCESS,
     REMOVE_POST_REQUEST,
     REMOVE_POST_SUCCESS,
-    REMOVE_POST_FAILURE
+    REMOVE_POST_FAILURE,
+    REMOVE_COMMENT_REQUEST,
+    REMOVE_COMMENT_SUCCESS,
+    REMOVE_COMMENT_FAILURE
 } from '../reducers/post';
+import ActionButton from 'antd/lib/modal/ActionButton';
 
 
 function addPostAPI(postData) {
@@ -161,7 +165,7 @@ function* uploadImages(action) {
 }
 
 function loadUserPostsAPI(id) {
-    return axios.get(`user/${id || 0}/posts`)
+    return axios.get(`/user/${id || 0}/posts`)
 }
 
 function* loadUserPosts(action) {
@@ -202,6 +206,33 @@ function* removePost(action) {
     }
 }
 
+function removeCommentAPI(data) {
+   
+    return axios.delete(`/post/${data.postId}/comment?commentId=${data.commentId}`, data, {
+        withCredentials: true,
+    });
+}
+
+function* removeComment(action) {
+    try {
+        const result = yield call(removeCommentAPI, action.data);
+        console.log('result comment', result.data);
+        yield put({
+            type: REMOVE_COMMENT_SUCCESS,
+            data: {
+                postId: action.data.postId,
+                commentId: result.data.commentId,
+            },
+        })
+    } catch(e) {
+        console.error(e);
+        yield put({
+            type: REMOVE_COMMENT_FAILURE,
+            error: e,
+        })
+    } 
+}
+
 function* watchAddPost() {
     yield takeLatest(ADD_POST_REQUEST, addPost);
 }
@@ -234,6 +265,9 @@ function* watchRemovePost() {
     yield takeLatest(REMOVE_POST_REQUEST, removePost);
 }
 
+function* watchRemoveComment() {
+    yield takeLatest(REMOVE_COMMENT_REQUEST, removeComment);
+}
 
 export default function* postSage() {
     yield all([
@@ -245,6 +279,7 @@ export default function* postSage() {
         fork(watchUploadImages),
         fork(watchLoadUserPosts),
         fork(watchRemovePost),
+        fork(watchRemoveComment),
     ])
 }
 

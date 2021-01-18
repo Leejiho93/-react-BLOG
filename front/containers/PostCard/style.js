@@ -23,9 +23,14 @@ export const CardWrapper = styled.div`
 `
 
 export const PostTitle = styled.p`
+    word-break: break-all;
     overflow: hidden;
-    text-overflow: ellipsis;
-    width: 50%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    // width: 50%;
     font-weight: bold;
 `
 
@@ -34,7 +39,7 @@ export const PostContent = styled.p`
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
 `
 
 export const PostCardWrapper = styled.div`

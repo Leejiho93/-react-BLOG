@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import Router from 'next/router'
 import PostCard from '../../containers/PostCard';
 import PostImages from '../../components/PostImages';
-import { LOAD_POST_REQUEST, LOAD_MAIN_POSTS_REQUEST, LOAD_COMMENTS_REQUEST, REMOVE_POST_REQUEST } from '../../reducers/post';
+import { LOAD_POST_REQUEST, LOAD_MAIN_POSTS_REQUEST, LOAD_COMMENTS_REQUEST, REMOVE_POST_REQUEST, REMOVE_COMMENT_REQUEST } from '../../reducers/post';
 import { List, Comment, Card, Avatar, Button } from 'antd';
 import Link from 'next/link';
 import wrapper from '../../store/configureStore';
@@ -29,12 +29,11 @@ margin-bottom: 50px;
 `
 
 const Post = () => {
-    const { removePost, singlePost } = useSelector(state => state.post);
+    const { removePost, singlePost, removeComment } = useSelector(state => state.post);
     const router = useRouter();
     const { id } = router.query;
-    const userid = useSelector(state => state.user.me.id)
+    const userid = useSelector(state => state.user.me && state.user.me.id)
     const dispatch = useDispatch();
-
 
     useEffect(() => {
         if (removePost) {
@@ -42,10 +41,30 @@ const Post = () => {
         }
     }, [removePost])
 
-    const removePostBtn = useCallback(userId => () => {
+    useEffect(() => {
+        if (removeComment) {
+            dispatch({
+                type: LOAD_POST_REQUEST,
+                data: singlePost.id,
+            })         
+        }
+    }, [removeComment])
+
+    const removePostBtn = useCallback(() => {
         dispatch({
             type: REMOVE_POST_REQUEST,
-            data: userId,
+            data: singlePost.id,
+        })
+    })
+
+    const removeCommentBtn = useCallback(commentId => () => {
+        // console.log('commentId', commentId);
+        dispatch({
+            type: REMOVE_COMMENT_REQUEST,
+            data:{
+                postId: singlePost.id,
+                commentId: commentId,
+            } 
         })
     })
 
@@ -65,11 +84,11 @@ const Post = () => {
 
             {
                 userid && (singlePost && singlePost.UserId === userid)
-                    ? (<Button onClick={removePostBtn(singlePost.id)}>삭제</Button>)
+                    ? (<Button onClick={removePostBtn}>삭제</Button>)
                     : null
             }
 
-            <Card title={<p style={{ fontWeight: 'bold' }}>{singlePost && singlePost.title}</p>} style={{ width: '100%', textAlign: 'center', wordBreak: 'break-all' }}>
+            <Card title={<p style={{ fontWeight: 'bold' }}>{singlePost && singlePost.title}</p>} style={{ width: '100%', textAlign: 'center'}}>
                 <PostImages images={singlePost && singlePost.Images} />
                 <p style={{ marginBottom: '70px' }}>{singlePost && singlePost.content}</p>
             </Card>
@@ -84,9 +103,6 @@ const Post = () => {
                     <li>
                         <Comment
                             // actions={
-                            //     userid && (singlePost && singlePost.UserId === userid)
-                            //     ? (<Button onClick={removePostBtn(singlePost.id)}>삭제</Button>)
-                            //     : null
                             // }
                             author={item.User ? <p>{item.User.nickname} &nbsp;&nbsp;&nbsp;&nbsp; {moment(item.createdAt).format('YYYY-MM-DD hh:mm:ss')}</p> : null}
                             avatar={
@@ -95,9 +111,15 @@ const Post = () => {
                                 </Link>}
                             content={<p style={{ paddingRight: '20px' }}>{item.content}</p>}
                         ></Comment>
-                        <Button
-                            // onClick={removeCommentBtn(singlePost.id)}
-                        >삭제</Button>
+                        {
+                            console.log('post.UserId', item && item.UserId),
+                            console.log('post.id', item && item.id)
+                        }
+                        {
+                            userid && (item && item.UserId === userid)
+                                ? ( <Button onClick={removeCommentBtn(item.id)}>삭제</Button>)
+                                : null
+                        }
                     </li>
                 )}
             />

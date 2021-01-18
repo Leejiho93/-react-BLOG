@@ -194,30 +194,19 @@ router.get('/:id', async (req, res, next) => {
 
 router.get('/:id/posts', async (req, res, next) => {
     try {
-        const user = await db.User.findOne({ where: { id: req.params.id } });
-        if (user) {
-            const posts = await user.getPosts({
-                include: [{
-                    model: db.Image,
-                }, {
-                    model: db.Comment,
-                    include: [{
-                        model: db.User,
-                        attributes: ['id', 'nickname'],
-                    }]
-                }, {
-                    model: db.User,
-                    attributes: ['id', 'nickname'],
-                }],
-                order: [['createdAt', 'DESC']]
-            })
-            console.log('[back] load user posts: ', posts);
-
-            res.status(200).json(posts);
-        } else {
-            res.status(404).send('존재하지 않는 사용자입니다.')
-        }
-       
+        const posts = await db.Post.findAll({
+            where: {
+                UserId: parseInt(req.params.id ,10) || (req.user && req.user.id) || 0,
+            },
+            include: [{
+                model: db.User,
+                attributes: ['id', 'nickname'],
+            }, {
+                model: db.Image,
+            }],
+            order: [['createdAt', 'DESC']]
+        })
+       res.json(posts);
     } catch (e) {
         console.error(e);
         next(e);

@@ -21,6 +21,7 @@ import {
     LOAD_MY_INFO_SUCCESS
 
 } from '../reducers/user';
+import { LOAD_USER_POSTS_REQUEST, LOAD_MAIN_POSTS_FAILURE } from '../reducers/post';
 
 // 로그인
 function logInAPI(loginData) {
@@ -176,6 +177,10 @@ function* watchLoadMyInfo() {
     yield takeLatest(LOAD_MY_INFO_REQUEST, loadMyInfo)
 }
 
+function* watchLoadUserPosts() {
+    yield takeLatest(LOAD_USER_POSTS_REQUEST, loadUserPosts)
+}
+
 export default function* userSage() {
     yield all([
         fork(watchLogIn),
@@ -183,6 +188,6 @@ export default function* userSage() {
         fork(watchLogOut),
         fork(watchSignUpIdCheck),
         fork(watchSignUpNicknameCheck),
-        fork(watchLoadMyInfo)
+        fork(watchLoadMyInfo),
     ])
 }
